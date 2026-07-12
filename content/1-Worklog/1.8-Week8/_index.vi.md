@@ -12,48 +12,32 @@ pre: " <b> 1.8. </b> "
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tối ưu tài nguyên EC2
+* Phân tích chi phí với Glue/Athena
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Phân tích chi phí sử dụng nâng cao với AWS Glue và Amazon Athena | 22/06/2026 | 22/06/2026 | <https://000040.awsstudygroup.com/vi/> |
+| 3 | - Di chuyển ứng dụng Monolith | 23/06/2026 | 23/06/2026 | <https://000050.awsstudygroup.com/vi/> |
+| 4 | - Tự động release ứng dụng | 24/06/2026 | 24/06/2026 | <https://000051.awsstudygroup.com/vi/> |
+| 5 | - Tạo một Microservice | 25/06/2026 | 25/06/2026 | <https://000052.awsstudygroup.com/vi/> |
+| 6 | - Tái cấu trúc dữ liệu và workflow | 26/06/2026 | 26/06/2026 | <https://000053.awsstudygroup.com/vi/> |
 
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tối ưu tài nguyên EC2 và phân tích chi phí cloud bằng AWS Glue và Amazon Athena
+* Tìm hiểu di chuyển từ monolith sang microservice và tự động hóa quy trình release ứng dụng
+* Tham gia FCAJ Community Day (Enterprise AI trong DevOps, Voice AI, Amazon Q for HR, bảo mật AI)
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+**Dịch vụ AWS đã sử dụng:**
+* AWS Cost Explorer & Cost Optimization
+* AWS Glue
+* Amazon Athena
+* Amazon EC2 (Resource Optimization)
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+**Kỹ năng đạt được:**
+* Phân tích dữ liệu chi phí và tối ưu truy vấn
+* Chiến lược hiện đại hóa ứng dụng
+* Nhận thức về kiến trúc Enterprise AI (từ Community Day)

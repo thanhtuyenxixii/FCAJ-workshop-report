@@ -12,48 +12,33 @@ pre: " <b> 1.3. </b> "
 
 ### Mục tiêu tuần 3:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tiếp tục tìm hiểu Compute VM và Cloud9 IDE
+* Tạo database RDS
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Sử dụng AWS CLI trên Amazon EC2 (Windows/Ubuntu) | 18/05/2026 | 18/05/2026 | <https://000011.awsstudygroup.com/vi/> |
+| 3 | - Tạo hệ thống giám sát với Amazon CloudWatch | 19/05/2026 | 19/05/2026 | <https://000008.awsstudygroup.com/vi/> |
+| 4 | - Thiết lập hệ thống DNS hybrid tích hợp giữa môi trường Local và Amazon VPC với Amazon Route 53 | 20/05/2026 | 20/05/2026 | <https://000010.awsstudygroup.com/vi/> |
+| 5 | - Di chuyển máy chủ ảo với AWS VM Import/Export <br> - Di chuyển cơ sở dữ liệu với AWS Database Migration Service (DMS) và Schema Conversion Tool (SCT) | 21/05/2026 | 21/05/2026 | <https://000014.awsstudygroup.com/vi/> |
+| 6 | - Triển khai kế hoạch backup hệ thống với AWS Backup | 22/05/2026 | 22/05/2026 | <https://000013.awsstudygroup.com/vi/> |
 
 
 ### Kết quả đạt được tuần 3:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Di chuyển thành công máy chủ ảo và thực hiện di chuyển database liên môi trường
+* Thiết lập kế hoạch backup hệ thống toàn diện và cấu hình tích hợp hybrid DNS
+* Tham gia sự kiện AWS chính thức để mở rộng kết nối và kiến thức thực tế
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+**Dịch vụ AWS đã sử dụng:**
+* AWS VM Import/Export
+* AWS DMS & Schema Conversion Tool (SCT)
+* AWS Backup
+* AWS Storage Gateway (File Gateway)
+* Amazon Route 53
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+**Kỹ năng đạt được:**
+* Chiến lược di chuyển dữ liệu và máy chủ (cloud migration)
+* Triển khai disaster recovery và kế hoạch backup tự động
+* Xử lý sự cố và quản lý chi phí (rút kinh nghiệm từ lỗi cấu hình volume)
