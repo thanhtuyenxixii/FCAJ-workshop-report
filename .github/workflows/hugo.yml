@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - intern/ho-viet-thang
+  workflow_dispatch:
 
 permissions:
   contents: write
