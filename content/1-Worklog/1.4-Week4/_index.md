@@ -5,53 +5,41 @@ weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 4 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand AWS Security Groups and their role in network security.
+* Master key pair management for secure EC2 access.
+* Deploy a simple application to an EC2 instance.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Review Security Groups concepts <br> - Learn inbound and outbound rules <br> - Understand security best practices                                                                                    | 05/11/2026 | 05/11/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Study key pair creation and management <br> - Learn about private and public keys <br> - Practice creating and downloading key pairs                                                                | 05/12/2026 | 05/12/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Set up a simple web application (e.g., Flask, Node.js) <br> - Prepare deployment files <br> - Learn deployment concepts and best practices                                                        | 05/13/2026 | 05/13/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Configure Security Groups for web application <br>&emsp; + Set up inbound/outbound rules <br>&emsp; + Test security configurations                                      | 05/14/2026 | 05/14/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Deploy application to EC2 <br>&emsp; + Verify application is running <br>&emsp; + Access application from browser                                                       | 05/15/2026 | 05/15/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 4 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Mastered Security Groups and understood inbound/outbound rules configuration.
 
-* Successfully created and configured an AWS Free Tier account.
+* Learned best practices for security group configuration and least privilege principle.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Successfully managed key pairs including creation, download, and secure storage.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Understood the importance of key pair management for EC2 security.
 
-* Used AWS CLI to perform basic operations such as:
+* Prepared a simple web application for deployment.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Configured Security Groups to allow web traffic (HTTP/HTTPS).
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Successfully deployed an application to an EC2 instance.
+
+* Verified the deployed application is accessible via browser.
+
+* Gained practical experience with end-to-end application deployment on AWS.

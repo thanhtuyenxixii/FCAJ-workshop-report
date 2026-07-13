@@ -5,28 +5,50 @@ weight : 6
 chapter : false
 pre : " <b> 5.6. </b> "
 ---
-Congratulations on completing this workshop! 
-In this workshop, you learned architecture patterns for accessing Amazon S3 without using the Public Internet. 
-+ By creating a gateway endpoint, you enabled direct communication between EC2 resources and Amazon S3, without traversing an Internet Gateway. 
-+ By creating an interface endpoint you extended S3 connectivity to resources running in your on-premises data center via AWS Site-to-Site VPN or Direct Connect. 
+To avoid incurring unexpected charges on your AWS account after finishing the workshop, clean up the resources by following the steps below.
 
-#### clean up
-1. Navigate to Hosted Zones on the left side of Route 53 console. Click the name of *s3.us-east-1.amazonaws.com* zone. Click Delete and confirm deletion by typing delete. 
+> [!CAUTION]
+> CloudFormation **cannot delete S3 Buckets that are not empty**. You must empty all S3 buckets first before deleting the stack.
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+---
 
-2. Disassociate the Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+#### Step 1: Empty S3 Buckets
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+Use AWS CLI to delete all objects in the three buckets:
 
-4. Open the CloudFormation console  and delete the two CloudFormation Stacks that you created for this lab:
-+ PLOnpremSetup
-+ PLCloudSetup
+```bash
+# 1. Empty the raw uploads bucket
+aws s3 rm s3://essay-scoring-raw-919968175298-ap-southeast-1 --recursive
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+# 2. Empty the AI evaluation results bucket
+aws s3 rm s3://essay-scoring-result-919968175298-ap-southeast-1 --recursive
 
-5. Delete S3 buckets
-+ Open S3 console
-+ Choose the bucket we created for the lab, click and confirm empty. Click delete and confirm delete.
+# 3. Empty the frontend distribution bucket
+aws s3 rm s3://essay-scoring-frontend-919968175298-ap-southeast-1 --recursive
+```
 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+*(Note: Replace with your actual S3 bucket names from the CloudFormation Outputs).*
+
+---
+
+#### Step 2: Delete the SAM Stack
+
+Once the S3 buckets are empty, delete the CloudFormation stack:
+
+```bash
+sam delete
+```
+
+Confirm by typing `y` (Yes) when prompted. This removes the API Gateway, Lambdas, Cognito User Pool, DynamoDB Table, CloudFront distribution, and associated IAM roles.
+
+Alternatively, you can visit the [AWS CloudFormation Console](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home?region=ap-southeast-1), select the **`essay-scoring`** stack, and click **Delete**.
+
+---
+
+#### Step 3: Delete the Gemini API Key from SSM Parameter Store
+
+Run this command to delete the stored secure parameter:
+
+```bash
+aws ssm delete-parameter --name "/essay-scoring/gemini-api-key"
+```

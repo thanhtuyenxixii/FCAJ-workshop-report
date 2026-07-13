@@ -5,27 +5,26 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+# Guide your Amazon Aurora MySQL migration with Kiro powers
+
+The blog introduces the new Amazon Aurora MySQL power for Kiro — an AI tool integrated into the IDE that helps automate and simplify the entire database migration process from Amazon RDS for MySQL to Amazon Aurora MySQL through 4 phases (Assess, Migrate, Promote, Switch) using natural language, minimizing preparation time and reducing cutover downtime to just tens of seconds.
 
 Key points to know:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+* Concept of Kiro Powers: An extension tool that equips Kiro IDE's AI with deep domain expertise in a specific technology (best practices, APIs, standard configurations).
+* Composed of 3 Components: MCP servers (connect directly to read AWS/DB status), Steering files (encode expert best practices), and Validation hooks (check for errors prior to execution).
+* 4-Phase Migration Process (Near-Zero Downtime): Assess $\rightarrow$ Migrate $\rightarrow$ Promote $\rightarrow$ Switch.
+* Source Version Requirements: The source RDS MySQL instance must be running version 5.7.44+ or 8.0.28+.
+* Storage Engine: Only InnoDB is supported. Any tables using MyISAM on the source DB must be converted to InnoDB before migration.
+* Backup & Binlog: The source instance must have automated backups enabled with a retention period of at least 1 day (to enable binary logging).
+* Scope: Currently supports migration only within the same AWS account and same Region.
+* Safety Mechanism: The AI only recommends and generates commands; the system never modifies AWS resources without explicit human approval at each step.
+* Post-Migration Capabilities: After a successful migration to Aurora, the AI can continue to assist with adding read replicas tailored to workloads, configuring Aurora Global Database (multi-Region for disaster recovery), schema design, and SQL query optimization.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+This feature is particularly useful as it introduces a production-ready solution that transforms a complex and risky database migration from Amazon RDS to Aurora into automated steps via natural language. This AI tool not only minimizes downtime to tens of seconds but also ensures technical safety through its ability to automatically audit compatibility issues (such as binlog and InnoDB) against AWS expert best practices.
 
-...Image...
+![](/images/blog1.png)
 
-...Link...
-
-...Guide...
+Link: https://www.facebook.com/groups/awsstudygroupfcj/permalink/2208778813220412/

@@ -6,32 +6,53 @@ chapter : false
 pre : " <b> 5.6. </b> "
 ---
 
-#### Dọn dẹp tài nguyên
 
-Xin chúc mừng bạn đã hoàn thành xong lab này!
-Trong lab này, bạn đã học về các mô hình kiến trúc để truy cập Amazon S3 mà không sử dụng Public Internet.
+Để tránh phát sinh chi phí không mong muốn từ các dịch vụ AWS sau khi hoàn thành bài thực hành, hãy tiến hành dọn dẹp các tài nguyên theo quy trình dưới đây.
 
-+ Bằng cách tạo Gateway endpoint, bạn đã cho phép giao tiếp trực tiếp giữa các tài nguyên EC2 và Amazon S3, mà không đi qua Internet Gateway.
-Bằng cách tạo Interface endpoint, bạn đã mở rộng kết nối S3 đến các tài nguyên chạy trên trung tâm dữ liệu trên chỗ của bạn thông qua AWS Site-to-Site VPN hoặc Direct Connect.
+> [!CAUTION]
+> CloudFormation sẽ **không thể xoá** các S3 bucket nếu chúng đang chứa dữ liệu. Bạn bắt buộc phải dọn sạch (empty) dữ liệu trong các bucket trước khi xoá stack.
 
-#### Dọn dẹp
-1. Điều hướng đến Hosted Zones trên phía trái của bảng điều khiển Route 53. Nhấp vào tên của  s3.us-east-1.amazonaws.com zone. Nhấp vào Delete và xác nhận việc xóa bằng cách nhập từ khóa "delete".
+---
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+#### Bước 1: Dọn dẹp dữ liệu trong các Amazon S3 Bucket
 
-2. Disassociate Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+Sử dụng AWS CLI hoặc AWS Console để xoá dữ liệu trong 3 bucket của hệ thống:
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+```bash
+# 1. Xoá file bài viết đã upload trong raw bucket
+aws s3 rm s3://essay-scoring-raw-919968175298-ap-southeast-1 --recursive
 
-4.Mở console của CloudFormation và xóa hai stack CloudFormation mà bạn đã tạo cho bài thực hành này:
-+ PLOnpremSetup
-+ PLCloudSetup
+# 2. Xoá file kết quả chấm điểm JSON trong result bucket
+aws s3 rm s3://essay-scoring-result-919968175298-ap-southeast-1 --recursive
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+# 3. Xoá file giao diện website trong frontend bucket
+aws s3 rm s3://essay-scoring-frontend-919968175298-ap-southeast-1 --recursive
+```
 
-5. Xóa các S3 bucket
+*(Lưu ý: Thay thế tên bucket thực tế hiển thị trong phần Output CloudFormation của bạn).*
 
-+ Mở bảng điều khiển S3
-+ Chọn bucket chúng ta đã tạo cho lab, nhấp chuột và xác nhận là empty. Nhấp Delete và xác nhận delete.
-+ 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+---
+
+#### Bước 2: Xoá CloudFormation Stack
+
+Sau khi các bucket đã trống, tiến hành xoá toàn bộ stack bằng lệnh sau trong thư mục dự án:
+
+```bash
+sam delete
+```
+
+Khi được hỏi xác nhận (Are you sure you want to delete the stack essay-scoring?), nhập y (Yes) để đồng ý. Hệ thống sẽ tự động xoá bỏ tất cả Lambda, DynamoDB, API Gateway, CloudFront, Cognito User Pool, và các IAM Role liên quan.
+
+Hoặc bạn có thể truy cập vào [AWS CloudFormation Console](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home?region=ap-southeast-1), chọn stack **essay-scoring** và nhấn **Delete**.
+
+---
+
+#### Bước 3: Xoá Gemini API Key trong SSM Parameter Store
+
+Để xoá khoá bảo mật đã lưu trữ trên Parameter Store, chạy lệnh sau:
+
+```bash
+aws ssm delete-parameter --name "/essay-scoring/gemini-api-key"
+```
+
+Quá trình dọn dẹp đã hoàn tất!

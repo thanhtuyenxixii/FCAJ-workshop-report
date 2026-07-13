@@ -6,90 +6,74 @@ chapter : false
 pre : " <b> 5.5 </b> "
 ---
 
-Khi bạn tạo một Interface Endpoint  hoặc cổng, bạn có thể đính kèm một chính sách điểm cuối để kiểm soát quyền truy cập vào dịch vụ mà bạn đang kết nối. Chính sách VPC Endpoint là chính sách tài nguyên IAM mà bạn đính kèm vào điểm cuối. Nếu bạn không đính kèm chính sách khi tạo điểm cuối, thì AWS sẽ đính kèm chính sách mặc định cho bạn để cho phép toàn quyền truy cập vào dịch vụ thông qua điểm cuối.
+Trong phần này, chúng ta sẽ thực hiện các bước đăng ký tài khoản, xác thực email từ dịch vụ SNS và tiến hành tải lên bài luận dưới các định dạng khác nhau để kiểm thử tính năng OCR của Amazon Textract và khả năng chấm điểm của Gemini AI.
 
-Bạn có thể tạo chính sách chỉ hạn chế quyền truy cập vào các S3 bucket cụ thể. Điều này hữu ích nếu bạn chỉ muốn một số Bộ chứa S3 nhất định có thể truy cập được thông qua điểm cuối.
+---
 
-Trong phần này, bạn sẽ tạo chính sách VPC Endpoint hạn chế quyền truy cập vào S3 bucket được chỉ định trong chính sách VPC Endpoint.
+#### Bước 1: Kích hoạt email nhận thông báo từ AWS SNS
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+Trước khi thực hiện chấm điểm, bạn cần đồng ý đăng ký nhận thông báo từ SNS để hệ thống có thể gửi email về hộp thư của bạn:
 
-#### Kết nối tới EC2 và xác minh kết nối tới S3. 
+1. Đăng nhập vào hộp thư email bạn đã khai báo trong quá trình deploy (ví dụ: testuser@gmail.com).
+2. Tìm một email được gửi từ no-reply@sns.amazonaws.com với tiêu đề **"AWS Notification - Subscription Confirmation"**.
+3. Nhấp vào liên kết **Confirm Subscription** trong email. Trình duyệt hiển thị thông báo **Subscription confirmed!** nghĩa là bạn đã kích hoạt thành công.
 
-1. Bắt đầu một phiên AWS Session Manager mới trên máy chủ có tên là Test-Gateway-Endpoint. Từ phiên này, xác minh rằng bạn có thể liệt kê nội dung của bucket mà bạn đã tạo trong Phần 1: Truy cập S3 từ VPC.
+![Xác nhận đăng ký email SNS](/images/5-Workshop/5.5-Policy/confirm-notification.jpeg)
 
-```
-aws s3 ls s3://<your-bucket-name>
-```
-![test](/images/5-Workshop/5.5-Policy/test1.png)
+---
 
-Nội dung của bucket bao gồm hai tệp có dung lượng 1GB đã được tải lên trước đó.
+#### Bước 2: Đăng nhập vào ứng dụng Web
 
-2. Tạo một bucket S3 mới; tuân thủ mẫu đặt tên mà bạn đã sử dụng trong Phần 1, nhưng thêm '-2' vào tên. Để các trường khác là mặc định và nhấp vào **Create**.
+1. Mở trình duyệt và truy cập vào **CloudFront URL** của bạn.
+2. Trang web hiển thị giao diện đăng nhập (Sign In).
+3. Đăng nhập bằng tài khoản thử nghiệm của bạn:
+   * **Email:** testuser@gmail.com
+   * **Mật khẩu:** MatKhauChauAu123!
 
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
+![Giao diện đăng nhập website](/images/5-Workshop/5.5-Policy/test-web.png)
 
-3. Tạo bucket thành công.
+4. Sau khi đăng nhập thành công, bạn sẽ được chuyển hướng đến trang **Dashboard** của hệ thống.
 
-![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
+---
 
-Policy mặc định cho phép truy cập vào tất cả các S3 Buckets thông qua VPC endpoint.
+#### Bước 3: Kiểm thử tải lên bài luận (Upload & Evaluation)
 
-4. Trong giao diện **Edit Policy**, sao chép và dán theo policy sau, thay thế yourbucketname-2 với tên bucket thứ hai của bạn. Policy này sẽ cho phép truy cập đến bucket mới thông qua VPC endpoint, nhưng không cho phép truy cập đến các bucket còn lại. Chọn **Save** để kích hoạt policy.
+Hệ thống hỗ trợ 3 loại định dạng đầu vào. Bạn có thể tiến hành kiểm thử lần lượt:
 
+##### Trường hợp A: Upload file văn bản thuần (.txt)
+1. Tạo một file .txt chứa nội dung bài luận tiếng Anh của bạn.
+2. Kéo thả hoặc chọn file này vào khung **Upload Essay** ở bên trái màn hình.
+3. Nhấn nút **Submit for Assessment**. Trạng thái bài luận sẽ chuyển thành Analyzing.
+4. Sau khoảng 30-50 giây (thời gian Gemini xử lý), trạng thái sẽ cập nhật thành Scored kèm theo điểm số hiển thị trên bảng.
 
-```
-{
-  "Id": "Policy1631305502445",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1631305501021",
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": [
-      				"arn:aws:s3:::yourbucketname-2",
-       				"arn:aws:s3:::yourbucketname-2/*"
-       ],
-      "Principal": "*"
-    }
-  ]
-}
-```
+##### Trường hợp B: Upload file hình ảnh chứa bài luận (.png, .jpg, .jpeg)
+1. Chuẩn bị một bức ảnh chụp bài viết tiếng Anh (có thể viết tay rõ ràng hoặc in ấn).
+2. Kéo thả file ảnh này vào khung upload của ứng dụng.
+3. Nhấn **Submit for Assessment**. 
+4. Hệ thống sẽ tự động kích hoạt luồng **Choice State** trong Step Functions, điều hướng file ảnh sang dịch vụ **Amazon Textract** để trích xuất chữ, rồi mới chuyển cho Gemini đánh giá.
 
-![custom policy](/images/5-Workshop/5.5-Policy/policy2.png)
+##### Trường hợp C: Upload file tài liệu chứa bài luận (.pdf)
+1. Tương tự như trường hợp ảnh, upload một file tài liệu .pdf.
+2. Textract sẽ quét qua các trang tài liệu PDF để lấy chữ thô và gửi chấm điểm.
 
-Cấu hình policy thành công.
+![Màn hình giao diện Dashboard quản lý](/images/5-Workshop/5.5-Policy/thuc-hien-cham-diem.png)
 
-![success](/images/5-Workshop/5.5-Policy/success.png)
+---
 
-5. Từ session của bạn trên Test-Gateway-Endpoint instance, kiểm tra truy cập đến S3 bucket bạn tạo ở bước đầu
+#### Bước 4: Kiểm tra kết quả chấm điểm & Email báo điểm
 
-```
-aws s3 ls s3://<yourbucketname>
-```
+##### 1. Xem chi tiết phân tích trên Website:
+* Nhấn nút **View Analysis** bên cạnh bài luận đã được chấm điểm trên bảng.
+* Hệ thống sẽ hiển thị một trang báo cáo chi tiết trực quan bao gồm:
+  * **Tổng điểm (Overall Score):** Điểm số từ 0 - 100.
+  * **Đánh giá chung (Overall Feedback):** Lời khuyên tổng quan từ AI.
+  * **Phân tích chi tiết từng tiêu chí:** Đánh giá về Ngữ pháp (Grammar), Từ vựng (Vocabulary), Bố cục cấu trúc (Structure), và Sự mạch lạc (Coherence).
 
-Câu lệnh trả về lỗi bởi vì truy cập vào S3 bucket không có quyền trong VPC endpoint policy.
+![Giao diện báo cáo kết quả chi tiết](/images/5-Workshop/5.5-Policy/ket-qua-cham-diem.png)
 
-![error](/images/5-Workshop/5.5-Policy/error.png)
+##### 2. Kiểm tra Hộp thư Email:
+* Mở hộp thư email của bạn. Bạn sẽ nhận được một thư báo điểm mới từ hệ thống với tiêu đề:
+  * **Essay Scored! File: [Ten_File_Cua_Ban]**
+* Nội dung email sẽ hiển thị chi tiết điểm số cùng toàn bộ bài đánh giá chấm điểm của AI, giúp bạn theo dõi kết quả ngay lập tức mà không cần mở website.
 
-6. Trở lại home directory của bạn trên EC2 instance ```cd~```
-
-+ Tạo file ```fallocate -l 1G test-bucket2.xyz ```
-+ Sao chép file lên bucket thứ  2 ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
-
-![success](/images/5-Workshop/5.5-Policy/test2.png)
-
-Thao tác này được cho phép bởi VPC endpoint policy.
-
-![success](/images/5-Workshop/5.5-Policy/test2-success.png)
-
-Sau đó chúng ta kiểm tra truy cập vào S3 bucket đầu tiên
-
- ```aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>```
-
- ![fail](/images/5-Workshop/5.5-Policy/test2-fail.png)
-
- Câu lệnh xảy ra lỗi bởi vì bucket không có quyền truy cập bởi VPC endpoint policy.
-
-Trong phần này, bạn đã tạo chính sách VPC Endpoint cho Amazon S3 và sử dụng AWS CLI để kiểm tra chính sách. Các hoạt động AWS CLI liên quan đến bucket S3 ban đầu của bạn thất bại vì bạn áp dụng một chính sách chỉ cho phép truy cập đến bucket thứ hai mà bạn đã tạo. Các hoạt động AWS CLI nhắm vào bucket thứ hai của bạn thành công vì chính sách cho phép chúng. Những chính sách này có thể hữu ích trong các tình huống khi bạn cần kiểm soát quyền truy cập vào tài nguyên thông qua VPC Endpoint.
+![Thư báo điểm tự động từ SNS](/images/5-Workshop/5.5-Policy/mail-thong-bao.png)

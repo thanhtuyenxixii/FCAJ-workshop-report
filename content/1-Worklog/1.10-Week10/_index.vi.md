@@ -5,55 +5,48 @@ weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai thiết kế dự án AWS và triển khai tất cả các dịch vụ được lên kế hoạch.
+* Cấu hình và tối ưu hóa các dịch vụ AWS theo kiến trúc được đề xuất.
+* Xác thực tính ổn định của hệ thống, kết nối và tình hình bảo mật.
+* Chuẩn bị tài liệu dự án và báo cáo xác thực triển khai.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| Ngày | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Thiết lập cơ sở hạ tầng dự án <br> - Triển khai EC2 instances và cấu hình tài nguyên tính toán <br> - Thiết lập mạng (VPC, subnets, security groups)                                          | 22/06/2026   | 22/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Cấu hình S3 buckets và storage policies <br> - Thiết lập IAM roles và permissions cho dịch vụ <br> - Cấu hình database services nếu cần                                                     | 23/06/2026   | 23/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Thực hành:** <br>&emsp; + Triển khai các thành phần ứng dụng <br>&emsp; + Cấu hình monitoring và logging <br>&emsp; + Thiết lập backup và disaster recovery                                 | 24/06/2026   | 24/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Thực hành:** <br>&emsp; + Kiểm tra kết nối hệ thống và hiệu suất <br>&emsp; + Xác thực cấu hình bảo mật <br>&emsp; + Thực hiện audit bảo mật và đánh giá lỗ hổng                         | 25/06/2026   | 25/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Xác minh tính ổn định của hệ thống dưới các điều kiện tải khác nhau <br>&emsp; + Tài liệu hóa các quy trình triển khai  | 26/06/2026   | 26/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thành công thiết lập toàn bộ cơ sở hạ tầng dự án trên AWS.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Triển khai và cấu hình tất cả tài nguyên tính toán bao gồm EC2 instances với kích thước và cấu hình thích hợp.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Thiết lập cơ sở hạ tầng mạng bao gồm VPC, subnets, và security groups với cấu hình thích hợp.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Cấu hình S3 buckets và storage policies theo yêu cầu dự án.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Thiết lập IAM roles và permissions theo nguyên tắc least privilege.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Triển khai thành công tất cả các thành phần ứng dụng và xác minh chức năng của chúng.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Triển khai monitoring và logging toàn diện để quan sát hệ thống.
+
+* Cấu hình các quy trình backup và disaster recovery để đảm bảo bảo vệ dữ liệu.
+
+* Xác thực kết nối hệ thống và hiệu suất dưới các điều kiện tải khác nhau.
+
+* Thực hiện audit bảo mật toàn diện và đánh giá lỗ hổng với tất cả các phát hiện được khắc phục.
+
+* Xác minh tính ổn định của hệ thống và xác nhận sự sẵn sàng sản xuất của toàn bộ triển khai.
 
 

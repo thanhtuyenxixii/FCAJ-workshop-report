@@ -5,53 +5,40 @@ weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 3 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Enable MFA (Multi-Factor Authentication) for AWS account security.
+* Understand AWS EC2 (Elastic Compute Cloud) virtual server service.
+* Launch and initialize EC2 instances.
+* Practice connecting to EC2 servers.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Review MFA setup process <br> - Enable MFA for root account and IAM users <br> - Understand MFA devices and best practices                                                                          | 05/04/2026 | 05/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Learn EC2 fundamentals <br> - Understand instance types, AMI, and EBS volumes <br> - Learn about EC2 pricing models                                                                                 | 05/05/2026 | 05/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Study EC2 security groups and network configuration <br> - Learn SSH connection methods <br> - Understand key pairs and their importance                                                             | 05/06/2026 | 05/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Configure instance settings <br>&emsp; + Create and manage key pairs                                                                  | 05/07/2026 | 05/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Connect to EC2 via SSH <br>&emsp; + Test connection stability <br>&emsp; + Manage security groups                                                                        | 05/08/2026 | 05/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 3 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Successfully enabled MFA for AWS account to enhance security.
 
-* Successfully created and configured an AWS Free Tier account.
+* Understood EC2 service architecture and its role in AWS Compute.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Gained knowledge of instance types, AMI (Amazon Machine Images), and EBS volumes.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Learned about EC2 pricing models and how to optimize costs.
 
-* Used AWS CLI to perform basic operations such as:
+* Configured security groups and understood network security concepts.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Successfully launched an EC2 instance with proper configuration.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Established SSH connections to EC2 instances and managed key pairs effectively.
+
+* Practiced server management through command-line interface.

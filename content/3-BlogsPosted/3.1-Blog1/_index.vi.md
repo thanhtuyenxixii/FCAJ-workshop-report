@@ -5,27 +5,27 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+# Hướng dẫn migration sang Amazon Aurora MySQL với "quyền năng" từ Kiro
+
+Bài blog giới thiệu tính năng mới Amazon Aurora MySQL power cho Kiro — một công cụ AI tích hợp vào IDE giúp tự động hóa và đơn giản hóa toàn bộ quy trình dịch chuyển database từ Amazon RDS for MySQL sang Amazon Aurora MySQL qua 4 giai đoạn (Đánh giá, Đồng bộ, Nâng cấp, Chuyển đổi) bằng ngôn ngữ tự nhiên, giúp giảm tối đa thời gian chuẩn bị và đưa downtime khi cutover xuống chỉ còn vài chục giây.
 
 Các điểm chính cần nắm:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+* Khái niệm về Kiro Powers: là công cụ mở rộng giúp AI của Kiro IDE có kiến thức chuyên sâu về một công nghệ cụ thể (best-practices, APIs, cấu hình chuẩn). 
+* Gồm 3 thành phần: MCP servers (kết nối trực tiếp để đọc trạng thái AWS/DB), Steering files (nạp quy chuẩn của chuyên gia), và Validation hooks (kiểm tra lỗi trước khi thực thi).
+* Quy trình Migration 4 giai đoạn (Near-Zero Downtime): Assess (Đánh giá), Migrate (Dịch chuyển), Promote (Nâng cấp), Switch (Chuyển đổi)
+* Phiên bản nguồn: RDS MySQL phải từ bản 5.7.44+ hoặc 8.0.28+.
+* Storage Engine: Chỉ hỗ trợ InnoDB. Nếu DB nguồn có bảng dùng MyISAM thì phải chuyển sang InnoDB trước.
+* Backup & Binlog: Instance nguồn bắt buộc phải bật sao lưu tự động (automated backups) với thời gian lưu ít nhất 1 ngày (để kích hoạt binary logging).
+* Phạm vi: Hiện tại chỉ hỗ trợ migration trong cùng một tài khoản AWS và cùng một Region.
+* Cơ chế an toàn: AI chỉ đề xuất và tạo câu lệnh, hệ thống không tự ý thay đổi tài nguyên AWS nếu không có sự xác nhận (approve) từng bước từ con người.
+* Khả năng sau Migration: Sau khi chuyển lên Aurora thành công, AI có thể tiếp tục hỗ trợ: tự động thêm read replica theo workload, cấu hình Aurora Global Database (đa vùng để dự phòng thảm họa), thiết kế schema và tối ưu hóa các câu lệnh SQL.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Tính năng này đặc biệt hữu ích ì nó giới thiệu một giải pháp thực chiến giúp biến quy trình dịch chuyển database (migration) phức tạp và rủi ro từ Amazon RDS sang Aurora thành các bước tự động qua ngôn ngữ tự nhiên; công cụ AI này không chỉ giúp tối thiểu hóa downtime xuống còn vài chục giây mà còn đảm bảo an toàn kỹ thuật nhờ khả năng tự động check lỗi tương thích (binlog, InnoDB) dựa trên các bộ quy chuẩn (best-practices) của chuyên gia AWS.
 
-...Hình ảnh...
+![](/images/blog1.png)
 
-...Link...
+Link: https://www.facebook.com/groups/awsstudygroupfcj/permalink/2208778813220412/
 
-...Hướng dẫn...

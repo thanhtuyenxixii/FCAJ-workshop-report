@@ -6,14 +6,28 @@ chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### Giới thiệu về VPC Endpoint
+#### Kiến trúc Hệ thống
 
-+ Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
-+ Tài nguyên điện toán đang chạy trong VPC có thể truy cập Amazon S3 bằng cách sử dụng điểm cuối Gateway. Interface Endpoint  PrivateLink có thể được sử dụng bởi tài nguyên chạy trong VPC hoặc tại TTDL.
+Hệ thống được xây dựng hoàn toàn trên nền tảng **Serverless** của AWS, giúp tự động co giãn theo lượng người dùng, tối ưu chi phí và không cần quản lý máy chủ.
 
-#### Tổng quan về workshop
-Trong workshop này, bạn sẽ sử dụng hai VPC.
-+ **"VPC Cloud"** dành cho các tài nguyên cloud như Gateway endpoint và EC2 instance để kiểm tra.
-+ **"VPC On-Prem"** mô phỏng môi trường truyền thống như nhà máy hoặc trung tâm dữ liệu của công ty. Một EC2 Instance chạy phần mềm StrongSwan VPN đã được triển khai trong "VPC On-prem" và được cấu hình tự động để thiết lập đường hầm VPN Site-to-Site với AWS Transit Gateway. VPN này mô phỏng kết nối từ một vị trí tại TTDL (on-prem) với AWS cloud. Để giảm thiểu chi phí, chỉ một phiên bản VPN được cung cấp để hỗ trợ workshop này. Khi lập kế hoạch kết nối VPN cho production workloads của bạn, AWS khuyên bạn nên sử dụng nhiều thiết bị VPN để có tính sẵn sàng cao.
+![](/images/2-Proposal/AWS.jpeg.png)
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+#### Các thành phần chính của dự án
+
+1. **Bảo mật & Định danh (Stage 1):**
+   * **AWS Cognito User Pool:** Quản lý tài khoản đăng ký, đăng nhập và xác thực người dùng bằng JWT token.
+   * **AWS IAM Role & Policies:** Tuân thủ nguyên tắc phân quyền tối thiểu (Least Privilege).
+2. **Cổng API & Xử lý Ingestion (Stage 2):**
+   * **Amazon API Gateway:** Cung cấp cổng REST API an toàn với Cognito Authorizer.
+   * **S3 Presigned URL:** Tối ưu hóa băng thông bằng cách cho phép client upload file trực tiếp lên S3 mà không cần đi qua API Gateway.
+   * **Amazon SQS:** Nhận sự kiện không đồng bộ để giảm tải cho API Gateway.
+3. **Quy trình Phân tích AI (Stage 3):**
+   * **AWS Step Functions:** Quản lý luồng chấm điểm tự động.
+   * **Amazon Textract:** Nhận diện và trích xuất chữ từ hình ảnh bài viết hoặc file PDF.
+   * **Google Gemini AI:** Đánh giá bài luận, cho điểm từ 0-100 và nhận xét chi tiết dựa trên prompt chuyên gia.
+4. **Lưu trữ & Thông báo (Stage 4):**
+   * **Amazon DynamoDB:** Lưu trữ trạng thái chấm điểm, điểm số tổng quan của từng bài viết.
+   * **Amazon S3 (Result Bucket):** Lưu trữ file JSON chi tiết nhận xét của AI để tối ưu bộ nhớ DynamoDB.
+   * **Amazon SNS:** Gửi email báo điểm trực tiếp tới người dùng khi hoàn tất.
+5. **Phân phối Web (Stage 5):**
+   * **Amazon CloudFront & S3 Website Hosting:** Tối ưu hóa phân phối ứng dụng React tĩnh toàn cầu qua giao thức HTTPS bảo mật.

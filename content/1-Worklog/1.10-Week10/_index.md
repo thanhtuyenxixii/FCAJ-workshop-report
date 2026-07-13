@@ -5,53 +5,46 @@ weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 10 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Implement the AWS project design and deploy all planned services.
+* Configure and optimize AWS services according to the proposed architecture.
+* Validate system stability, connectivity, and security posture.
+* Prepare project documentation and deployment validation reports.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Set up project infrastructure <br> - Deploy EC2 instances and configure compute resources <br> - Set up networking (VPC, subnets, security groups)                                                   | 06/22/2026 | 06/22/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Configure S3 buckets and storage policies <br> - Set up IAM roles and permissions for services <br> - Configure database services if required                                                       | 06/23/2026 | 06/23/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Deploy application components <br>&emsp; + Configure monitoring and logging <br>&emsp; + Set up backup and disaster recovery                                             | 06/24/2026 | 06/24/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Test system connectivity and performance <br>&emsp; + Validate security configurations <br>&emsp; + Conduct security audits and vulnerability assessments             | 06/25/2026 | 06/25/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Verify system stability under various load conditions <br>&emsp; + Document deployment procedures                             | 06/26/2026 | 06/26/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 10 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Successfully set up the complete project infrastructure on AWS.
 
-* Successfully created and configured an AWS Free Tier account.
+* Deployed and configured all compute resources including EC2 instances with appropriate sizing and configurations.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Established networking infrastructure including VPC, subnets, and security groups with proper configurations.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Configured S3 buckets and storage policies according to project requirements.
 
-* Used AWS CLI to perform basic operations such as:
+* Set up IAM roles and permissions with least privilege principles.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Successfully deployed all application components and verified their functionality.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Implemented comprehensive monitoring and logging for system observability.
+
+* Configured backup and disaster recovery procedures to ensure data protection.
+
+* Validated system connectivity and performance under various load conditions.
+
+* Conducted thorough security audits and vulnerability assessments with all findings remediated.
+
+* Verified system stability and confirmed production-readiness of the entire deployment.

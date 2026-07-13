@@ -6,13 +6,28 @@ chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### VPC endpoints
-+ **VPC endpoints** are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. They allow communication between your compute resources and AWS services without imposing availability risks.
-+ Compute resources running in VPC can access  **Amazon S3**  using a Gateway endpoint. PrivateLink interface endpoints can be used by compute resources running in VPC or on-premises.
+#### System Architecture
 
-#### Workshop overview
-In this workshop, you will use two VPCs. 
-+ **"VPC Cloud"** is for cloud resources such as a  **Gateway endpoint** and an EC2 instance to test with. 
-+ **"VPC On-Prem"** simulates an on-premises environment such as a factory or corporate datacenter. An EC2 instance running strongSwan VPN software has been deployed in "VPC On-prem" and automatically configured to establish a Site-to-Site VPN tunnel with AWS Transit Gateway. This VPN simulates connectivity from an on-premises location to the AWS cloud. To minimize costs, only one VPN instance is provisioned to support this workshop. When planning VPN connectivity for your production workloads, AWS recommends using multiple VPN devices for high availability.
+The system is built entirely on a **Serverless** architecture, which automatically scales, optimizes costs, and requires no server management.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+![](/images/2-Proposal/AWS.jpeg.png)
+
+#### Key Project Components
+
+1. **Identity & Security (Stage 1):**
+   * **AWS Cognito User Pool:** Manages account registrations, logins, and client JWT token verification.
+   * **AWS IAM Role & Policies:** Enforces the principle of least privilege.
+2. **API & Ingestion (Stage 2):**
+   * **Amazon API Gateway:** Provides secure REST endpoints protected by Cognito.
+   * **S3 Presigned URL:** Direct uploads from client browsers to S3, bypassing Lambda.
+   * **Amazon SQS:** Decouples API responses from backend state machine launches.
+3. **AI Pipeline (Stage 3):**
+   * **AWS Step Functions:** Orchestrates the serverless workflow.
+   * **Amazon Textract:** Scans handwritten or printed documents for OCR text extraction.
+   * **Google Gemini AI:** Evaluates grammar, vocabulary, structure, and coherence out of 100 points.
+4. **Storage & Notification (Stage 4):**
+   * **Amazon DynamoDB:** Stores metadata, status, and summary scores.
+   * **Amazon S3 (Result Bucket):** Stores verbose JSON feedback reports.
+   * **Amazon SNS:** Delivers grading feedback directly to the user's email inbox.
+5. **Distribution (Stage 5):**
+   * **Amazon CloudFront & S3 Website:** Distributes the React single-page app over secure HTTPS globally.

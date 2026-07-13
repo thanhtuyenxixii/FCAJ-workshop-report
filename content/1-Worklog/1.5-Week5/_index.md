@@ -5,53 +5,42 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 5 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand AWS S3 (Simple Storage Service) and its features.
+* Learn how to create and manage S3 buckets.
+* Master uploading and downloading data to/from S3.
+* Understand S3 access control and permissions.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Learn S3 fundamentals and architecture <br> - Understand S3 storage classes and pricing <br> - Review use cases for S3                                                                                | 05/18/2026 | 05/18/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Create S3 buckets <br> - Configure bucket settings <br> - Understand bucket naming conventions and regions                                                                                           | 05/19/2026 | 05/19/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Learn S3 access control and permissions <br> - Understand IAM policies for S3 <br> - Study bucket policies and ACLs                                                                                 | 05/20/2026 | 05/20/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Upload files to S3 bucket <br>&emsp; + Download files from S3 <br>&emsp; + Manage object versions                                                                        | 05/21/2026 | 05/21/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Configure bucket permissions <br>&emsp; + Set up public/private access <br>&emsp; + Test S3 operations via CLI and Console                                               | 05/22/2026 | 05/22/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 5 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Mastered the fundamentals of AWS S3 storage service and its architecture.
 
-* Successfully created and configured an AWS Free Tier account.
+* Successfully created and configured multiple S3 buckets with proper naming and region settings.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Understood S3 storage classes and their appropriate use cases for cost optimization.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Gained knowledge of S3 access control mechanisms including IAM policies, bucket policies, and ACLs.
 
-* Used AWS CLI to perform basic operations such as:
+* Practiced uploading various file types to S3 buckets using both AWS Console and CLI.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Successfully downloaded files from S3 and managed object versions.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Configured bucket permissions to control public and private access.
+
+* Tested S3 operations through both AWS Management Console and AWS CLI.
+
+* Understood pricing models and optimization strategies for S3 storage.

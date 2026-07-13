@@ -6,94 +6,69 @@ chapter : false
 pre : " <b> 5.5. </b> "
 ---
 
-When you create an interface or gateway endpoint, you can attach an endpoint policy to it that controls access to the service to which you are connecting. A VPC endpoint policy is an IAM resource policy that you attach to an endpoint. If you do not attach a policy when you create an endpoint, AWS attaches a default policy for you that allows full access to the service through the endpoint.
+#### Step 1: Confirm Amazon SNS Email Subscription
 
-You can create a policy that restricts access to specific S3 buckets only. This is useful if you only want certain S3 Buckets to be accessible through the endpoint.
+Before submitting any essays, you must approve the subscription to receive automatic score emails:
 
-In this section you will create a VPC endpoint policy that restricts access to the S3 bucket specified in the VPC endpoint policy.
+1. Log into your email account (the one provided during the stack deployment, e.g. testuser@gmail.com).
+2. Find the email sent by no-reply@sns.amazonaws.com with the subject **"AWS Notification - Subscription Confirmation"**.
+3. Click the **Confirm Subscription** link in the body. The browser will show **Subscription confirmed!**.
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+![SNS subscription confirmation](/images/5-Workshop/5.5-Policy/confirm-notification.jpeg)
 
-#### Connect to an EC2 instance and verify connectivity to S3
+---
 
-1. Start a new AWS Session Manager session on the instance named Test-Gateway-Endpoint. From the session, verify that you can list the contents of the bucket you created in Part 1: Access S3 from VPC:
+#### Step 2: Access the Frontend Web Application
 
-```
-aws s3 ls s3://\<your-bucket-name\>
-```
-![test](/images/5-Workshop/5.5-Policy/test1.png)
+1. Open your web browser and navigate to the **CloudFront URL**.
+2. Sign in using the test account credentials:
+   * **Email:** testuser@gmail.com
+   * **Password:** MatKhauChauAu123!
 
-The bucket contents include the two 1 GB files uploaded in earlier.
+![Sign In Page Web UI](/images/5-Workshop/5.5-Policy/test-web.png)
 
-2. Create a new S3 bucket; follow the naming pattern you used in Part 1, but add a '-2' to the name. Leave other fields as default and click create
+3. You will be redirected to the **Dashboard** page.
 
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
 
-Successfully create bucket
+---
 
-![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
+#### Step 3: Test Uploading Essays
 
-3. Navigate to: Services > VPC > Endpoints, then select the Gateway VPC endpoint you created earlier. Click the Policy tab. Click Edit policy.
+The system supports .txt files, images (.png, .jpg, .jpeg), and .pdf files. Submit them sequentially to test the pipelines:
 
-![policy](/images/5-Workshop/5.5-Policy/policy1.png)
+##### Case A: Uploading a Plain Text Essay (.txt)
+1. Select or drop a .txt file containing your English essay into the **Upload Essay** panel on the left.
+2. Click **Submit for Assessment**. The status will become Analyzing.
+3. After 30-50 seconds, the status will update to Scored and show the score.
 
-The default policy allows access to all S3 Buckets through the VPC endpoint.
+##### Case B: Uploading an Image (.png, .jpg, .jpeg)
+1. Drop an image of a handwritten or printed essay.
+2. Click **Submit for Assessment**.
+3. The step functions state machine will execute a **Choice State**, routing the image to **Amazon Textract** to perform OCR, parsing the blocks, and sending the extracted text to Gemini AI.
 
-4. In Edit Policy console, copy & Paste the following policy, then replace yourbucketname-2 with your 2nd bucket name. This policy will allow access through the VPC endpoint to your new bucket, but not any other bucket in Amazon S3. Click Save to apply the policy.
+##### Case C: Uploading a Document (.pdf)
+1. Submit a .pdf file.
+2. Textract will scan the pages and extract the text blocks for evaluation.
+![Sign In Page Web UI](/images/5-Workshop/5.5-Policy/thuc-hien-cham-diem.png)
 
-```
-{
-  "Id": "Policy1631305502445",
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1631305501021",
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": [
-      				"arn:aws:s3:::yourbucketname-2",
-       				"arn:aws:s3:::yourbucketname-2/*"
-       ],
-      "Principal": "*"
-    }
-  ]
-}
-```
 
-![custom policy](/images/5-Workshop/5.5-Policy/policy2.png)
+---
 
-Successfully customize policy
+#### Step 4: Verify Evaluation Results and Emails
 
-![success](/static/images/5-Workshop/5.5-Policy/success.png)
+##### 1. View Detailed Reports on the UI:
+* Click the **View Analysis** button on any scored essay.
+* The system displays:
+  * **Overall Score:** out of 100.
+  * **Overall Feedback:** Advice and comments from the AI.
+  * **Evaluation Criteria:** Score breakdown for Grammar, Vocabulary, Structure, and Coherence.
+![Dashboard Page UI](/images/5-Workshop/5.5-Policy/ket-qua-cham-diem.png)
 
-5. From your session on the Test-Gateway-Endpoint instance, test access to the S3 bucket you created in Part 1: Access S3 from VPC
-```
-aws s3 ls s3://<yourbucketname>
-```
+##### 2. Check your Email Inbox:
+* Open your inbox and look for an email notification:
+  * **Subject:** Essay Scored! File: [Your_Filename]
+* The body contains the score and the evaluation report.
 
-This command will return an error because access to this bucket is not permitted by your new VPC endpoint policy:
-
-![error](/static/images/5-Workshop/5.5-Policy/error.png)
-
-6. Return to your home directory on your EC2 instance ` cd~ `
-
-+ Create a file ```fallocate -l 1G test-bucket2.xyz ```
-+ Copy file to 2nd bucket ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
-
-![success](/static/images/5-Workshop/5.5-Policy/test2.png)
-
-This operation succeeds because it is permitted by the VPC endpoint policy.
-
-![success](/static/images/5-Workshop/5.5-Policy/test2-success.png)
-
-+ Then we test access to the first bucket by copy the file to 1st bucket `aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>`
-
-![fail](/static/images/5-Workshop/5.5-Policy/test2-fail.png)
-
-This command will return an error because access to this bucket is not permitted by your new VPC endpoint policy.
-
-#### Part 3 Summary:
-
-In this section, you created a VPC endpoint policy for Amazon S3, and used the AWS CLI to test the policy. AWS CLI actions targeted to your original S3 bucket failed because you applied a policy that only allowed access to the second bucket you created. AWS CLI actions targeted for your second bucket succeeded because the policy allowed them. These policies can be useful in situations where you need to control access to resources through VPC endpoints.
+![Evaluation Detailed Report page](/images/5-Workshop/5.5-Policy/mail-thong-bao.png)
 
 

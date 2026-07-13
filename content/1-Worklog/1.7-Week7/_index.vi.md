@@ -5,55 +5,46 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 7:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Ôn tập và tổng hợp kiến thức từ toàn bộ chương trình đào tạo AWS.
+* Hiểu rõ các quy trình triển khai và best practices trong các tình huống thực tế.
+* Tìm hiểu cách các dịch vụ AWS khác nhau kết nối và làm việc cùng nhau trong hệ thống tích hợp.
+* Chuẩn bị cho các triển khai AWS nâng cao và thiết kế kiến trúc đa dịch vụ.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| Ngày | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Ôn tập tất cả các dịch vụ AWS đã học (IAM, EC2, S3, Security Groups, Key Pairs) <br> - Tạo tài liệu tóm tắt các khái niệm                                                                     | 01/06/2026   | 01/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Học các quy trình triển khai và workflow <br> - Tìm hiểu best practices cho thiết lập cơ sở hạ tầng <br> - Xem lại các chiến lược bảo mật và kiểm soát truy cập                         | 02/06/2026   | 02/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Hiểu tích hợp dịch vụ và các mô hình kiến trúc <br> - Học cách EC2, S3 và IAM làm việc cùng nhau <br> - Tìm hiểu các cân nhắc về thiết kế hệ thống                                     | 03/06/2026   | 03/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Thực hành:** <br>&emsp; + Thiết kế kiến trúc AWS hoàn chỉnh <br>&emsp; + Tài liệu các thành phần hệ thống <br>&emsp; + Tạo tài liệu triển khai                                           | 04/06/2026   | 04/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Xem lại các triển khai thực tế <br>&emsp; + Xác định bài học rút ra <br>&emsp; + Chuẩn bị các đề xuất cải thiện                                                 | 05/06/2026   | 05/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 7:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Thành công ôn tập và tổng hợp tất cả kiến thức AWS về IAM, EC2, S3 và các dịch vụ bảo mật.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tạo tài liệu các khái niệm chính và tài liệu tham khảo toàn diện để sử dụng trong tương lai.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hiểu rõ các quy trình triển khai và workflow cơ sở hạ tầng trong môi trường sản xuất.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Nắm vững best practices cho bảo mật, kiểm soát truy cập và quản lý tài nguyên.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Tìm hiểu cách các dịch vụ AWS khác nhau tích hợp và giao tiếp trong các kiến trúc thực tế.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Thiết kế kiến trúc hệ thống AWS hoàn chỉnh kết hợp nhiều dịch vụ.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Tạo tài liệu chi tiết cho các thành phần hệ thống và mối quan hệ của chúng.
+
+* Xác định bài học rút ra từ thực tiễn và các lĩnh vực để cải tiến liên tục.
+
+* Phát triển các khuyến nghị để mở rộng quy mô và tối ưu hóa các triển khai AWS.
+
+* Chuẩn bị cho đào tạo AWS nâng cao và thiết kế kiến trúc đa dịch vụ.
 
 

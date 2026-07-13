@@ -5,238 +5,56 @@ weight : 2
 chapter : false
 pre : " <b> 5.2. </b> "
 ---
+Để bắt đầu triển khai hệ thống Essay Scorer AI, bạn cần cài đặt một số công cụ lập trình dưới máy cá nhân và thực hiện một số cấu hình bảo mật trên tài khoản AWS của mình.
 
-#### IAM permissions
-Gắn IAM permission policy sau vào tài khoản aws user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+#### 1. Cài đặt các công cụ lập trình (Local Tools)
 
-```
+Đảm bảo máy tính của bạn đã được cài đặt đầy đủ các phần mềm sau:
 
-#### Khởi tạo tài nguyên bằng CloudFormation
+* **AWS CLI:** Dùng để cấu hình thông tin truy cập tài khoản AWS. 
+  * Cấu hình bằng lệnh: `aws configure` (nhập Access Key ID, Secret Access Key và Default Region là `ap-southeast-1`).
+* **AWS SAM CLI:** Công cụ quản lý và triển khai hạ tầng Serverless.
+  * Tải và cài đặt theo tài liệu chính thức của AWS. Kiểm tra bằng lệnh: `sam --version`.
+* **Java Development Kit (JDK 17) & Maven:** Dùng để biên dịch code Java của các Lambda function.
+  * Kiểm tra bằng lệnh: `java -version` và `mvn -version`.
+* **Node.js (phiên bản LTS):** Dùng để chạy môi trường phát triển cục bộ và đóng gói mã nguồn frontend.
+  * Kiểm tra bằng lệnh: `node -v` và `npm -v`.
 
-Trong lab này, chúng ta sẽ dùng N.Virginia region (us-east-1).
+---
 
-Để chuẩn bị cho môi trường làm workshop, chúng ta deploy CloudFormation template sau (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Để nguyên các lựa chọn mặc định.
+#### 2. Khởi tạo Gemini API Key từ Google AI Studio
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+Hệ thống sử dụng mô hình ngôn ngữ lớn **Gemini 1.5 Flash** để chấm điểm bài viết. Bạn cần chuẩn bị khoá API (API Key):
 
-+ Lựa chọn 2 mục acknowledgement 
-+ Chọn Create stack
+1. Truy cập [Google AI Studio](https://aistudio.google.com/).
+2. Đăng nhập bằng tài khoản Google của bạn và nhấn nút **Get API Key**.
+3. Tạo một API Key mới và copy giá trị của nó.
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+![Get Gemini API Key](/images/5-Workshop/5.2-Prerequisite/gemini-api-key.png)
 
-Quá trình triển khai CloudFormation cần khoảng 15 phút để hoàn thành.
+---
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+#### 3. Lưu trữ API Key an toàn trên AWS SSM Parameter Store
 
-+ 2 VPCs đã được tạo
+Để tránh lộ API Key trong mã nguồn, chúng ta sẽ lưu khoá này vào **AWS Systems Manager (SSM) Parameter Store** dưới dạng một chuỗi mã hoá (`SecureString`).
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+Mở terminal (PowerShell hoặc Bash) và chạy lệnh sau (thay thế giá trị API Key thực tế của bạn):
 
-+ 3 EC2s đã được tạo
+``bash
+aws ssm put-parameter \
+    --name "/essay-scoring/gemini-api-key" \
+    --value "YOUR_GEMINI_KEY" \
+    --type "SecureString" \
+    --overwrite
+``
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+![Create Parameter Store in AWS](/images/5-Workshop/5.2-Prerequisite/Parameter.png)
+![Create Parameter Store in AWS](/images/5-Workshop/5.2-Prerequisite/Parameter-2.png)
+
+> **Lưu ý quan trọng:** Tên tham số `/essay-scoring/gemini-api-key` phải khớp chính xác với cấu hình khai báo trong file mẫu `template.yaml` của AWS SAM.
+
+---
+
+#### 4. Email cá nhân để nhận thông báo từ AWS SNS
+
+Chuẩn bị một địa chỉ email cá nhân (ví dụ: `testuser@gmail.com`). Địa chỉ này sẽ được truyền vào tham số triển khai để AWS Simple Notification Service (SNS) gửi thư báo điểm trực tiếp về hộp thư của bạn.

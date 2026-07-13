@@ -5,53 +5,44 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 7 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Review and consolidate knowledge from the entire AWS training program.
+* Understand deployment processes and best practices in real-world scenarios.
+* Learn how different AWS services interconnect and work together in integrated systems.
+* Prepare for advanced AWS implementations and multi-service architectures.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Review all AWS services learned (IAM, EC2, S3, Security Groups, Key Pairs) <br> - Create summary documentation of concepts                                                                          | 06/01/2026 | 06/01/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Study deployment processes and workflows <br> - Learn infrastructure setup best practices <br> - Review security and access control strategies                                                        | 06/02/2026 | 06/02/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Understand service integration and architecture patterns <br> - Study how EC2, S3, and IAM work together <br> - Learn about system design considerations                                            | 06/03/2026 | 06/03/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Design a complete AWS architecture <br>&emsp; + Document system components <br>&emsp; + Create deployment documentation                                                 | 06/04/2026 | 06/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Review practical implementations <br>&emsp; + Identify lessons learned <br>&emsp; + Prepare recommendations for improvements                                            | 06/05/2026 | 06/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 7 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Successfully reviewed and consolidated all AWS knowledge from IAM, EC2, S3, and security services.
 
-* Successfully created and configured an AWS Free Tier account.
+* Documented key concepts and created comprehensive reference materials for future use.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Understood deployment processes and infrastructure setup workflows in production environments.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Mastered best practices for security, access control, and resource management.
 
-* Used AWS CLI to perform basic operations such as:
+* Learned how different AWS services integrate and communicate in real-world architectures.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Designed complete AWS system architectures incorporating multiple services.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Created detailed documentation for system components and their relationships.
+
+* Identified practical lessons learned and areas for continuous improvement.
+
+* Developed recommendations for scaling and optimizing AWS implementations.
+
+* Prepared for advanced AWS training and multi-service architectural design.

@@ -5,55 +5,44 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 5:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu về AWS S3 (Simple Storage Service) và các tính năng của nó.
+* Học cách tạo và quản lý S3 bucket.
+* Nắm vững upload và download dữ liệu từ/vào S3.
+* Hiểu rõ các kiểm soát truy cập và quyền hạn của S3.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| Ngày | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tạo và quản lý S3 bucket <br> - Cấu hình các thiết lập bucket <br> - Hiểu về tên bucket và các vùng Region                                                                           | 18/05/2026   | 18/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Tìm hiểu kiến thức cơ bản về S3 <br> - Hiểu các loại văn bản lưu trữ S3 và giá <br> - Ôn tập các trường hợp sử dụng cho S3                                                              | 19/05/2026   | 19/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Tìm hiểu kiểm soát truy cập và quyền hạn S3 <br> - Hiểu chính sách IAM cho S3 <br> - Học về bucket policy và ACL                                                                     | 20/05/2026   | 20/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Thực hành:** <br>&emsp; + Upload tập tin lên S3 bucket <br>&emsp; + Download tập tin từ S3 <br>&emsp; + Quản lý phiên bản đối tượng                                                   | 21/05/2026   | 21/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Cấu hình quyền hạn bucket <br>&emsp; + Thiết lập truy cập công khai/riêng tư <br>&emsp; + Kiểm tra các thao tác S3 qua CLI và Console                      | 22/05/2026   | 22/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 5:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Nắm vững các kiến thức cơ bản về dịch vụ lưu trữ AWS S3 và các tính năng của nó.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Thành công tạo và cấu hình các S3 bucket với cách đặt tên và vùng thích hợp.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Hiểu các loại lưu trữ S3 và các trường hợp sử dụng đơn lẻ cho tối ưu hóa chi phí.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Có kiến thức về các cơ chế kiểm soát truy cập S3 bao gồm chính sách IAM, bucket policy và ACL.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Thực hành upload các loại tập tin khác nhau lên S3 bucket bằng cả AWS Console lần CLI.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Thành công tải file từ S3 và quản lý phiên bản đối tượng.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Cấu hình quyền hạn bucket để kiểm soát truy cập công khai và riêng tư.
+
+* Kiểm tra các thao tác S3 thông qua cả AWS Management Console và AWS CLI.
+
+* Hiểu rõ mô hình giá và các chiến lược tối ưu hóa cho lưu trữ S3.
 
 

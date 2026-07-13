@@ -5,55 +5,46 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Học cách vẽ sơ đồ kiến trúc AWS và sử dụng các ký hiệu chuyên nghiệp.
+* Hiểu các best practices về bảo mật và kiểm toán cơ sở hạ tầng AWS.
+* Tối ưu hóa chi phí và sử dụng tài nguyên AWS.
+* Tạo tài liệu chuyên nghiệp cho kiến trúc AWS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| Ngày | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Học các công cụ vẽ sơ đồ AWS và ký hiệu <br> - Hiểu các best practices về kiến trúc <br> - Học các mô hình kiến trúc AWS khác nhau                                                         | 08/06/2026   | 08/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Học các best practices về bảo mật AWS <br> - Tìm hiểu AWS Well-Architected Framework <br> - Hiểu các yêu cầu về compliance và governance                                                   | 09/06/2026   | 09/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Học các chiến lược tối ưu hóa chi phí AWS <br> - Nghiên cứu các mô hình định giá <br> - Tìm hiểu về reserved instances và savings plans                                                  | 10/06/2026   | 10/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Thực hành:** <br>&emsp; + Vẽ sơ đồ kiến trúc cho các tình huống khác nhau <br>&emsp; + Kiểm toán bảo mật các triển khai <br>&emsp; + Xác định cơ hội tối ưu hóa chi phí             | 11/06/2026   | 11/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:** <br>&emsp; + Tạo tài liệu kiến trúc toàn diện <br>&emsp; + Tính toán tiết kiệm chi phí <br>&emsp; + Chuẩn bị các đề xuất tối ưu hóa                                         | 12/06/2026   | 12/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Nắm vững các công cụ vẽ sơ đồ AWS và ký hiệu cho tài liệu chuyên nghiệp.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Hiểu rõ các mô hình kiến trúc AWS khác nhau và best practices cho các trường hợp sử dụng.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Tìm hiểu AWS Well-Architected Framework và các trụ cột cốt lõi của nó.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Có kiến thức về các best practices bảo mật bao gồm mã hóa, kiểm soát truy cập và giám sát.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Học các yêu cầu về compliance và governance của AWS cho các môi trường được điều chỉnh.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Tìm hiểu các chiến lược tối ưu hóa chi phí và mô hình định giá cho các dịch vụ AWS.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Hiểu rõ reserved instances và savings plans để giảm chi phí.
+
+* Thành công tạo sơ đồ kiến trúc AWS chuyên nghiệp cho nhiều tình huống.
+
+* Thực hiện kiểm toán bảo mật trên các triển khai hiện có và xác định các lỗ hổng.
+
+* Tính toán tiết kiệm chi phí và chuẩn bị các đề xuất tối ưu hóa cho các kiến trúc thực tế.
 
 

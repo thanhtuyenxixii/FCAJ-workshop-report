@@ -6,120 +6,85 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch “AWS COMMUNITY DAY”
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Cập nhật công nghệ và xu hướng mới
+- Chia sẻ kinh nghiệm thực chiến
+- Kết nối cộng đồng
+
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **1. Anh Tịnh - Build second brain** 
+- **2. Hải Anh - Friendly AI Assistant with Amazon Quick** 
+- **3. Thịnh - From Edge To Origin: CloudFront as Your Foundation** 
+- **4. Team VIB - 36 hrs with LotusHacks - Building UTMorpho from Idea to Reality** 
+- **5. Đào Đức - Deep dive talk: How LLM actually works?**
+- **6. Cát Vy - Enterprise-Grade Multi-Agent System: The Case of startup Scredit Scoring**
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### Context Is Everything trong GenAIOps
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+- Phân tích sâu lý do các mô hình AI lớn (LLM) thường thất bại do thiếu ngữ cảnh đầu vào hơn là lỗi từ bản thân mô hình. Bài nghiên cứu chỉ ra sự dịch chuyển từ kỹ thuật prompt đơn thuần sang xây dựng "Hệ thống ngữ cảnh" (Context systems) hoàn chỉnh
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+#### Friendly AI Assistant với Amazon Quick Suite
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+- Giới thiệu giải pháp Agentic AI toàn diện cho doanh nghiệp. Công cụ này tự động hóa quy trình kinh doanh phức tạp, tổng hợp dữ liệu đa nguồn và thực hiện các tác vụ quản lý dự án
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Hạ tầng CloudFront & Mô hình Giá Flat-Rate mới
 
-#### Domain-Driven Design (DDD)
+- Mô hình giá cố định này tích hợp sẵn CDN, WAF, Anti-DDoS, Route 53 và S3, giúp doanh nghiệp triệt tiêu hoàn toàn rủi ro "vỡ nợ" vì hóa đơn đám mây tăng đột biến khi bị tấn công DDoS
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+#### Hành trình 36 giờ tại LotusHacks
 
-#### Event-Driven Architecture
+- Câu chuyện thực tế đầy áp lực từ việc tìm kiếm ý tưởng đến hoàn thiện sản phẩm
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+#### Deep dive talk
 
-#### Compute Evolution
+- các mô hình LLM chạy trên các endpoint dùng chung (Shared Endpoints) vẫn sinh ra kết quả khác nhau (không đồng nhất)
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+#### Enterprise-Grade Multi-Agent System
 
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+- Giải quyết bài toán hóc búa của ngân hàng truyền thống khi đánh giá startup. Kiến trúc Single Agent gặp giới hạn về ngữ cảnh và dễ sai sót, thay vào đó, một "Hội đồng tín dụng ảo" gồm nhiều Agent chuyên biệt (Tài chính, Thị trường, Nhân sự, Rủi ro) cùng phản biện để đưa ra điểm số chính xác và minh bạch nhất
 
 ### Những Gì Học Được
 
+#### Hiểu về cơ chế LLM
+
+- Hiểu rõ bản chất sinh văn bản theo xác suất của LLM. Tỷ lệ không đồng nhất (Non-determinism) ảnh hưởng trực tiếp đến việc kiểm thử prompt (A/B testing) và độ tin cậy khi xuất dữ liệu cấu trúc (JSON/YAML)
+
 #### Tư Duy Thiết Kế
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- Đưa "Context" vào AI một cách chọn lọc. Việc nhồi nhét quá nhiều tài liệu thô (nạn "Internet Puller") chỉ làm tăng chi phí token và làm giảm độ chính xác của mô hình
 
-#### Kiến Trúc Kỹ Thuật
+#### Sức mạnh của Multi-Agent
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- Học được cách chia nhỏ một bài toán lớn, phức tạp và có tính rủi ro cao thành một mạng lưới các tác nhân AI chuyên biệt có cơ chế kiểm tra chéo lẫn nhau
 
-#### Chiến Lược Hiện Đại Hóa
+#### Quản trị chi phí và bảo mật biên
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- Nắm bắt cách thức hoạt động của mạng lưới phân tán AWS Edge Network trong việc chặn đứng tấn công DDoS ngay tại nguồn, kết hợp cơ chế gom request để giảm tải cho máy chủ gốc 
 
 ### Ứng Dụng Vào Công Việc
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+- **Ứng dụng trong Phát triển Phần mềm & AI:** Áp dụng kiến trúc Multi-Agent khi thiết kế các module hệ thống phức tạp
+- **Ứng dụng trong Vận hành DevOps & Hạ tầng:** Cân nhắc chuyển dịch sang các gói giá Flat-rate của CloudFront khi triển khai ứng dụng cho khách hàng doanh nghiệp vừa và nhỏ để dễ dàng ước tính chi phí hạ tầng cố định hàng tháng
+- **Ứng dụng trong Quản trị & Tự động hóa:** Agentic AI của Amazon Quick Suite để tự động hóa các tác vụ lặp đi lặp lại hàng ngày như làm biên bản họp hay tối ưu hóa quy trình tương tác nội bộ
+
 
 ### Trải nghiệm trong event
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+Nội dung không xa rời thực tiễn, đi thẳng vào các bài toán nhức nhối như hóa đơn AWS tăng phi mã hay bài toán chấm điểm tín dụng khắt khe của ngành ngân hàng, có được tư duy tổng quan về mặt kinh doanh, vừa có thể "nhúng tay" vào các bài thực hành chi tiết (Hands-on exercise) về phân quyền, bảo mật, và Terraform
 
 #### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- Công nghệ tốt cần tư duy đúng: Một mô hình AI dù mạnh đến đâu cũng sẽ trở nên vô dụng nếu người vận hành cung cấp ngữ cảnh nghèo nàn. Đầu vào quyết định đầu ra
+- Biết người biết ta khi chọn kiến trúc: Single-Agent rất tốt cho việc làm prototype nhanh hoặc tác vụ tuyến tính đơn giản; nhưng để chạy sản phẩm Enterprise thực tế, bắt buộc phải nâng cấp lên Multi-Agent để kiểm soát rủi ro và tăng tính chính xác.
+
 
 #### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+![](/images/event1.png)
+
