@@ -5,27 +5,24 @@ weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# OPTIMIZING AWS LAMBDA COSTS
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+The Serverless model on AWS Lambda is generally considered cost-effective thanks to its pay-per-use pricing. However, without proactive optimization, the end-of-month bill can far exceed expectations — costs silently accumulate from misconfigured memory sizes, poorly handled cold starts, or logs retained indefinitely.
 
-Key points to know:
+Below are the most noteworthy AWS Lambda cost optimization strategies, summarized from a CloudKeeper article:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+**Key optimization strategies**
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+* **Switch to AWS Graviton2 (ARM)**: The simplest yet most effective move. Roughly 20% cheaper than the x86 architecture, while performance is even better for many workloads.
+* **Memory optimization (Right-sizing)**: Do not pick a memory size by guesswork. Use a tool such as AWS Lambda Power Tuning to find the balance point between RAM and CPU — more RAM means more CPU, shorter execution time, and lower total cost.
+* **Handle Cold Start & Concurrency**: Configure a reasonable amount of Provisioned Concurrency to protect user experience without wasting reserved resources.
+* **Clean up Logs**: CloudWatch Logs retained indefinitely are an often-overlooked cost trap. Set an appropriate Retention period for each log group.
 
-...Image...
+The AWS Lambda Power Tuning results below clearly illustrate the balance point between cost and execution time: Best Cost at 512MB, Best Time at 2048MB, with Graviton consistently cheaper than x86:
 
-...Link...
+![AWS Lambda Power Tuning Results](/images/3-BlogsPosted/3.2-Blog2/LambdaPowerTuningResults.jpg)
 
-...Guide...
+Full article for readers who want to dive deeper: [Reducing AWS Lambda Costs — Optimization Tips for Serverless Computing](https://www.cloudkeeper.com/insights/blog/reducing-aws-lambda-costs-optimization-tips-serverless-computing#toc-using-aws-graviton2)
+
+[Link to the original post](https://www.facebook.com/share/p/1cMX6QhMWE/)

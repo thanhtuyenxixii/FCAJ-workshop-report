@@ -5,27 +5,24 @@ weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# TỐI ƯU CHI PHÍ AWS LAMBDA
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Mô hình Serverless trên AWS Lambda thường được xem là tiết kiệm nhờ cơ chế trả tiền theo mức sử dụng (pay-per-use). Tuy nhiên, nếu không chủ động tối ưu, hóa đơn cuối tháng hoàn toàn có thể vượt xa dự kiến — chi phí phát sinh âm thầm từ việc chọn sai cấu hình memory, cold start xử lý chưa hợp lý, hay log lưu trữ không giới hạn.
 
-Các điểm chính cần nắm:
+Dưới đây là các hướng tối ưu chi phí AWS Lambda đáng chú ý, được tổng hợp từ bài viết của CloudKeeper:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+**Các hướng tối ưu chính**
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+* **Chuyển sang AWS Graviton2 (ARM)**: Giải pháp đơn giản nhưng hiệu quả nhất. Chi phí thấp hơn khoảng 20% so với kiến trúc x86, trong khi hiệu năng ở nhiều workload còn tốt hơn.
+* **Tối ưu Memory (Right-sizing)**: Không nên chọn dung lượng memory một cách cảm tính. Sử dụng công cụ như AWS Lambda Power Tuning để tìm điểm cân bằng giữa RAM và CPU — RAM tăng kéo theo CPU tăng, thời gian thực thi giảm, và tổng chi phí giảm.
+* **Xử lý Cold Start & Concurrency**: Cân nhắc cấu hình Provisioned Concurrency ở mức hợp lý để không ảnh hưởng trải nghiệm người dùng, đồng thời tránh lãng phí tài nguyên dự phòng.
+* **Dọn dẹp Log**: CloudWatch Logs lưu trữ không giới hạn là một "bẫy chi phí" thường bị bỏ qua. Cần thiết lập thời gian Retention phù hợp cho từng log group.
 
-...Hình ảnh...
+Kết quả chạy AWS Lambda Power Tuning dưới đây minh họa rõ điểm cân bằng giữa chi phí và thời gian thực thi: Best Cost tại 512MB, Best Time tại 2048MB, và Graviton luôn có chi phí thấp hơn x86:
 
-...Link...
+![AWS Lambda Power Tuning Results](/images/3-BlogsPosted/3.2-Blog2/LambdaPowerTuningResults.jpg)
 
-...Hướng dẫn...
+Bài viết chi tiết dành cho bạn đọc muốn tìm hiểu sâu hơn: [Reducing AWS Lambda Costs — Optimization Tips for Serverless Computing](https://www.cloudkeeper.com/insights/blog/reducing-aws-lambda-costs-optimization-tips-serverless-computing#toc-using-aws-graviton2)
+
+[Link bài viết gốc](https://www.facebook.com/share/p/1cMX6QhMWE/)
