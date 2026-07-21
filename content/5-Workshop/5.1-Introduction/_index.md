@@ -6,6 +6,8 @@ chapter : false
 pre : " <b> 5.1 </b> "
 ---
 
+🔗 **Live demo:** [https://main.d1ktib0li4t40t.amplifyapp.com/](https://main.d1ktib0li4t40t.amplifyapp.com/)
+
 ### Context & problem
 
 The project is a complete **online movie streaming platform** (Netflix-clone) with 2 applications:
