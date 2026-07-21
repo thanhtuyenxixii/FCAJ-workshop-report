@@ -10,10 +10,6 @@ pre : " <b> 5.13 </b> "
 
 Delete **all** created resources so nothing keeps billing after the workshop. Follow the order below (reverse of creation, due to dependencies).
 
-{{% notice warning %}}
-Only do this **after** you have all screenshots for the report!
-{{% /notice %}}
-
 ### Deletion order
 
 **1. WAF Web ACL** — WAF & Shield → Global (CloudFront) scope → `phim-waf` → **Associated AWS resources** → **Disassociate** the distribution → then **Delete** the ACL.
@@ -47,7 +43,7 @@ Only do this **after** you have all screenshots for the report!
 
 All 11 resource groups deleted; no new charges in Cost Explorer.
 
-### 🛠 Troubleshooting
+### Troubleshooting
 
 | Issue | Fix |
 |---|---|

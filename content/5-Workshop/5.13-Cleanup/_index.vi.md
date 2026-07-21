@@ -10,9 +10,6 @@ pre : " <b> 5.13 </b> "
 
 Chúc mừng bạn đã hoàn thành workshop! Bước cuối cùng này cũng quan trọng không kém các bước trước: chúng ta sẽ xóa **toàn bộ** tài nguyên đã tạo để không phát sinh chi phí sau khi demo xong. Xóa theo đúng thứ tự dưới đây (ngược với thứ tự tạo, vì có ràng buộc phụ thuộc giữa các dịch vụ).
 
-{{% notice warning %}}
-Chỉ làm bước này **sau khi** đã chụp đủ ảnh cho báo cáo!
-{{% /notice %}}
 
 ### Thứ tự xóa
 
@@ -50,7 +47,7 @@ Chỉ làm bước này **sau khi** đã chụp đủ ảnh cho báo cáo!
 
 Toàn bộ 11 nhóm tài nguyên đã xóa; Cost Explorer không còn phát sinh chi phí mới.
 
-### 🛠 Troubleshooting
+### Troubleshooting
 
 | Vấn đề | Xử lý |
 |---|---|
