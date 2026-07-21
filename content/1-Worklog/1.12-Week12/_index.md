@@ -5,10 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 12 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.12. </b> "
 | 4 | - Business Intelligence with Amazon QuickSight | 22/07/2026 | 22/07/2026 | <https://000073.awsstudygroup.com/> |
 | 5 | - Serverless Analytics with Amazon Athena | 23/07/2026 | 23/07/2026 | <https://000106.awsstudygroup.com/> |
 | 6 | - SageMaker Immersion Day | 24/07/2026 | 24/07/2026 | <https://000200.awsstudygroup.com/> |
-
 
 ### Week 12 Achievements:
 

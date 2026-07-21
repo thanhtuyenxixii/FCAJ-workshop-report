@@ -10,30 +10,30 @@ pre: " <b> 2. </b> "
 ## Nền tảng xem phim trực tuyến Serverless với HLS Streaming, giám sát và bảo mật
 
 ### 1. Tóm tắt điều hành
-Dự án xây dựng **nền tảng xem phim trực tuyến** hoàn chỉnh (streaming qua giao thức HLS), gồm hai ứng dụng độc lập: **Backend** — REST API viết bằng Node.js + Express với \~25 nhóm chức năng (quản lý phim, người dùng, xác thực JWT, đánh giá, bình luận, danh sách yêu thích, lịch sử xem, tiến độ xem, gói Premium/subscription, quảng cáo, crawl phim tự động, tìm kiếm và admin dashboard) — và **Frontend** — ứng dụng Next.js 15 (Pages Router), hỗ trợ song ngữ vi/en, dark/light theme, PWA offline, player HLS tùy biến và khu vực quản trị viết bằng TypeScript.
+Dự án xây dựng nền tảng xem phim trực tuyến hoàn chỉnh (streaming qua giao thức HLS), gồm hai ứng dụng độc lập: Backend — REST API viết bằng Node.js + Express với \~25 nhóm chức năng (quản lý phim, người dùng, xác thực JWT, đánh giá, bình luận, danh sách yêu thích, lịch sử xem, tiến độ xem, gói Premium/subscription, quảng cáo, crawl phim tự động, tìm kiếm và admin dashboard) — và Frontend — ứng dụng Next.js 15 (Pages Router), hỗ trợ song ngữ vi/en, dark/light theme, PWA offline, player HLS tùy biến và khu vực quản trị viết bằng TypeScript.
 
-Mục tiêu của workshop là **triển khai toàn bộ hệ thống lên hạ tầng AWS Serverless** (region `ap-southeast-1`): frontend Next.js SSR chạy trên **AWS Amplify**, backend Express.js chạy trên **Lambda + API Gateway**, tất cả phía sau **CloudFront** — thể hiện năng lực vận dụng các dịch vụ AWS vào một use-case thực tế, end-to-end. Khách hàng mục tiêu là người dùng cuối xem phim miễn phí (kèm quảng cáo) hoặc trả phí (Premium, không quảng cáo), và quản trị viên vận hành nội dung, theo dõi hệ thống qua dashboard.
+Mục tiêu của workshop là triển khai toàn bộ hệ thống lên hạ tầng AWS Serverless (region `ap-southeast-1`): frontend Next.js SSR chạy trên AWS Amplify, backend Express.js chạy trên Lambda + API Gateway, tất cả phía sau CloudFront — thể hiện năng lực vận dụng các dịch vụ AWS vào một use-case thực tế, end-to-end. Khách hàng mục tiêu là người dùng cuối xem phim miễn phí (kèm quảng cáo) hoặc trả phí (Premium, không quảng cáo), và quản trị viên vận hành nội dung, theo dõi hệ thống qua dashboard.
 
 ### 2. Tuyên bố vấn đề
 *Vấn đề hiện tại*
-1. **Chi phí hạ tầng cho traffic không đều**: lượng truy cập dao động mạnh theo giờ (cao điểm buổi tối, thấp điểm ban ngày) — thuê server cố định (EC2/VPS) gây lãng phí lúc thấp điểm và nghẽn lúc cao điểm.
-2. **Băng thông khi phát video HLS**: video được stream từ nguồn ngoài; nếu mọi request video đều đi qua backend thì backend trở thành bottleneck băng thông và chi phí.
-3. **Vận hành thủ công thiếu giám sát**: không có log tập trung và cảnh báo — lỗi chỉ được phát hiện khi người dùng phàn nàn.
-4. **Rủi ro bảo mật**: API công khai dễ bị tấn công (injection, DDoS lớp 7, bot); credentials rải rác trong code.
-5. **Tác vụ định kỳ trên serverless**: `node-cron` truyền thống không chạy được trên serverless (không có process thường trực).
+1. Chi phí hạ tầng cho traffic không đều: lượng truy cập dao động mạnh theo giờ (cao điểm buổi tối, thấp điểm ban ngày) — thuê server cố định (EC2/VPS) gây lãng phí lúc thấp điểm và nghẽn lúc cao điểm.
+2. Băng thông khi phát video HLS: video được stream từ nguồn ngoài; nếu mọi request video đều đi qua backend thì backend trở thành bottleneck băng thông và chi phí.
+3. Vận hành thủ công thiếu giám sát: không có log tập trung và cảnh báo — lỗi chỉ được phát hiện khi người dùng phàn nàn.
+4. Rủi ro bảo mật: API công khai dễ bị tấn công (injection, DDoS lớp 7, bot); credentials rải rác trong code.
+5. Tác vụ định kỳ trên serverless: `node-cron` truyền thống không chạy được trên serverless (không có process thường trực).
 
 *Giải pháp*
-Kiến trúc **serverless, trả tiền theo request, tự scale**: Express.js chạy trên **Lambda + API Gateway (HTTP API)**, Next.js SSR host trên **AWS Amplify**, **CloudFront** (gắn WAF Web ACL tại edge) làm CDN phân phối static assets/SSR và định tuyến API. Video HLS được player **HLS.js** tải trực tiếp từ External Video Server qua URL path — không đi qua backend, nên backend không phải gánh băng thông video. **CloudWatch Logs/Metrics + Alarm + SNS** cung cấp giám sát và cảnh báo admin; **WAF, IAM least-privilege, SSM Parameter Store** đảm nhiệm bảo mật; **EventBridge Scheduler + Lambda** riêng xử lý cron job hàng ngày (kiểm tra subscription hết hạn, gửi email hàng loạt qua SES).
+Kiến trúc serverless, trả tiền theo request, tự scale: Express.js chạy trên Lambda + API Gateway (HTTP API), Next.js SSR host trên AWS Amplify, CloudFront (gắn WAF Web ACL tại edge) làm CDN phân phối static assets/SSR và định tuyến API. Video HLS được player HLS.js tải trực tiếp từ External Video Server qua URL path — không đi qua backend, nên backend không phải gánh băng thông video. CloudWatch Logs/Metrics + Alarm + SNS cung cấp giám sát và cảnh báo admin; WAF, IAM least-privilege, SSM Parameter Store đảm nhiệm bảo mật; EventBridge Scheduler + Lambda riêng xử lý cron job hàng ngày (kiểm tra subscription hết hạn, gửi email hàng loạt qua SES).
 
 *Lợi ích và hoàn vốn đầu tư (ROI)*
-Nền tảng tự động scale theo nhu cầu với chi phí chỉ **\~$18–20/tháng** — kiến trúc không dùng VPC/NAT Gateway (Lambda kết nối database trực tiếp qua TLS + credentials mạnh) nên tiết kiệm \~$32/tháng so với phương án IP whitelist qua NAT Gateway. Giám sát tập trung thay thế cách vận hành bị động dựa vào phàn nàn của người dùng, và workshop song ngữ step-by-step tạo ra ở cuối dự án là tài nguyên học tập tái sử dụng cho việc triển khai hệ thống Express/Next.js thực tế lên AWS Serverless.
+Nền tảng tự động scale theo nhu cầu với chi phí chỉ \~$18–20/tháng — kiến trúc không dùng VPC/NAT Gateway (Lambda kết nối database trực tiếp qua TLS + credentials mạnh) nên tiết kiệm \~$32/tháng so với phương án IP whitelist qua NAT Gateway. Giám sát tập trung thay thế cách vận hành bị động dựa vào phàn nàn của người dùng, và workshop song ngữ step-by-step tạo ra ở cuối dự án là tài nguyên học tập tái sử dụng cho việc triển khai hệ thống Express/Next.js thực tế lên AWS Serverless.
 
 ### 3. Kiến trúc giải pháp
-Request từ người dùng đi qua CloudFront (WAF Web ACL gắn tại edge) đến hai origin: **Amplify** (frontend Next.js SSR, luồng Static/SSR) và **API Gateway (HTTP API) → Lambda** (backend Express.js, luồng API Calls); Amplify cũng "SSR fetch" ngược về API khi render phía server. Riêng **video HLS**, player HLS.js tải m3u8/segments trực tiếp từ External Video Server qua URL path. Lambda backend truy vấn **MongoDB Atlas** (Query/Write qua TLS), cache tìm kiếm bằng **Upstash Redis** (Cache GET/SET), đọc secrets (JWT/DB/SES) từ **SSM Parameter Store**, lưu avatar trên **S3** qua Pre-signed URL và gửi email qua **SES**. **EventBridge Scheduler** trigger Lambda hàng ngày (bulk email, kiểm tra subscription hết hạn). **CloudWatch** thu log/metric, khi vượt ngưỡng Alarm đẩy sang **SNS** gửi email cảnh báo admin. Chi tiết kiến trúc:
+Request từ người dùng đi qua CloudFront (WAF Web ACL gắn tại edge) đến hai origin: Amplify (frontend Next.js SSR, luồng Static/SSR) và API Gateway (HTTP API) → Lambda (backend Express.js, luồng API Calls); Amplify cũng "SSR fetch" ngược về API khi render phía server. Riêng video HLS, player HLS.js tải m3u8/segments trực tiếp từ External Video Server qua URL path. Lambda backend truy vấn MongoDB Atlas (Query/Write qua TLS), cache tìm kiếm bằng Upstash Redis (Cache GET/SET), đọc secrets (JWT/DB/SES) từ SSM Parameter Store, lưu avatar trên S3 qua Pre-signed URL và gửi email qua SES. EventBridge Scheduler trigger Lambda hàng ngày (bulk email, kiểm tra subscription hết hạn). CloudWatch thu log/metric, khi vượt ngưỡng Alarm đẩy sang SNS gửi email cảnh báo admin. Chi tiết kiến trúc:
 
 ![Movie Streaming Platform on AWS Architecture](/images/2-Proposal/awswebxemphimchua.drawio.png)
 
-> 🔒 **Lưu ý về WAF:** WAF không phải một "trạm" độc lập trên đường truyền — Web ACL được **gắn trực tiếp vào CloudFront distribution** và đánh giá request ngay tại edge location trước khi CloudFront xử lý. Web ACL cho CloudFront bắt buộc tạo ở scope Global (us-east-1).
+Lưu ý về WAF: WAF không phải một "trạm" độc lập trên đường truyền — Web ACL được gắn trực tiếp vào CloudFront distribution và đánh giá request ngay tại edge location trước khi CloudFront xử lý. Web ACL cho CloudFront bắt buộc tạo ở scope Global (us-east-1).
 
 *Dịch vụ AWS sử dụng*
 - *AWS Lambda*: Chạy backend Express.js + cron jobs — serverless, free tier 1M request/tháng, code đã tối ưu cold-start.
@@ -48,7 +48,7 @@ Request từ người dùng đi qua CloudFront (WAF Web ACL gắn tại edge) đ
 - *AWS Systems Manager Parameter Store*: Lưu tập trung secrets (JWT/DB/SES) — Lambda đọc lúc runtime, không hard-code credentials.
 - *IAM + ACM + WAF*: Least-privilege role; chứng chỉ SSL/TLS miễn phí (ACM us-east-1 cho CloudFront + Amplify, ACM ap-southeast-1 cho API Gateway); chặn tấn công lớp 7.
 
-**Dịch vụ ngoài AWS**: MongoDB Atlas M2 (managed DBaaS, replica set 3 node, auto-failover), Upstash Redis (cache serverless, free tier), External Video Server (nguồn HLS — player tải trực tiếp).
+Dịch vụ ngoài AWS: MongoDB Atlas M2 (managed DBaaS, replica set 3 node, auto-failover), Upstash Redis (cache serverless, free tier), External Video Server (nguồn HLS — player tải trực tiếp).
 
 *Thiết kế thành phần*
 - *Phân phối nội dung*: CloudFront phục vụ static assets/SSR và API tại edge location toàn cầu; WAF Web ACL lọc request tại edge. Video HLS do player HLS.js tải trực tiếp từ External Video Server.
@@ -98,18 +98,18 @@ Request từ người dùng đi qua CloudFront (WAF Web ACL gắn tại edge) đ
     - Upstash Redis: \~$0/tháng (free tier).
     - MongoDB Atlas M2: \~$9/tháng (managed DBaaS, replica set 3 node).
 
-**Tổng: \~$18–20/tháng**
+Tổng: \~$18–20/tháng
 
-> 💡 **Lựa chọn kiến trúc tiết kiệm chi phí:** Hệ thống không dùng VPC + NAT Gateway (\~$32/tháng) — thay vì IP whitelist qua Elastic IP của NAT Gateway, Lambda xác thực với MongoDB Atlas/Upstash Redis bằng **TLS + credentials mạnh**, giúp giảm hơn 60% tổng chi phí vận hành.
+Lựa chọn kiến trúc tiết kiệm chi phí: Hệ thống không dùng VPC + NAT Gateway (\~$32/tháng) — thay vì IP whitelist qua Elastic IP của NAT Gateway, Lambda xác thực với MongoDB Atlas/Upstash Redis bằng TLS + credentials mạnh, giúp giảm hơn 60% tổng chi phí vận hành.
 
 ### 7. Đánh giá rủi ro
 *Ma trận rủi ro*
-- **Lambda cold-start** làm chậm request đầu tiên (Express app lớn): mức độ cao.
-- **SES sandbox** chỉ gửi được đến email đã verify: mức độ trung bình.
-- **Socket.io không chạy được trên Lambda** (không có kết nối thường trực): mức độ trung bình.
-- **Nguồn video ngoài (Ophim)** thay đổi cấu trúc hoặc ngừng hoạt động: mức độ trung bình.
-- **Vượt free tier** gây phát sinh chi phí ngoài ý muốn: mức độ thấp.
-- **Lộ credentials** khi làm việc nhóm/public repo: mức độ thấp.
+- Lambda cold-start làm chậm request đầu tiên (Express app lớn): mức độ cao.
+- SES sandbox chỉ gửi được đến email đã verify: mức độ trung bình.
+- Socket.io không chạy được trên Lambda (không có kết nối thường trực): mức độ trung bình.
+- Nguồn video ngoài (Ophim) thay đổi cấu trúc hoặc ngừng hoạt động: mức độ trung bình.
+- Vượt free tier gây phát sinh chi phí ngoài ý muốn: mức độ thấp.
+- Lộ credentials khi làm việc nhóm/public repo: mức độ thấp.
 
 *Chiến lược giảm thiểu*
 - Cold-start: đã lazy-require module nặng (socket.io, swagger, cron); cache kết nối MongoDB trên `global`; cân nhắc Provisioned Concurrency cho endpoint quan trọng.

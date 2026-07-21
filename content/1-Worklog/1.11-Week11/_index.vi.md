@@ -5,10 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 11:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.11. </b> "
 | 4 | - Triển khai ứng dụng Node.js <br> - CI/CD với Elastic Beanstalk và CDK Pipelines | 15/07/2026 | 15/07/2026 | <https://000112.awsstudygroup.com/vi/> <br> <https://000113.awsstudygroup.com/vi/> |
 | 5 | - Chạy WordPress trên Amazon EC2 | 16/07/2026 | 16/07/2026 | <https://000091.awsstudygroup.com/vi/> |
 | 6 | - Tạo Container Service <br> - Triển khai container từ Public Image | 17/07/2026 | 17/07/2026 | <https://000046.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 11:
 

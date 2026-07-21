@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 5:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.5. </b> "
 | 4 | - Tự động tắt server và gửi thông báo Slack với AWS Lambda | 03/06/2026 | 03/06/2026 | <https://000022.awsstudygroup.com/vi/> |
 | 5 | - Thiết lập Single Sign-On (Amazon SSO) cho Organization | 04/06/2026 | 04/06/2026 | <https://000012.awsstudygroup.com/vi/> |
 | 6 | - Giới hạn quyền người dùng với IAM Permission Boundary | 05/06/2026 | 05/06/2026 | <https://000030.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 5:
 

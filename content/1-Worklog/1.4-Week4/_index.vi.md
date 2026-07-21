@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 4:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.4. </b> "
 | 4 | - Kết nối các Virtual Private Cloud (VPC) bằng VPC Peering | 27/05/2026 | 27/05/2026 | <https://000019.awsstudygroup.com/vi/> |
 | 5 | - Quản lý tập trung các kết nối với AWS Transit Gateway | 28/05/2026 | 28/05/2026 | <https://000020.awsstudygroup.com/vi/> |
 | 6 | - Quản lý quyền truy cập dịch vụ EC2 bằng Tag thông qua IAM <br> - Quản lý tài nguyên theo nhóm với Tag và Resource Groups | 29/05/2026 | 29/05/2026 | <https://000027.awsstudygroup.com/vi/> <br> <https://000028.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 4:
 

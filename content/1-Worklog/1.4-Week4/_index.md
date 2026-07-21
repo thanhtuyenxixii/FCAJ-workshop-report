@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 4 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.4. </b> "
 | 4 | - Linking Virtual Private Clouds (VPCs) with VPC Peering | 27/05/2026 | 27/05/2026 | <https://000019.awsstudygroup.com/> |
 | 5 | - Centrally manage connections with AWS Transit Gateway | 28/05/2026 | 28/05/2026 | <https://000020.awsstudygroup.com/> |
 | 6 | - Manage EC2 service access with Tag through IAM <br> - Manage resources in groups with Tag and Resouce Groups | 29/05/2026 | 29/05/2026 | <https://000027.awsstudygroup.com/> <br> <https://000028.awsstudygroup.com/> |
-
 
 ### Week 4 Achievements:
 

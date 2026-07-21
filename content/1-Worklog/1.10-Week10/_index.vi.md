@@ -5,10 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 10:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.10. </b> "
 | 4 | - Chuyển đổi từ Monolith sang Microservices với Docker và AWS Fargate | 08/07/2026 | 08/07/2026 | <https://000067.awsstudygroup.com/vi/> |
 | 5 | - CI/CD trên EKS với CodePipeline và GitHub | 09/07/2026 | 09/07/2026 | <https://000062.awsstudygroup.com/vi/> |
 | 6 | - Serverless - Xây dựng Frontend gọi API Gateway | 10/07/2026 | 10/07/2026 | <https://000079.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 10:
 

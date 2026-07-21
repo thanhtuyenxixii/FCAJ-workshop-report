@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 1:
 
@@ -24,7 +20,6 @@ pre: " <b> 1.1. </b> "
 | 4 | - Học về kiểm soát truy cập AWS Identity and Access Management (IAM) <br> - Tạo IAM Group & IAM User <br> - Tạo IAM Role & IAM User <br> - Chuyển đổi Role (Switch Role) | 06/05/2026 | 06/05/2026 | <https://000002.awsstudygroup.com/vi/> |
 | 5 | - Đọc tổng quan về Support <br> - Đọc các loại Support Request <br> - Tạo Support Request <br> - Đọc cách thay đổi gói Support | 07/05/2026 | 07/05/2026 | <https://000009.awsstudygroup.com/vi/1-support-plans/> |
 | 6 | - Thiết kế và triển khai một Amazon VPC tùy chỉnh với subnet công khai và riêng tư, cấu hình Route Tables, Internet Gateway và NAT Gateway để quản lý luồng traffic mạng. <br> - Triển khai các lớp bảo mật mạng bằng cách cấu hình Security Groups và Network ACLs (NACLs) để kiểm soát traffic vào/ra. <br> - Triển khai và kiểm thử các Amazon EC2 instance trong các subnet để xác thực khả năng cách ly mạng và kết nối nội bộ. <br> - Cấu hình các thành phần AWS Site-to-Site VPN (Customer Gateway & Virtual Private Gateway) để mô phỏng kết nối hybrid cloud an toàn. <br> - Tìm hiểu các template Infrastructure as Code (IaC) và thực hiện dọn dẹp tài nguyên đúng cách để tối ưu chi phí cloud. | 08/05/2026 | 08/05/2026 | <https://000003.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 1:
 

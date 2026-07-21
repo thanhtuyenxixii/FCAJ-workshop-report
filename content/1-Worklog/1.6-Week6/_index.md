@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 6 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.6. </b> "
 | 4 | - Deploy Applications with Docker | 10/06/2026 | 10/06/2026 | <https://000015.awsstudygroup.com/> |
 | 5 | - Deploy Applications to Amazon Elastic Container Service (Amazon ECS) | 11/06/2026 | 11/06/2026 | <https://000016.awsstudygroup.com/> |
 | 6 | - Deploy Applications with AWS CodePipeline | 12/06/2026 | 12/06/2026 | <https://000029.awsstudygroup.com/> |
-
 
 ### Week 6 Achievements:
 

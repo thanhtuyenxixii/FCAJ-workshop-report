@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.9. </b> "
 | 4 | - Experience AI services on AWS | 01/07/2026 | 01/07/2026 | <https://000056.awsstudygroup.com/> |
 | 5 | - Getting Started with AWS Step Functions | 02/07/2026 | 02/07/2026 | <https://000047.awsstudygroup.com/> |
 | 6 | - Serverless - Lambda interacting with S3 and DynamoDB | 03/07/2026 | 03/07/2026 | <https://000078.awsstudygroup.com/> |
-
 
 ### Week 9 Achievements:
 

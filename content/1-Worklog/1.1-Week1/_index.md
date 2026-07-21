@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 1 Objectives:
 
@@ -24,7 +20,6 @@ pre: " <b> 1.1. </b> "
 | 4 | - Learn AWS Identity and Access Management (IAM) Access Control <br> - Create IAM Group & IAM User <br> - Create IAM Role & IAM User <br> - Switch Role | 06/05/2026 | 06/05/2026 | <https://000002.awsstudygroup.com/> |
 | 5 | - Read Overview Support <br> - Read Support Request Types <br> - Create Support Request <br> - Read how to change support plans | 07/05/2026 | 07/05/2026 | <https://000009.awsstudygroup.com/1-support-plans/> |
 | 6 | - Designed and launched a custom Amazon VPC with public and private subnets, configuring Route Tables, Internet Gateway, and NAT Gateway to manage network traffic flow. <br> - Implemented network security layers by configuring Security Groups and Network ACLs (NACLs) to control inbound and outbound traffic. <br> - Deployed and tested Amazon EC2 instances within the subnets to validate network isolation and internal connectivity. <br> - Configured AWS Site-to-Site VPN components (Customer Gateway & Virtual Private Gateway) to simulate secure hybrid cloud connectivity. <br> - Explored Infrastructure as Code (IaC) templates and performed proper resource cleanup to optimize cloud costs. | 08/05/2026 | 08/05/2026 | <https://000003.awsstudygroup.com/> |
-
 
 ### Week 1 Achievements:
 

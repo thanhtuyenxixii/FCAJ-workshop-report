@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 8 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.8. </b> "
 | 4 | - Auto-release apps | 24/06/2026 | 24/06/2026 | <https://000051.awsstudygroup.com/> |
 | 5 | - Create a Microservice | 25/06/2026 | 25/06/2026 | <https://000052.awsstudygroup.com/> |
 | 6 | - Data and workflow restructuring | 26/06/2026 | 26/06/2026 | <https://000053.awsstudygroup.com/> |
-
 
 ### Week 8 Achievements:
 

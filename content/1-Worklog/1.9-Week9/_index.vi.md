@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 9:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.9. </b> "
 | 4 | - Trải nghiệm các dịch vụ AI trên AWS | 01/07/2026 | 01/07/2026 | <https://000056.awsstudygroup.com/vi/> |
 | 5 | - Bắt đầu với AWS Step Functions | 02/07/2026 | 02/07/2026 | <https://000047.awsstudygroup.com/vi/> |
 | 6 | - Serverless - Lambda tương tác với S3 và DynamoDB | 03/07/2026 | 03/07/2026 | <https://000078.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 9:
 

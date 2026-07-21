@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 7:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.7. </b> "
 | 4 | - Kiến trúc nâng cao với Amazon DynamoDB | 17/06/2026 | 17/06/2026 | <https://000039.awsstudygroup.com/vi/> |
 | 5 | - Tối ưu chi phí với Savings Plans, Reserved Instance, Reserved DB Instance | 18/06/2026 | 18/06/2026 | <https://000029.awsstudygroup.com/vi/> |
 | 6 | - Lựa chọn kích thước phù hợp để tối ưu tài nguyên Amazon EC2 | 19/06/2026 | 19/06/2026 | <https://000032.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 7:
 

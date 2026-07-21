@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 2:
 
@@ -24,7 +20,6 @@ pre: " <b> 1.2. </b> "
 | 4 | - Tìm hiểu về User data <br> - Tìm hiểu về Meta data <br> - Tìm hiểu về EC2 Auto Scaling | 13/05/2026 | 13/05/2026 | <https://000004.awsstudygroup.com/vi/1-introduce/> |
 | 5 | - Sử dụng Cloud IDE trên trình duyệt với AWS Cloud9 | 14/05/2026 | 14/05/2026 | <https://000049.awsstudygroup.com/vi/> |
 | 6 | - Tạo cơ sở dữ liệu trên Amazon Relational Database Service (Amazon RDS) | 15/05/2026 | 15/05/2026 | <https://000005.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 2:
 

@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.5. </b> "
 | 4 | - Automated server shutdown and Slack messaging with AWS Lambda | 03/06/2026 | 03/06/2026 | <https://000022.awsstudygroup.com/> |
 | 5 | - Set Single Sign-On (Amazon SSO) for the Organization | 04/06/2026 | 04/06/2026 | <https://000012.awsstudygroup.com/> |
 | 6 | - Limit User Permissions with IAM Permission Boundary | 05/06/2026 | 05/06/2026 | <https://000030.awsstudygroup.com/> |
-
 
 ### Week 5 Achievements:
 

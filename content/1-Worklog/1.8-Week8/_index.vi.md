@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 8:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.8. </b> "
 | 4 | - Tự động release ứng dụng | 24/06/2026 | 24/06/2026 | <https://000051.awsstudygroup.com/vi/> |
 | 5 | - Tạo một Microservice | 25/06/2026 | 25/06/2026 | <https://000052.awsstudygroup.com/vi/> |
 | 6 | - Tái cấu trúc dữ liệu và workflow | 26/06/2026 | 26/06/2026 | <https://000053.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 8:
 

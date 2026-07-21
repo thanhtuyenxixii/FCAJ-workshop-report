@@ -5,10 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 12:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.12. </b> "
 | 4 | - Business Intelligence với Amazon QuickSight | 22/07/2026 | 22/07/2026 | <https://000073.awsstudygroup.com/vi/> |
 | 5 | - Serverless Analytics với Amazon Athena | 23/07/2026 | 23/07/2026 | <https://000106.awsstudygroup.com/vi/> |
 | 6 | - SageMaker Immersion Day | 24/07/2026 | 24/07/2026 | <https://000200.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 12:
 

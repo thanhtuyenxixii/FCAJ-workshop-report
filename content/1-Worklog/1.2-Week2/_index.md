@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 2 Objectives:
 
@@ -24,7 +20,6 @@ pre: " <b> 1.2. </b> "
 | 4 | - Learn about User data <br> - Learn about Meta data <br> - Learn about EC2 auto scaling | 13/05/2026 | 13/05/2026 | <https://000004.awsstudygroup.com/1-introduce/> |
 | 5 | - Use the Cloud IDE in the browser with AWS Cloud9) | 14/05/2026 | 14/05/2026 | <https://000049.awsstudygroup.com/> |
 | 6 | - Create a database on Amazon Relational Database Service (Amazon RDS) | 15/05/2026 | 15/05/2026 | <https://000005.awsstudygroup.com/> |
-
 
 ### Week 2 Achievements:
 

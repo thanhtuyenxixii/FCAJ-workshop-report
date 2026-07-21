@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 3 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.3. </b> "
 | 4 | - Set up an integrated hybrid DNS system between Local and Amazon VPC environments with Amazon Route53 | 20/05/2026 | 20/05/2026 | <https://000010.awsstudygroup.com/> |
 | 5 | - Migrate virtual servers with AWS VM Import/Export <br> - Database Migration with AWS Database Migration Service (DMS) and Schema Conversion Tool(SCT) | 21/05/2026 | 21/05/2026 | <https://000014.awsstudygroup.com/> |
 | 6 | - Implement a system backup plan with AWS Backup | 22/05/2026 | 22/05/2026 | <https://000013.awsstudygroup.com/> |
-
 
 ### Week 3 Achievements:
 

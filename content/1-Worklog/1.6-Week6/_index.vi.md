@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 6:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.6. </b> "
 | 4 | - Triển khai ứng dụng với Docker | 10/06/2026 | 10/06/2026 | <https://000015.awsstudygroup.com/vi/> |
 | 5 | - Triển khai ứng dụng lên Amazon Elastic Container Service (Amazon ECS) | 11/06/2026 | 11/06/2026 | <https://000016.awsstudygroup.com/vi/> |
 | 6 | - Triển khai ứng dụng với AWS CodePipeline | 12/06/2026 | 12/06/2026 | <https://000029.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 6:
 

@@ -5,10 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 11 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.11. </b> "
 | 4 | - Deploying Node.js Applications <br> - CI/CD with Elastic Beanstalk and CDK Pipelines | 15/07/2026 | 15/07/2026 | <https://000112.awsstudygroup.com/> <br> <https://000113.awsstudygroup.com/> |
 | 5 | - Running WordPress on Amazon EC2 | 16/07/2026 | 16/07/2026 | <https://000091.awsstudygroup.com/> |
 | 6 | - Creating a Container Service <br> - Deploying a Container from a Public Image | 17/07/2026 | 17/07/2026 | <https://000046.awsstudygroup.com/> |
-
 
 ### Week 11 Achievements:
 

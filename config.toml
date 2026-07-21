@@ -20,7 +20,8 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  
+  custom_css = ["css/custom.css"]
+
 [Languages]
 [Languages.en]
 title = "Internship Report"

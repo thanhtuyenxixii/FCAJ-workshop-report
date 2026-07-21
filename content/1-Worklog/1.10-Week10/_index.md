@@ -5,10 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 10 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.10. </b> "
 | 4 | - Monolith to Microservices with Docker and AWS Fargate | 08/07/2026 | 08/07/2026 | <https://000067.awsstudygroup.com/> |
 | 5 | - CI/CD on EKS with CodePipeline and GitHub | 09/07/2026 | 09/07/2026 | <https://000062.awsstudygroup.com/> |
 | 6 | - Serverless - Build Frontend to call API Gateway | 10/07/2026 | 10/07/2026 | <https://000079.awsstudygroup.com/> |
-
 
 ### Week 10 Achievements:
 

@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 3:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.3. </b> "
 | 4 | - Thiết lập hệ thống DNS hybrid tích hợp giữa môi trường Local và Amazon VPC với Amazon Route 53 | 20/05/2026 | 20/05/2026 | <https://000010.awsstudygroup.com/vi/> |
 | 5 | - Di chuyển máy chủ ảo với AWS VM Import/Export <br> - Di chuyển cơ sở dữ liệu với AWS Database Migration Service (DMS) và Schema Conversion Tool (SCT) | 21/05/2026 | 21/05/2026 | <https://000014.awsstudygroup.com/vi/> |
 | 6 | - Triển khai kế hoạch backup hệ thống với AWS Backup | 22/05/2026 | 22/05/2026 | <https://000013.awsstudygroup.com/vi/> |
-
 
 ### Kết quả đạt được tuần 3:
 

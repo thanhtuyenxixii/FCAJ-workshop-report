@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 7 Objectives:
 
@@ -23,7 +19,6 @@ pre: " <b> 1.7. </b> "
 | 4 | - Advanced Architecture with Amazon DynamoDB | 17/06/2026 | 17/06/2026 | <https://000039.awsstudygroup.com/> |
 | 5 | - Optimize cost with Savings Plans, Reserved Instance, Reserved DB Instance | 18/06/2026 | 18/06/2026 | <https://000029.awsstudygroup.com/> |
 | 6 | - Choose the right serving size for Amazon EC2 Resource Optimization | 19/06/2026 | 19/06/2026 | <https://000032.awsstudygroup.com/> |
-
 
 ### Week 7 Achievements:
 
