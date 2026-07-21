@@ -5,27 +5,20 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# AWS LAMBDA DURABLE FUNCTIONS
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+Kiến trúc Serverless trên AWS Lambda tồn tại một hạn chế đã được biết đến rộng rãi: tính chất stateless. Mỗi lần Invoke là một vòng đời thực thi độc lập, giới hạn tối đa 15 phút; nếu hàm gặp lỗi giữa chừng, toàn bộ tiến trình sẽ bị mất và phải chạy lại từ đầu.
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Hạn chế này gây khó khăn cho việc xây dựng các workflow gồm nhiều bước (ví dụ: xử lý đơn hàng theo trình tự Validate ➔ Charge tiền ➔ Chờ Webhook ➔ Gửi Email) hoặc các quy trình cần chờ phê duyệt thủ công trong nhiều giờ, nhiều ngày. Để giải quyết, các đội phát triển thường phải kết hợp thêm Step Functions, SQS, Cron Jobs, DynamoDB..., khiến hệ thống trở nên cồng kềnh hơn mức cần thiết.
 
-Các điểm chính cần nắm:
+Tại AWS re:Invent 2025, AWS đã giới thiệu một tính năng mới nhằm giải quyết vấn đề này: AWS Lambda Durable Functions (Session CNS380, trình bày bởi Eric Johnson và Michael Gasch).
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+**AWS Lambda Durable Functions là gì?**
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Đây là tính năng cho phép một execution của Lambda tự động "checkpoint" tiến trình và tạm dừng (wait) mà không phát sinh chi phí compute, sau đó tự động resume đúng tại vị trí đã dừng khi nhận được tín hiệu. Thời gian sống của một Execution hiện có thể kéo dài tới 1 năm, trong khi giới hạn của mỗi lần Invoke đơn lẻ vẫn giữ nguyên ở mức 15 phút. Khi function bị tạm dừng hoặc gặp lỗi, Lambda sẽ gọi lại hàm từ đầu, nhưng sẽ replay các bước đã hoàn thành dựa trên kết quả đã lưu trong log, và chỉ thực thi tiếp phần việc chưa hoàn tất.
 
-...Hình ảnh...
+![AWS Lambda Durable Functions](/images/3-BlogsPosted/3.1-Blog1/AWSLambdaDurableFunctions.drawio.png)
 
-...Link...
+[Link bài viết gốc](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2206391430125817/?rdid=ygFv7ftHySKZbKkF#)
 
 ...Hướng dẫn...

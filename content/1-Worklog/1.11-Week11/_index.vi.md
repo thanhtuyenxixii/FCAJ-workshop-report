@@ -5,55 +5,39 @@ weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hệ thống quản lý tài liệu Serverless
+* Triển khai Elastic Beanstalk & WordPress
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Serverless - Chuỗi bài Hệ thống quản lý tài liệu | 13/07/2026 | 13/07/2026 | <https://000133.awsstudygroup.com/vi/> |
+| 3 | - Xây dựng Serverless API <br> - Ứng dụng chat Serverless | 14/07/2026 | 14/07/2026 | <https://000066.awsstudygroup.com/vi/> <br> <https://000117.awsstudygroup.com/vi/> |
+| 4 | - Triển khai ứng dụng Node.js <br> - CI/CD với Elastic Beanstalk và CDK Pipelines | 15/07/2026 | 15/07/2026 | <https://000112.awsstudygroup.com/vi/> <br> <https://000113.awsstudygroup.com/vi/> |
+| 5 | - Chạy WordPress trên Amazon EC2 | 16/07/2026 | 16/07/2026 | <https://000091.awsstudygroup.com/vi/> |
+| 6 | - Tạo Container Service <br> - Triển khai container từ Public Image | 17/07/2026 | 17/07/2026 | <https://000046.awsstudygroup.com/vi/> |
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Xây dựng hệ thống quản lý tài liệu serverless và ứng dụng chat web serverless
+* Triển khai ứng dụng Node.js qua Elastic Beanstalk với CI/CD tự động
+* Host WordPress trên Amazon EC2
+* Tạo và triển khai container bằng Amazon Lightsail
+* Triển khai hạ tầng EKS dưới dạng code bằng CDK Blueprints
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+**Dịch vụ AWS đã sử dụng:**
+* AWS Lambda / Amazon DynamoDB
+* Amazon API Gateway
+* AWS Elastic Beanstalk
+* Amazon EC2 (WordPress)
+* Amazon Lightsail Containers
+* Amazon EKS + AWS CDK
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+**Kỹ năng đạt được:**
+* Phát triển ứng dụng serverless (CRUD, auth, tích hợp API)
+* Triển khai PaaS & tự động hóa CI/CD
+* Hosting web truyền thống trên EC2
+* Infrastructure as Code cho Kubernetes

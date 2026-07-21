@@ -5,104 +5,126 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
+# Movie Streaming Platform on AWS
+## Nền tảng xem phim trực tuyến Serverless với HLS Streaming, giám sát và bảo mật
 
-# IoT Weather Platform for Lab Research  
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực  
+### 1. Tóm tắt điều hành
+Dự án xây dựng nền tảng xem phim trực tuyến hoàn chỉnh (streaming qua giao thức HLS), gồm hai ứng dụng độc lập: Backend — REST API viết bằng Node.js + Express với \~25 nhóm chức năng (quản lý phim, người dùng, xác thực JWT, đánh giá, bình luận, danh sách yêu thích, lịch sử xem, tiến độ xem, gói Premium/subscription, quảng cáo, crawl phim tự động, tìm kiếm và admin dashboard) — và Frontend — ứng dụng Next.js 15 (Pages Router), hỗ trợ song ngữ vi/en, dark/light theme, PWA offline, player HLS tùy biến và khu vực quản trị viết bằng TypeScript.
 
-### 1. Tóm tắt điều hành  
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.  
+Mục tiêu của workshop là triển khai toàn bộ hệ thống lên hạ tầng AWS Serverless (region `ap-southeast-1`): frontend Next.js SSR chạy trên AWS Amplify, backend Express.js chạy trên Lambda + API Gateway, tất cả phía sau CloudFront — thể hiện năng lực vận dụng các dịch vụ AWS vào một use-case thực tế, end-to-end. Khách hàng mục tiêu là người dùng cuối xem phim miễn phí (kèm quảng cáo) hoặc trả phí (Premium, không quảng cáo), và quản trị viên vận hành nội dung, theo dõi hệ thống qua dashboard.
 
-### 2. Tuyên bố vấn đề  
-*Vấn đề hiện tại*  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.  
+### 2. Tuyên bố vấn đề
+*Vấn đề hiện tại*
+1. Chi phí hạ tầng cho traffic không đều: lượng truy cập dao động mạnh theo giờ (cao điểm buổi tối, thấp điểm ban ngày) — thuê server cố định (EC2/VPS) gây lãng phí lúc thấp điểm và nghẽn lúc cao điểm.
+2. Băng thông khi phát video HLS: video được stream từ nguồn ngoài; nếu mọi request video đều đi qua backend thì backend trở thành bottleneck băng thông và chi phí.
+3. Vận hành thủ công thiếu giám sát: không có log tập trung và cảnh báo — lỗi chỉ được phát hiện khi người dùng phàn nàn.
+4. Rủi ro bảo mật: API công khai dễ bị tấn công (injection, DDoS lớp 7, bot); credentials rải rác trong code.
+5. Tác vụ định kỳ trên serverless: `node-cron` truyền thống không chạy được trên serverless (không có process thường trực).
 
-*Giải pháp*  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.  
+*Giải pháp*
+Kiến trúc serverless, trả tiền theo request, tự scale: Express.js chạy trên Lambda + API Gateway (HTTP API), Next.js SSR host trên AWS Amplify, CloudFront (gắn WAF Web ACL tại edge) làm CDN phân phối static assets/SSR và định tuyến API. Video HLS được player HLS.js tải trực tiếp từ External Video Server qua URL path — không đi qua backend, nên backend không phải gánh băng thông video. CloudWatch Logs/Metrics + Alarm + SNS cung cấp giám sát và cảnh báo admin; WAF, IAM least-privilege, SSM Parameter Store đảm nhiệm bảo mật; EventBridge Scheduler + Lambda riêng xử lý cron job hàng ngày (kiểm tra subscription hết hạn, gửi email hàng loạt qua SES).
 
-*Lợi ích và hoàn vốn đầu tư (ROI)*  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.  
+*Lợi ích và hoàn vốn đầu tư (ROI)*
+Nền tảng tự động scale theo nhu cầu với chi phí chỉ \~$18–20/tháng — kiến trúc không dùng VPC/NAT Gateway (Lambda kết nối database trực tiếp qua TLS + credentials mạnh) nên tiết kiệm \~$32/tháng so với phương án IP whitelist qua NAT Gateway. Giám sát tập trung thay thế cách vận hành bị động dựa vào phàn nàn của người dùng, và workshop song ngữ step-by-step tạo ra ở cuối dự án là tài nguyên học tập tái sử dụng cho việc triển khai hệ thống Express/Next.js thực tế lên AWS Serverless.
 
-### 3. Kiến trúc giải pháp  
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.  
+### 3. Kiến trúc giải pháp
+Request từ người dùng đi qua CloudFront (WAF Web ACL gắn tại edge) đến hai origin: Amplify (frontend Next.js SSR, luồng Static/SSR) và API Gateway (HTTP API) → Lambda (backend Express.js, luồng API Calls); Amplify cũng "SSR fetch" ngược về API khi render phía server. Riêng video HLS, player HLS.js tải m3u8/segments trực tiếp từ External Video Server qua URL path. Lambda backend truy vấn MongoDB Atlas (Query/Write qua TLS), cache tìm kiếm bằng Upstash Redis (Cache GET/SET), đọc secrets (JWT/DB/SES) từ SSM Parameter Store, lưu avatar trên S3 qua Pre-signed URL và gửi email qua SES. EventBridge Scheduler trigger Lambda hàng ngày (bulk email, kiểm tra subscription hết hạn). CloudWatch thu log/metric, khi vượt ngưỡng Alarm đẩy sang SNS gửi email cảnh báo admin. Chi tiết kiến trúc:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![Movie Streaming Platform on AWS Architecture](/images/2-Proposal/awswebxemphimchua.drawio.png)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+Lưu ý về WAF: WAF không phải một "trạm" độc lập trên đường truyền — Web ACL được gắn trực tiếp vào CloudFront distribution và đánh giá request ngay tại edge location trước khi CloudFront xử lý. Web ACL cho CloudFront bắt buộc tạo ở scope Global (us-east-1).
 
-*Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+*Dịch vụ AWS sử dụng*
+- *AWS Lambda*: Chạy backend Express.js + cron jobs — serverless, free tier 1M request/tháng, code đã tối ưu cold-start.
+- *Amazon API Gateway (HTTP API)*: Cửa ngõ REST API — rẻ hơn REST API Gateway \~70%, tích hợp Lambda native.
+- *AWS Amplify*: Hosting Next.js SSR, CI/CD tự động từ Git.
+- *Amazon CloudFront*: CDN phân phối static assets/SSR và API — edge location toàn cầu giảm độ trễ, là điểm gắn WAF Web ACL.
+- *Amazon S3*: Lưu avatar người dùng, upload trực tiếp qua Pre-signed URL; chặn toàn bộ public access.
+- *Amazon SES*: Gửi email hệ thống — $0.10/1.000 email, thay thế Nodemailer/SMTP.
+- *Amazon CloudWatch*: Log + metric + alarm, tích hợp sẵn với Lambda/API Gateway.
+- *Amazon SNS*: Cảnh báo admin qua email subscription trực tiếp.
+- *Amazon EventBridge Scheduler*: Trigger cron, thay thế node-cron trên môi trường serverless.
+- *AWS Systems Manager Parameter Store*: Lưu tập trung secrets (JWT/DB/SES) — Lambda đọc lúc runtime, không hard-code credentials.
+- *IAM + ACM + WAF*: Least-privilege role; chứng chỉ SSL/TLS miễn phí (ACM us-east-1 cho CloudFront + Amplify, ACM ap-southeast-1 cho API Gateway); chặn tấn công lớp 7.
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+Dịch vụ ngoài AWS: MongoDB Atlas M2 (managed DBaaS, replica set 3 node, auto-failover), Upstash Redis (cache serverless, free tier), External Video Server (nguồn HLS — player tải trực tiếp).
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
+*Thiết kế thành phần*
+- *Phân phối nội dung*: CloudFront phục vụ static assets/SSR và API tại edge location toàn cầu; WAF Web ACL lọc request tại edge. Video HLS do player HLS.js tải trực tiếp từ External Video Server.
+- *Frontend*: AWS Amplify host ứng dụng Next.js 15 SSR, deploy tự động từ Git.
+- *Backend*: Express.js đóng gói cho Lambda phía sau API Gateway HTTP API.
+- *Tầng dữ liệu*: MongoDB Atlas là kho dữ liệu chính; Upstash Redis cache tìm kiếm — Lambda kết nối trực tiếp qua TLS + credentials mạnh (không cần VPC/NAT Gateway).
+- *Lưu trữ media*: S3 bucket cho avatar, chỉ truy cập qua Pre-signed URL (`BlockPublicAcls=true`).
+- *Email*: SES gửi email xác thực/thông báo và email hàng loạt khi subscription hết hạn.
+- *Cron*: EventBridge Scheduler trigger Lambda riêng hàng ngày kiểm tra subscription hết hạn.
+- *Giám sát*: CloudWatch thu log/metric; Alarm đẩy sang SNS gửi email cho admin khi vượt ngưỡng.
+- *Bảo mật*: Lambda Execution Role chỉ có `s3:GetObject`/`s3:PutObject` trên bucket cụ thể; HTTPS-only với chứng chỉ ACM; secrets lưu trong SSM Parameter Store, không hard-code credentials.
 
-*Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+### 4. Triển khai kỹ thuật
+*Các giai đoạn triển khai*
+1. *Nghiên cứu & thiết kế*: học AWS cơ bản (IAM, Lambda, S3, API Gateway); khảo sát kiến trúc serverless cho Express/Next.js (Tuần 1–2).
+2. *Hoàn thiện ứng dụng*: hoàn thiện tính năng BE/FE (subscription, quảng cáo, crawl phim, admin dashboard); tối ưu cold-start cho serverless (Tuần 3–5).
+3. *Triển khai hạ tầng AWS*: tạo IAM roles; deploy BE lên Lambda + API Gateway; deploy FE lên Amplify; cấu hình S3, SES, CloudFront, WAF, SSM Parameter Store (Tuần 6–8).
+4. *Giám sát & tối ưu*: cấu hình CloudWatch Logs/Metrics, Alarm → SNS, EventBridge cron; đo hiệu năng, tối ưu chi phí (Tuần 9–10).
+5. *Kiểm thử & tài liệu*: test end-to-end, kiểm thử lỗi; viết workshop song ngữ step-by-step, hướng dẫn clean-up (Tuần 11–12).
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+*Yêu cầu kỹ thuật*
+- *Backend*: Node.js + Express điều chỉnh cho Lambda (lazy-require module nặng, cache kết nối MongoDB trên `global`), deploy sau API Gateway HTTP API.
+- *Frontend*: Next.js 15 (Pages Router, khu vực admin TypeScript) build và host trên Amplify với hỗ trợ SSR.
+- *Mạng & bảo mật*: WAF Web ACL scope Global (us-east-1) gắn vào CloudFront; chứng chỉ ACM us-east-1 (CloudFront + Amplify) và ap-southeast-1 (API Gateway); secrets (JWT/DB/SES) quản lý qua SSM Parameter Store; MongoDB Atlas/Upstash Redis kết nối qua TLS + credentials mạnh.
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
+### 5. Lộ trình & Mốc triển khai
+*Lộ trình dự án (12 tuần)*
+- *Giai đoạn 1 — Nghiên cứu & thiết kế (Tuần 1–2)*: học AWS cơ bản, khảo sát kiến trúc serverless → bàn giao: bản proposal này + sơ đồ kiến trúc draw.io.
+- *Giai đoạn 2 — Hoàn thiện ứng dụng (Tuần 3–5)*: hoàn thiện tính năng BE/FE, tối ưu cold-start → bàn giao: ứng dụng chạy end-to-end ở local.
+- *Giai đoạn 3 — Triển khai hạ tầng AWS (Tuần 6–8)*: IAM, Lambda + API Gateway, Amplify, S3, SES, CloudFront, WAF, SSM Parameter Store → bàn giao: hệ thống chạy trên AWS, truy cập công khai.
+- *Giai đoạn 4 — Giám sát & tối ưu (Tuần 9–10)*: CloudWatch, Alarm → SNS, EventBridge cron, tối ưu chi phí → bàn giao: dashboard giám sát + alert hoạt động.
+- *Giai đoạn 5 — Kiểm thử & tài liệu (Tuần 11–12)*: test end-to-end, workshop song ngữ, hướng dẫn clean-up → bàn giao: workshop website + báo cáo hoàn chỉnh.
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+### 6. Ước tính ngân sách
+*Chi phí hạ tầng*
+- Dịch vụ AWS:
+    - AWS Lambda: \~$0/tháng (free tier 1M request/tháng).
+    - API Gateway (HTTP API): \~$1/tháng ($1/triệu request).
+    - AWS Amplify: \~$1/tháng (build minutes + hosting SSR).
+    - Amazon S3: \~$0.02/tháng (chỉ lưu avatar, dung lượng nhỏ).
+    - Amazon SES: \~$0.10/1.000 email.
+    - AWS WAF: \~$6/tháng (Web ACL + rules).
+    - CloudFront CDN: \~$1–2/tháng (static assets/SSR + API).
+    - CloudWatch + SNS: \~$0–1/tháng (trong free tier với quy mô nhỏ).
+    - SSM Parameter Store: \~$0/tháng (standard parameters miễn phí).
+- Dịch vụ ngoài AWS:
+    - Upstash Redis: \~$0/tháng (free tier).
+    - MongoDB Atlas M2: \~$9/tháng (managed DBaaS, replica set 3 node).
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
+Tổng: \~$18–20/tháng
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
+Lựa chọn kiến trúc tiết kiệm chi phí: Hệ thống không dùng VPC + NAT Gateway (\~$32/tháng) — thay vì IP whitelist qua Elastic IP của NAT Gateway, Lambda xác thực với MongoDB Atlas/Upstash Redis bằng TLS + credentials mạnh, giúp giảm hơn 60% tổng chi phí vận hành.
 
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
+### 7. Đánh giá rủi ro
+*Ma trận rủi ro*
+- Lambda cold-start làm chậm request đầu tiên (Express app lớn): mức độ cao.
+- SES sandbox chỉ gửi được đến email đã verify: mức độ trung bình.
+- Socket.io không chạy được trên Lambda (không có kết nối thường trực): mức độ trung bình.
+- Nguồn video ngoài (Ophim) thay đổi cấu trúc hoặc ngừng hoạt động: mức độ trung bình.
+- Vượt free tier gây phát sinh chi phí ngoài ý muốn: mức độ thấp.
+- Lộ credentials khi làm việc nhóm/public repo: mức độ thấp.
 
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
+*Chiến lược giảm thiểu*
+- Cold-start: đã lazy-require module nặng (socket.io, swagger, cron); cache kết nối MongoDB trên `global`; cân nhắc Provisioned Concurrency cho endpoint quan trọng.
+- SES: xin production access sớm (tuần 6); dự phòng Nodemailer/Gmail SMTP trong lúc chờ.
+- Realtime: chỉ bật khi chạy local/VPS; hướng phát triển — chuyển sang API Gateway WebSocket.
+- Nguồn video: crawler tách thành service riêng, dễ thay nguồn.
+- Kiểm soát chi phí: AWS Budgets + Billing Alarm; clean-up tài nguyên sau khi demo.
+- Credentials: secrets lưu trong SSM Parameter Store; `.env` trong `.gitignore`; IAM key xoay vòng; quét secret trước khi commit.
 
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+*Kế hoạch dự phòng*
+- Nếu SES production access bị chậm, tạm gửi email qua Nodemailer/Gmail SMTP.
+- Nếu nguồn video ngoài chậm hoặc quá tải, có thể bổ sung CloudFront distribution riêng làm lớp cache cho HLS segments (hướng phát triển).
+- Hướng dẫn clean-up đảm bảo có thể gỡ toàn bộ tài nguyên nhanh chóng sau demo để dừng mọi chi phí.
+
+### 8. Kết quả kỳ vọng
+*Cải tiến kỹ thuật*: Toàn bộ nền tảng chạy serverless trên AWS — tự scale theo traffic, HTTPS-only, được WAF bảo vệ, giám sát tập trung bằng CloudWatch và cảnh báo SNS thay cho vận hành thủ công, bị động. Video HLS phát trực tiếp từ nguồn, backend không phải gánh băng thông video.
+
+*Giá trị dài hạn*: Kiến trúc tham chiếu production-grade cho việc triển khai hệ thống Express/Next.js lên AWS Serverless, workshop song ngữ step-by-step tái sử dụng được cho người học khác, và mô hình chi phí tối ưu (\~$18–20/tháng, không cần NAT Gateway) đã kiểm chứng với traffic thực tế.

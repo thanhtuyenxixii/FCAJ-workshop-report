@@ -5,27 +5,36 @@ weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# PIPELINE XỬ LÝ ẢNH SERVERLESS VỚI S3, LAMBDA, DYNAMODB VÀ SNS
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Xử lý ảnh trên server truyền thống (resize, watermark ngay tại thời điểm upload) có một điểm yếu quen thuộc: khi traffic tăng đột biến, server trở nên ì ạch, thậm chí ngừng phản hồi hoàn toàn. Toàn bộ tải xử lý dồn lên một tiến trình cố định, không thể tự co giãn theo nhu cầu.
 
-Các điểm chính cần nắm:
+Bài viết này chia sẻ một pipeline xử lý ảnh theo hướng serverless trên AWS, sử dụng bộ dịch vụ S3 – Lambda – DynamoDB – SNS, vận hành mượt mà và tự động scale theo traffic.
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+**Vai trò của từng dịch vụ**
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+* **S3**: Vừa là kho lưu ảnh gốc và ảnh đã xử lý, vừa là nơi phát event (`s3:ObjectCreated`) kích hoạt Lambda mỗi khi có ảnh mới được upload.
+* **Lambda**: Là "hub" xử lý chính — sau khi resize và watermark ảnh, Lambda chủ động ghi kết quả đồng thời tới cả S3, DynamoDB và SNS, thay vì gọi nối tiếp từng bước một.
+* **DynamoDB**: Lưu metadata như trạng thái xử lý, URL ảnh... để client poll qua API Gateway khi cần kiểm tra tiến độ.
+* **SNS**: Đẩy thông báo hoàn tất tới các subscriber đã đăng ký (app mobile qua push notification, email...), chạy song song với luồng poll, giúp client không phải chờ thụ động.
 
-...Hình ảnh...
+**Ba bài học đáng nhớ**
 
-...Link...
+* Không bao giờ ghi ảnh đã xử lý ngược lại chính bucket vừa trigger — sẽ tạo vòng lặp vô hạn ngay lập tức. Tách riêng 2 bucket (`raw-images` / `processed-images`) hoặc dùng prefix khác nhau là giải pháp an toàn.
+* Lambda là hub, không phải một mắt xích trong chuỗi — chính Lambda gọi cả S3, DynamoDB, SNS một cách độc lập, chứ không phải S3 gọi DynamoDB rồi DynamoDB gọi tiếp SNS.
+* Poll (qua API Gateway) và Push (qua SNS) là 2 luồng hoàn toàn tách biệt — không nên vẽ chung hay hiểu gộp làm một, tránh rối kiến trúc khi debug.
 
-...Hướng dẫn...
+Pattern S3 → Lambda → DynamoDB/SNS → API Gateway phù hợp cho các bài toán xử lý file bất đồng bộ, khả năng tự scale tốt. Điểm khó không nằm ở việc nhớ tên dịch vụ, mà là hiểu đúng "ai gọi ai" để tránh vòng lặp vô hạn và chi phí phát sinh không đáng có.
+
+![Serverless Image Processing Pipeline](/images/3-BlogsPosted/3.3-Blog3/ServerlessImagePipeline.jpg)
+
+Tài liệu tham khảo cho bạn đọc muốn tìm hiểu sâu hơn:
+
+* [Using AWS Lambda with Amazon S3](https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html)
+* [Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventNotifications.html)
+* [Introduction to Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+* [Amazon API Gateway REST API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-rest-api.html)
+* [Amazon SNS Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
+
+[Link bài viết gốc](https://www.facebook.com/share/p/1BvwKj9juC/)

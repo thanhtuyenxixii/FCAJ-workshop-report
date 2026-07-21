@@ -5,27 +5,20 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# AWS LAMBDA DURABLE FUNCTIONS
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+AWS Lambda's Serverless architecture has a well-known limitation: statelessness. Each Invoke is an independent execution lifecycle, capped at 15 minutes; if the function fails partway through, the entire process is lost and must be restarted from the beginning.
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+This limitation makes it difficult to build multi-step workflows (for example, order processing consisting of Validate ➔ Charge payment ➔ Wait for webhook ➔ Send email) or processes that require manual approval over hours or days. To work around it, development teams typically combine Step Functions, SQS, Cron Jobs, DynamoDB, and similar services, which adds unnecessary complexity to the system.
 
-Key points to know:
+At AWS re:Invent 2025, AWS introduced a new feature designed to address this problem: AWS Lambda Durable Functions (Session CNS380, presented by Eric Johnson and Michael Gasch).
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+**What is AWS Lambda Durable Functions?**
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+This feature allows a Lambda execution to automatically checkpoint its progress and pause (wait) without incurring compute costs, then automatically resume from the exact point it left off once a signal is received. The lifetime of an Execution can now extend up to 1 year, while the limit for each individual Invoke remains 15 minutes. When a function is paused or encounters an error, Lambda re-invokes it from the start, but replays the steps already completed based on results saved in the execution log, and only executes the remaining, unfinished portion of the work.
 
-...Image...
+![AWS Lambda Durable Functions](/images/3-BlogsPosted/3.1-Blog1/AWSLambdaDurableFunctions.drawio.png)
 
-...Link...
+[Link to the original post](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2206391430125817/?rdid=ygFv7ftHySKZbKkF#)
 
 ...Guide...

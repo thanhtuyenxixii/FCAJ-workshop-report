@@ -1,6 +1,6 @@
-baseURL = "https://workshop-sample.awsfcaj.com/"
+baseURL = "https://hovietthang190704.github.io/fcj-workshop-template/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo
@@ -20,7 +20,8 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  
+  custom_css = ["css/custom.css"]
+
 [Languages]
 [Languages.en]
 title = "Internship Report"

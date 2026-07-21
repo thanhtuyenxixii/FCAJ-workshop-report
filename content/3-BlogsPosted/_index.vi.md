@@ -6,17 +6,13 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}  
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Ví dụ:
 
-###  [Blog 1 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.1-Blog1/)
+###  [Blog 1 - AWS LAMBDA DURABLE FUNCTIONS](3.1-Blog1/)
+Blog này giới thiệu AWS Lambda Durable Functions được công bố tại AWS re:Invent 2025, cho phép một execution của Lambda tự "checkpoint" tiến trình và tạm dừng mà không tốn phí compute, sau đó tự động resume đúng vị trí đã dừng, kéo dài thời gian sống của một execution lên tới 1 năm dù giới hạn mỗi lần invoke vẫn là 15 phút.
+
+###  [Blog 2 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.2-Blog2/)
 Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
-
-###  [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+###  [Blog 3 - PIPELINE XỬ LÝ ẢNH SERVERLESS VỚI S3, LAMBDA, DYNAMODB VÀ SNS](3.3-Blog3/)
+Blog này chia sẻ một pipeline xử lý ảnh theo hướng serverless trên AWS, sử dụng bộ dịch vụ S3 – Lambda – DynamoDB – SNS để tự động resize, watermark ảnh ngay khi upload, vận hành mượt mà và tự động scale theo traffic thay vì phụ thuộc vào một tiến trình server cố định.

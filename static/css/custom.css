@@ -1,0 +1,10 @@
+/* Hide the inline "copy to clipboard" icon next to short inline `code` spans
+   (e.g. `MONGODB_URI`, `get-parameters-by-path`) — keep it only on real
+   multi-line code blocks where copying is actually useful. */
+.copy-to-clipboard {
+  display: none;
+}
+
+pre .copy-to-clipboard {
+  display: inline-block;
+}

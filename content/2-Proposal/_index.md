@@ -5,111 +5,128 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# Movie Streaming Platform on AWS
+## A Serverless Netflix-clone with HLS Streaming, Monitoring and Security Best Practices
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+This project builds a complete online movie streaming platform (HLS streaming), consisting of two independent applications: a Backend — a REST API built with Node.js + Express covering \~25 feature groups (movie management, users, JWT authentication, ratings, comments, favorites, watch history, watch progress, Premium subscriptions, advertisements, automated movie crawling, search, and an admin dashboard) — and a Frontend — a Next.js 15 application (Pages Router) supporting vi/en bilingual UI, dark/light themes, offline PWA, a custom HLS player, and a TypeScript-based admin area.
+
+The goal of this workshop is to deploy the entire system onto AWS Serverless infrastructure (region `ap-southeast-1`): the Next.js SSR frontend runs on AWS Amplify, the Express.js backend runs on Lambda + API Gateway, all behind CloudFront — demonstrating the ability to apply AWS services to a real, end-to-end use case. Target customers are end users who watch movies for free (ad-supported) or via a paid Premium plan (ad-free), and administrators who operate content and monitor the system through a dashboard.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+### What's the Problem?
+1. Infrastructure cost under uneven traffic: streaming traffic fluctuates heavily by hour (evening peaks, daytime lows) — fixed servers (EC2/VPS) waste money off-peak and bottleneck at peak.
+2. Bandwidth for HLS playback: video is streamed from an external origin; routing every video request through the backend would turn it into a bandwidth and cost bottleneck.
+3. Manual operations without observability: no centralized logging or alerting — failures are only discovered through user complaints.
+4. Security risks: public APIs are exposed to injection attacks, layer-7 DDoS, and bots; credentials scattered in code.
+5. Scheduled tasks in a serverless environment: traditional `node-cron` cannot run on serverless (no long-lived process).
 
 ### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+A serverless, pay-per-request, auto-scaling architecture: Express.js runs on Lambda + API Gateway (HTTP API), Next.js SSR is hosted on AWS Amplify, and CloudFront (with a WAF Web ACL attached at the edge) serves static assets/SSR and routes API calls. HLS video is fetched by the HLS.js player directly from the External Video Server via URL path — it never passes through the backend, so the backend carries no video bandwidth. CloudWatch Logs/Metrics + Alarms + SNS provide observability and admin alerting; WAF, IAM least-privilege, and SSM Parameter Store cover security; a dedicated EventBridge Scheduler + Lambda handles daily cron jobs (expired-subscription checks with SES bulk email).
 
 ### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+The platform scales automatically with demand and costs only \~$18–20/month — the architecture avoids VPC/NAT Gateway (Lambda connects to the databases directly over TLS with strong credentials), saving \~$32/month compared to an IP-whitelist-via-NAT approach. Centralized monitoring replaces reactive, complaint-driven operations, and the bilingual step-by-step workshop produced at the end serves as a reusable learning resource for deploying real Express/Next.js systems on AWS Serverless.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+User requests flow through CloudFront (WAF Web ACL attached at the edge) to two origins: Amplify (Next.js SSR frontend, Static/SSR flow) and API Gateway (HTTP API) → Lambda (Express.js backend, API Calls flow); Amplify also performs "SSR fetch" back to the API during server-side rendering. HLS video is fetched by the HLS.js player directly from the External Video Server (m3u8/segments via URL path). The backend Lambda queries MongoDB Atlas (Query/Write over TLS), caches search results in Upstash Redis (Cache GET/SET), reads secrets (JWT/DB/SES) from SSM Parameter Store, stores avatars in S3 via Pre-signed URLs, and sends email through SES. EventBridge Scheduler triggers a Lambda daily (bulk email, expired-subscription checks). CloudWatch collects logs/metrics; on threshold breach an Alarm publishes to SNS, which emails the admin. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![Movie Streaming Platform on AWS Architecture](/images/2-Proposal/awswebxemphimchua.drawio.png)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+Note on WAF: WAF is not a standalone hop on the network path — the Web ACL is attached directly to the CloudFront distribution and evaluates requests at the edge location before CloudFront processes them. A Web ACL used with CloudFront must be created in the Global scope (us-east-1).
 
 ### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+- AWS Lambda: Runs the Express.js backend + cron jobs — serverless, 1M free requests/month, cold-start optimized code.
+- Amazon API Gateway (HTTP API): REST API front door — \~70% cheaper than REST API Gateway, native Lambda integration.
+- AWS Amplify: Next.js SSR hosting with Git-based CI/CD.
+- Amazon CloudFront: CDN serving static assets/SSR and API — global edge locations cut latency, and it is the attachment point for the WAF Web ACL.
+- Amazon S3: User avatar storage with Pre-signed URL direct uploads; all public access blocked.
+- Amazon SES: Transactional email — $0.10/1,000 emails, replaces Nodemailer/SMTP.
+- Amazon CloudWatch: Logs + metrics + alarms, built-in integration with Lambda/API Gateway.
+- Amazon SNS: Admin alerting via direct email subscription.
+- Amazon EventBridge Scheduler: Cron trigger replacing node-cron in serverless environments.
+- AWS Systems Manager Parameter Store: Central storage for secrets (JWT/DB/SES) — read by Lambda at runtime, no hard-coded credentials.
+- IAM + ACM + WAF: Least-privilege roles; free SSL/TLS certificates (ACM in us-east-1 for CloudFront + Amplify, ACM in ap-southeast-1 for API Gateway); layer-7 attack protection.
+
+Non-AWS services: MongoDB Atlas M2 (managed DBaaS, 3-node replica set, auto-failover), Upstash Redis (serverless cache, free tier), External Video Server (HLS origin — fetched directly by the player).
 
 ### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- Content delivery: CloudFront serves static assets/SSR and API at global edge locations; the WAF Web ACL filters requests at the edge. HLS video is fetched by the HLS.js player directly from the External Video Server.
+- Frontend: AWS Amplify hosts the Next.js 15 SSR app, deployed automatically from Git.
+- Backend: Express.js wrapped for Lambda behind API Gateway HTTP API.
+- Data layer: MongoDB Atlas as primary data store; Upstash Redis as search cache — Lambda connects directly over TLS with strong credentials (no VPC/NAT Gateway required).
+- Media storage: S3 bucket for avatars, accessed only via Pre-signed URLs (`BlockPublicAcls=true`).
+- Email: SES for verification/notification emails and bulk subscription-expiry notices.
+- Cron: EventBridge Scheduler triggers a dedicated Lambda daily to check expired subscriptions.
+- Observability: CloudWatch collects logs/metrics; Alarms publish to SNS, which emails the admin on threshold breach.
+- Security: Lambda Execution Role limited to `s3:GetObject`/`s3:PutObject` on the specific bucket; HTTPS only with ACM certificates; secrets kept in SSM Parameter Store, no hard-coded credentials.
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+Implementation Phases
+- Research & design: learn AWS fundamentals (IAM, Lambda, S3, API Gateway); study serverless patterns for Express/Next.js (Weeks 1–2).
+- Application development: complete BE/FE features (subscriptions, ads, movie crawler, admin dashboard); optimize cold-start for serverless (Weeks 3–5).
+- AWS infrastructure deployment: create IAM roles; deploy BE to Lambda + API Gateway; deploy FE to Amplify; configure S3, SES, CloudFront, WAF, SSM Parameter Store (Weeks 6–8).
+- Monitoring & optimization: configure CloudWatch Logs/Metrics, Alarm → SNS, EventBridge cron; measure performance and optimize cost (Weeks 9–10).
+- Testing & documentation: end-to-end and failure testing; write the bilingual step-by-step workshop and clean-up guide (Weeks 11–12).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+Technical Requirements
+- Backend: Node.js + Express adapted for Lambda (lazy-required heavy modules, MongoDB connection cached on `global`), deployed behind API Gateway HTTP API.
+- Frontend: Next.js 15 (Pages Router, TypeScript admin area) built and hosted on Amplify with SSR support.
+- Networking & security: WAF Web ACL in Global scope (us-east-1) attached to CloudFront; ACM certificates in us-east-1 (CloudFront + Amplify) and ap-southeast-1 (API Gateway); secrets (JWT/DB/SES) managed in SSM Parameter Store; MongoDB Atlas/Upstash Redis connected over TLS with strong credentials.
 
 ### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+Project Timeline (12 weeks)
+- Phase 1 — Research & design (Weeks 1–2): AWS fundamentals, serverless architecture study → deliverable: this proposal + draw.io architecture diagram.
+- Phase 2 — Application development (Weeks 3–5): complete BE/FE features, cold-start optimization → deliverable: end-to-end app running locally.
+- Phase 3 — AWS infrastructure deployment (Weeks 6–8): IAM, Lambda + API Gateway, Amplify, S3, SES, CloudFront, WAF, SSM Parameter Store → deliverable: system live on AWS, publicly reachable.
+- Phase 4 — Monitoring & optimization (Weeks 9–10): CloudWatch, Alarm → SNS, EventBridge cron, cost optimization → deliverable: working monitoring dashboard + alerts.
+- Phase 5 — Testing & documentation (Weeks 11–12): end-to-end testing, bilingual workshop, clean-up guide → deliverable: workshop website + final report.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
-
 ### Infrastructure Costs
 - AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+    - AWS Lambda: \~$0/month (free tier 1M requests/month).
+    - API Gateway (HTTP API): \~$1/month ($1/million requests).
+    - AWS Amplify: \~$1/month (build minutes + SSR hosting).
+    - Amazon S3: \~$0.02/month (avatars only, small footprint).
+    - Amazon SES: \~$0.10 per 1,000 emails.
+    - AWS WAF: \~$6/month (Web ACL + rules).
+    - CloudFront CDN: \~$1–2/month (static assets/SSR + API).
+    - CloudWatch + SNS: \~$0–1/month (within free tier at this scale).
+    - SSM Parameter Store: \~$0/month (standard parameters are free).
+- Non-AWS services:
+    - Upstash Redis: \~$0/month (free tier).
+    - MongoDB Atlas M2: \~$9/month (managed DBaaS, 3-node replica set).
 
-Total: $0.7/month, $8.40/12 months
+Total: \~$18–20/month
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+Cost-saving architecture choice: The system avoids VPC + NAT Gateway (\~$32/month) — instead of IP whitelisting via a NAT Gateway Elastic IP, Lambda authenticates to MongoDB Atlas/Upstash Redis with TLS + strong credentials, cutting total operating cost by more than 60%.
 
 ### 7. Risk Assessment
 #### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+- Lambda cold-start slows first requests (large Express app): high severity.
+- SES sandbox only allows sending to verified addresses: medium severity.
+- Socket.io cannot run on Lambda (no persistent connections): medium severity.
+- External video source (Ophim) changes structure or shuts down: medium severity.
+- Exceeding free tier causes unexpected charges: low severity.
+- Credential leakage via public repos: low severity.
 
 #### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+- Cold-start: heavy modules lazy-required (socket.io, swagger, cron); MongoDB connection cached on `global`; consider Provisioned Concurrency for critical endpoints.
+- SES: request production access early (week 6); fall back to Nodemailer/Gmail SMTP meanwhile.
+- Realtime: enabled only on local/VPS; future work — migrate to API Gateway WebSocket.
+- Video source: crawler isolated as a swappable service.
+- Cost control: AWS Budgets + Billing Alarm; clean up resources after demo.
+- Credentials: secrets kept in SSM Parameter Store; `.env` git-ignored; IAM key rotation; secret scanning before commits.
 
 #### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+- If SES production access is delayed, temporarily send email via Nodemailer/Gmail SMTP.
+- If the external video origin becomes slow or overloaded, a dedicated CloudFront distribution can be added as a caching layer for HLS segments (future work).
+- Clean-up guide ensures all resources can be torn down quickly after the demo to stop all charges.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
+#### Technical Improvements
+The entire platform runs serverless on AWS — auto-scaling with traffic, HTTPS-only, WAF-protected, with centralized CloudWatch monitoring and SNS alerting replacing manual, reactive operations. HLS video streams directly from its origin, so the backend carries no video bandwidth.
+
 #### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+A production-grade reference architecture for deploying Express/Next.js systems on AWS Serverless, a bilingual step-by-step workshop reusable by other learners, and a cost-optimized model (\~$18–20/month, no NAT Gateway required) validated against real traffic.
