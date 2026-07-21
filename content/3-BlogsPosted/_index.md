@@ -14,5 +14,5 @@ This blog introduces AWS Lambda Durable Functions, announced at AWS re:Invent 20
 ###  [Blog 2 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.2-Blog2/)
 This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
 
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+###  [Blog 3 - A SERVERLESS IMAGE PROCESSING PIPELINE WITH S3, LAMBDA, DYNAMODB AND SNS](3.3-Blog3/)
+This blog shares a serverless image processing pipeline on AWS, built with the S3 – Lambda – DynamoDB – SNS service set, which resizes and watermarks images automatically at upload time and scales smoothly with traffic instead of relying on a fixed server process.

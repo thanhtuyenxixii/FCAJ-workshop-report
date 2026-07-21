@@ -14,5 +14,5 @@ Blog này giới thiệu AWS Lambda Durable Functions được công bố tại 
 ###  [Blog 2 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.2-Blog2/)
 Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
 
-###  [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+###  [Blog 3 - PIPELINE XỬ LÝ ẢNH SERVERLESS VỚI S3, LAMBDA, DYNAMODB VÀ SNS](3.3-Blog3/)
+Blog này chia sẻ một pipeline xử lý ảnh theo hướng serverless trên AWS, sử dụng bộ dịch vụ S3 – Lambda – DynamoDB – SNS để tự động resize, watermark ảnh ngay khi upload, vận hành mượt mà và tự động scale theo traffic thay vì phụ thuộc vào một tiến trình server cố định.
