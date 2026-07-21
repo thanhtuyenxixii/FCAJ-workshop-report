@@ -8,6 +8,8 @@ pre : " <b> 5.1 </b> "
 
 🔗 **Sản phẩm demo trực tiếp:** [https://main.d1ktib0li4t40t.amplifyapp.com/](https://main.d1ktib0li4t40t.amplifyapp.com/)
 
+🎬 **Video demo:** [https://drive.google.com/drive/folders/15MoFtgWw3u2Cjx40EQBNj-LHT5x5Z7Fb?usp=sharing](https://drive.google.com/drive/folders/15MoFtgWw3u2Cjx40EQBNj-LHT5x5Z7Fb?usp=sharing)
+
 ### Bối cảnh & bài toán
 
 Trước khi bắt tay vào console, hãy cùng nhìn qua bài toán mà chúng ta sắp giải quyết. Dự án là một **nền tảng xem phim trực tuyến** (Netflix-clone) hoàn chỉnh gồm 2 ứng dụng:

@@ -8,6 +8,8 @@ pre : " <b> 5.1 </b> "
 
 🔗 **Live demo:** [https://main.d1ktib0li4t40t.amplifyapp.com/](https://main.d1ktib0li4t40t.amplifyapp.com/)
 
+🎬 **Demo video:** [https://drive.google.com/drive/folders/15MoFtgWw3u2Cjx40EQBNj-LHT5x5Z7Fb?usp=sharing](https://drive.google.com/drive/folders/15MoFtgWw3u2Cjx40EQBNj-LHT5x5Z7Fb?usp=sharing)
+
 ### Context & problem
 
 The project is a complete **online movie streaming platform** (Netflix-clone) with 2 applications:
