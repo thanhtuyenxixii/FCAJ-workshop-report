@@ -84,7 +84,7 @@ Kết quả phải trả về `Account` (12 số — **ghi lại số này**, c�
 | Upstash Redis | Có REDIS_URL dạng `rediss://...` (free tier) |
 | Email test | 1–2 địa chỉ email bạn truy cập được (để verify SES và nhận cảnh báo SNS) |
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Đăng nhập Console bằng `phim-admin` (có MFA), region Singapore.
 - `aws sts get-caller-identity` trả đúng account.

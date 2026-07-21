@@ -55,7 +55,7 @@ Kết quả: alarm chuyển **In alarm** (đỏ), hộp thư nhận email `ALARM
 
 CloudWatch → Metrics → xem lại Invocations/Duration/Errors của `phim-backend` và Count/4xx/5xx của `phim-api` sau cả buổi test — có dữ liệu thật để phân tích trong báo cáo (VD: cold start đầu tiên ~3–5s, các request sau ~100–300ms).
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 Đủ 7 bằng chứng: happy path, 404/401, object S3, email SES, log cron, email alarm, metric dashboard.
 

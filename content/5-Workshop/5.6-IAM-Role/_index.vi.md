@@ -63,7 +63,7 @@ pre : " <b> 5.6 </b> "
 
 Không cấp `ses:*` vì email đi qua SMTP credentials riêng (bước 5) — thêm một lớp tách quyền.
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 Role `phim-lambda-role` tồn tại, trust policy cho `lambda.amazonaws.com`, đúng 2 policy như ảnh chụp.
 

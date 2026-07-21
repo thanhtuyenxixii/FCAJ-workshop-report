@@ -73,7 +73,7 @@ Mở **Monitor → View CloudWatch logs** thấy dòng `[Cron] checkExpiredSubsc
 
 ![tạo schedule](/images/5-Workshop/5.8-EventBridge-Cron/13-create-schedule.png)
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Test tay `phim-cron` chạy Succeeded, log ghi kết quả kiểm tra.
 - Schedule `phim-daily-check-subs` trạng thái **Enabled**, lần chạy kế tiếp (Next invocation) là 00:00 ngày mai giờ VN.

@@ -47,7 +47,7 @@ aws --version
 
 ![cli version](/images/5-Workshop/5.2-Prerequisite/05-cli-version.png)
 
-2. Create an access key: IAM → Users → `phim-admin` → **Security credentials** → **Create access key** → use case **Command Line Interface (CLI)** → download the .csv (shown only once).
+2. Create an access key: IAM → Users → `phim-admin` → **Security credentials** → **Create access key** → use case **Command Line Interface (CLI)** → **download the .csv** (shown only once).
 
 ![access key](/images/5-Workshop/5.2-Prerequisite/06-access-key.png)
 
@@ -84,7 +84,7 @@ It must return your `Account` (12 digits — **note it down**; later steps call 
 | Upstash Redis | A `rediss://...` REDIS_URL (free tier) |
 | Test email | 1–2 addresses you can access (for SES verification and SNS alerts) |
 
-### ✅ Expected result
+### Expected result
 
 - Console signed in as `phim-admin` (with MFA), Singapore region.
 - `aws sts get-caller-identity` returns the correct account.

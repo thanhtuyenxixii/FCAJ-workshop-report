@@ -53,7 +53,7 @@ Phần **Block Public Access** phải bật cả 4 ô — minh chứng bucket kh
 Sau bước 9/10 khi đã có domain Amplify/CloudFront chính thức, có thể thu hẹp `AllowedOrigins` về đúng 2 domain đó (least privilege).
 {{% /notice %}}
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Bucket `phim-avatars-<ACCOUNT_ID>` tồn tại ở `ap-southeast-1`, cột **Access** hiển thị "Bucket and objects not public".
 - Tab Permissions có CORS đã lưu.

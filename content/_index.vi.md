@@ -17,13 +17,13 @@ chapter: false
 
 &emsp; **Ngành:** Công nghệ thông tin
 
-&emsp; **Lớp:** 2280602990
+&emsp; **Lớp:** 22DTHC4
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
 
 &emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
+&emsp; **Thời gian thực tập:** Từ ngày 05/05/2026 đến ngày 30/07/2026
 
 ![Ảnh đại diện của bạn](/images/hovietthang.png)
 

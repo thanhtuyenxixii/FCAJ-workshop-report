@@ -39,7 +39,7 @@ Hệ thống đã chạy xong, nhưng chúng ta cần biết khi nào nó gặp 
 (Tuỳ chọn) Tạo thêm **Billing alarm** đề phòng chi phí: CloudWatch (region **us-east-1**) → Billing → EstimatedCharges ≥ $25 → cùng topic `phim-alerts`.
 {{% /notice %}}
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Đọc được log từng request; metric có dữ liệu; subscription Confirmed; alarm ở trạng thái OK.
 

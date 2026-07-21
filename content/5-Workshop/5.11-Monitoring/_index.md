@@ -24,22 +24,22 @@ Read the automatic Lambda + API Gateway logs/metrics in **CloudWatch**, create a
 
 ### 11.3. SNS topic
 
-1. **SNS** → **Topics** → **Create topic**: Standard, name `phim-alerts`.
+1. **SNS** → **Topics** → **Create topic**: **Standard**, name `phim-alerts`.
 2. **Create subscription**: Protocol **Email**, endpoint = your admin email.
 3. Click **Confirm subscription** in the email.
 
 ### 11.4. CloudWatch alarm
 
 1. **Alarms → Create alarm** → metric Lambda → `phim-backend` → **Errors**.
-2. Statistic **Sum**, period **5 minutes**, static threshold **>= 1**.
-3. Action: In alarm → SNS topic `phim-alerts`.
-4. Name: `phim-backend-errors` → Create.
+2. Statistic **Sum**, period **5 minutes**, **static** threshold **>= 1**.
+3. **Action:** In alarm → **SNS topic** `phim-alerts`.
+4. **Name:** `phim-backend-errors` → Create.
 
 {{% notice tip %}}
-(Optional) Add a **Billing alarm** (us-east-1): EstimatedCharges ≥ $25 → same topic `phim-alerts`.
+(Optional) Add a **Billing alarm** (**us-east-1**): EstimatedCharges ≥ $25 → same topic `phim-alerts`.
 {{% /notice %}}
 
-### ✅ Expected result
+### Expected result
 
 - Per-request logs readable; metrics populated; subscription Confirmed; alarm OK.
 

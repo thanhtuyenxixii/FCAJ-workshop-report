@@ -57,7 +57,7 @@ aws ssm get-parameters-by-path --path /phim/prod --with-decryption --query "Para
 
 ![verify cli](/images/5-Workshop/5.3-SSM-Parameters/07-verify-cli.png)
 
-### ✅ Expected result
+### Expected result
 
 - At least `MONGODB_URI`, `JWT_SECRET`, `REDIS_URL`, `FRONTEND_URL` exist under `/phim/prod` as SecureStrings.
 - `get-parameters-by-path` lists them all.

@@ -50,7 +50,7 @@ Backend dùng `FRONTEND_URL` để cấu hình CORS. Quay lại **SSM Parameter 
 
 Sau đó vào Lambda `phim-backend` → tab Code → **Deploy** lại (hoặc đổi bất kỳ env var nào rồi Save) để function khởi động lại và đọc giá trị mới.
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Build Amplify xanh; web truy cập được qua domain `*.amplifyapp.com`; trang chủ load danh sách phim từ API.
 

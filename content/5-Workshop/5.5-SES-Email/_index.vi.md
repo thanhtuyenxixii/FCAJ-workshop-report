@@ -44,7 +44,7 @@ Gửi thử một email qua ứng dụng (vd đăng ký hoặc quên mật khẩ
 ![gửi email test](/images/5-Workshop/5.5-SES-Email/02-send-test-email.png)
 ![nhận email test](/images/5-Workshop/5.5-SES-Email/03-receive-test-email.png)
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Ít nhất 1 identity **Verified**; có SMTP credentials; 4 parameter SMTP đã lưu trong SSM.
 

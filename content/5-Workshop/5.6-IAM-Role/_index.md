@@ -63,7 +63,7 @@ Create the `phim-lambda-role` IAM role for both Lambda functions (backend + cron
 
 No `ses:*` is granted — email uses dedicated SMTP credentials (step 5), one more layer of separation.
 
-### ✅ Expected result
+### Expected result
 
 `phim-lambda-role` exists, trusts `lambda.amazonaws.com`, and has exactly the two policies shown.
 

@@ -46,7 +46,7 @@ Chỉ làm bước này **sau khi** đã chụp đủ ảnh cho báo cáo!
 1. **Billing and Cost Management** → **Cost Explorer**: xem chi phí theo ngày sau 24h — các dịch vụ về ~$0.
 2. (Nên làm) Billing → **Budgets** → tạo budget $5/tháng để nhận email nếu còn tài nguyên nào bị sót.
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 Toàn bộ 11 nhóm tài nguyên đã xóa; Cost Explorer không còn phát sinh chi phí mới.
 

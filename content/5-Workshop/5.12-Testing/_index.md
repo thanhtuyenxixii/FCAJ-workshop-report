@@ -36,11 +36,11 @@ The backend should fail gracefully with structured JSON errors, not crash.
 
 ### 12.4. Email via SES
 
-Register a new account (with a verified address while in sandbox) or use **Forgot password** — the email arrives via SES with the verified identity as sender.
+**Register a new account** (with a verified address while in sandbox) or use **Forgot password** — the email arrives via SES with the verified identity as sender.
 
 ### 12.5. Cron works
 
-Invoke `phim-cron` with `{}` from the Test tab → the newest `/aws/lambda/phim-cron` log shows `[Cron] checkExpiredSubscriptions: {...}`.
+Invoke `phim-cron` with `{}` from the **Test** tab → the newest `/aws/lambda/phim-cron` log shows `[Cron] checkExpiredSubscriptions: {...}`.
 
 ### 12.6. Alarm → SNS email
 
@@ -55,7 +55,7 @@ Result: the alarm turns **In alarm** (red), and the SNS email `ALARM: "phim-back
 
 Review Invocations/Duration/Errors of `phim-backend` and Count/4xx/5xx of `phim-api` after the session — real data to analyze in the report (e.g. first cold start ~3–5s, warm requests ~100–300ms).
 
-### ✅ Expected result
+### Expected result
 
 All 7 pieces of evidence: happy path, 404/401, S3 object, SES email, cron log, alarm email, metrics dashboard.
 

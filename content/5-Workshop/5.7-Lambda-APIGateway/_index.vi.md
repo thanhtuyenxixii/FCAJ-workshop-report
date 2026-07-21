@@ -133,7 +133,7 @@ curl "https://<api-id>.execute-api.ap-southeast-1.amazonaws.com/api/movies?limit
 
 ![kiểm tra api curl](/images/5-Workshop/5.7-Lambda-APIGateway/13-check-api-curl.png)
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Lambda `phim-backend` test nội bộ trả 200.
 - Invoke URL công khai trả đúng dữ liệu qua HTTPS.

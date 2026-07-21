@@ -8,10 +8,6 @@ chapter: false
     
 # Internship Report
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
 ### Student Information:
 &emsp; **Full Name:** Ho Viet Thang
 
@@ -23,13 +19,13 @@ chapter: false
 
 &emsp; **Major:** Information Technology
 
-&emsp; **Class:** 2280602990
+&emsp; **Class:** 22DTHC4
 
 &emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
 &emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Internship Duration:** From 04/05/2025 to 25/07/2025
+&emsp; **Internship Duration:** From 05/05/2026 to 30/07/2026
 
 ![Your profile picture](/images/hovietthang.png)
 

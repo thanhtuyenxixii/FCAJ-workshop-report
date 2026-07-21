@@ -53,7 +53,7 @@ The **Block Public Access** section must have all 4 boxes ON — proof the bucke
 After steps 9/10, tighten `AllowedOrigins` to your exact Amplify/CloudFront domains (least privilege).
 {{% /notice %}}
 
-### ✅ Expected result
+### Expected result
 
 - Bucket `phim-avatars-<ACCOUNT_ID>` exists in `ap-southeast-1`; the **Access** column shows "Bucket and objects not public".
 - CORS saved under Permissions.

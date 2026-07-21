@@ -17,7 +17,7 @@ With the default `*.cloudfront.net` domain **no certificate work is needed**. AC
 ### 10.2. Create the distribution
 
 1. **CloudFront** → **Create distribution**.
-2. **Origin 1 — Amplify (default):** origin domain `<branch>.<app-id>.amplifyapp.com` (typed manually), Protocol **HTTPS only**.
+2. **Origin 1 — Amplify (default):** **origin domain** `<branch>.<app-id>.amplifyapp.com` (typed manually), **Protocol** HTTPS only.
 
 ![distribution options](/images/5-Workshop/5.10-CloudFront-WAF/01-distribution-options.png)
 ![origin amplify](/images/5-Workshop/5.10-CloudFront-WAF/02-origin-amplify.png)
@@ -28,7 +28,7 @@ With the default `*.cloudfront.net` domain **no certificate work is needed**. AC
 ![cache settings](/images/5-Workshop/5.10-CloudFront-WAF/04-cache-settings.png)
 
 4. → **Create distribution** (leave WAF off for now — attached in 10.4). Wait for status **Deployed** (~5 minutes).
-5. **Origin 2 — API Gateway:** tab **Origins** → **Create origin**: origin domain `<api-id>.execute-api.ap-southeast-1.amazonaws.com`, Protocol HTTPS only.
+5. **Origin 2 — API Gateway:** tab **Origins** → **Create origin**: **origin domain** `<api-id>.execute-api.ap-southeast-1.amazonaws.com`, Protocol HTTPS only.
 
 ![origin api gateway](/images/5-Workshop/5.10-CloudFront-WAF/05-origin-apigateway.png)
 
@@ -89,7 +89,7 @@ curl https://<dist-id>.cloudfront.net/api/health-check
 # {"status":"ok","message":"Server is running"}
 ```
 
-### ✅ Expected result
+### Expected result
 
 - One CloudFront domain serves FE + API + avatars; WAF associated; the S3 bucket still blocks all public access.
 

@@ -57,7 +57,7 @@ aws ssm get-parameters-by-path --path /phim/prod --with-decryption --query "Para
 
 ![verify cli](/images/5-Workshop/5.3-SSM-Parameters/07-verify-cli.png)
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - Tối thiểu `MONGODB_URI`, `JWT_SECRET`, `REDIS_URL`, `FRONTEND_URL` tồn tại dưới `/phim/prod`, type SecureString.
 - Lệnh `get-parameters-by-path` trả đủ danh sách.

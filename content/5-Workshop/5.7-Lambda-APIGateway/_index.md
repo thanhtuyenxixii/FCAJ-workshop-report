@@ -48,7 +48,7 @@ aws s3 cp phim-be-lambda.zip s3://phim-avatars-<ACCOUNT_ID>/deploy/phim-be-lambd
 
 ### 7.2. Create the `phim-backend` Lambda
 
-1. Console → **Lambda** → **Create function** → **Author from scratch**: name `phim-backend`, runtime **Node.js 20.x**, arch `x86_64`, execution role → **Use an existing role** → `phim-lambda-role` → **Create function**.
+1. Console → **Lambda** → **Create function** → **Author from scratch**: **name** `phim-backend`, **runtime** **Node.js 20.x**, **arch** `x86_64`, execution role → **Use an existing role** → **`phim-lambda-role`** → **Create function**.
 
 ![create function](/images/5-Workshop/5.7-Lambda-APIGateway/04-create-function.png)
 
@@ -56,7 +56,7 @@ aws s3 cp phim-be-lambda.zip s3://phim-avatars-<ACCOUNT_ID>/deploy/phim-be-lambd
 
 ![upload zip](/images/5-Workshop/5.7-Lambda-APIGateway/05-upload-zip.png)
 
-3. **Runtime settings → Edit → Handler:** `src/lambda.handler` → Save.
+3. **Runtime settings** → **Edit** → **Handler:** `src/lambda.handler` → Save.
 4. **Configuration → General configuration → Edit:** Memory **1024 MB**, Timeout **30 seconds** → Save.
 
 ![general configuration](/images/5-Workshop/5.7-Lambda-APIGateway/06-general-configuration.png)
@@ -99,7 +99,7 @@ aws s3 cp phim-be-lambda.zip s3://phim-avatars-<ACCOUNT_ID>/deploy/phim-be-lambd
 
 ### 7.4. Create the HTTP API
 
-1. Console → **API Gateway** → **Create API** → **HTTP API** → **Build**: integration **Lambda** → `phim-backend`, API name `phim-api`.
+1. Console → **API Gateway** → **Create API** → **HTTP API** → **Build**: integration **Lambda** → `phim-backend`, **API name** `phim-api`.
 
 ![configure api](/images/5-Workshop/5.7-Lambda-APIGateway/09-configure-api.png)
 
@@ -127,7 +127,7 @@ curl "https://<api-id>.execute-api.ap-southeast-1.amazonaws.com/api/movies?limit
 
 ![check api curl](/images/5-Workshop/5.7-Lambda-APIGateway/13-check-api-curl.png)
 
-### ✅ Expected result
+### Expected result
 
 - The internal Lambda test returns 200.
 - The public Invoke URL returns correct data over HTTPS.

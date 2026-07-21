@@ -14,7 +14,7 @@ Replace `node-cron` (which cannot run on serverless) with **EventBridge Schedule
 
 Use the **same zip** from step 7 — only the handler differs:
 
-1. **Lambda** → **Create function**: name `phim-cron`, runtime Node.js 20.x, role **`phim-lambda-role`**.
+1. **Lambda** → **Create function**: **name** `phim-cron`, **runtime** Node.js 20.x, **role** **`phim-lambda-role`**.
 
 ![basic information](/images/5-Workshop/5.8-EventBridge-Cron/01-basic-information.png)
 
@@ -70,7 +70,7 @@ Use the **same zip** from step 7 — only the handler differs:
 
 ![create schedule](/images/5-Workshop/5.8-EventBridge-Cron/13-create-schedule.png)
 
-### ✅ Expected result
+### Expected result
 
 - Manual test of `phim-cron` succeeds and logs the check result.
 - Schedule `phim-daily-check-subs` is **Enabled** with the next invocation at 00:00 VN time.

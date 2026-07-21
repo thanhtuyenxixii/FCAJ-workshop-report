@@ -47,7 +47,7 @@ To double-check the variable name: open `phim-fe/src/config/API.js`, line 1: `ex
 
 The backend uses `FRONTEND_URL` for CORS. In **SSM Parameter Store**, set `/phim/prod/FRONTEND_URL` = `https://<branch>.<app-id>.amplifyapp.com`, then redeploy the `phim-backend` Lambda so a fresh cold start reads the new value.
 
-### ✅ Expected result
+### Expected result
 
 - Green Amplify build; the site is reachable at `*.amplifyapp.com`; the homepage loads movies from the API.
 

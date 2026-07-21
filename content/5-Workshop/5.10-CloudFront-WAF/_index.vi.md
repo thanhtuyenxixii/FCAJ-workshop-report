@@ -89,7 +89,7 @@ curl https://<dist-id>.cloudfront.net/api/health-check
 # {"status":"ok","message":"Server is running"}
 ```
 
-### ✅ Kết quả mong đợi
+### Kết quả mong đợi
 
 - 1 domain CloudFront phục vụ cả FE + API + avatar; WAF Associated; bucket S3 vẫn Block Public Access.
 

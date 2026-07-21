@@ -44,7 +44,7 @@ Send yourself a test email through the app (e.g. registration or password reset)
 ![send test email](/images/5-Workshop/5.5-SES-Email/02-send-test-email.png)
 ![receive test email](/images/5-Workshop/5.5-SES-Email/03-receive-test-email.png)
 
-### ✅ Expected result
+### Expected result
 
 - At least one **Verified** identity; SMTP credentials created; the 4 SMTP parameters stored in SSM.
 
