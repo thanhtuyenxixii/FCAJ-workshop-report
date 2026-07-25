@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-The internship journey was enriched by participating in three prominent technology events, which offered hands-on learning experiences, deep technical insights, and valuable networking opportunities within the community.
+The internship journey was enriched by participating in four prominent technology events, which offered hands-on learning experiences, deep technical insights, and valuable networking opportunities within the community.
 
 ### [Event 1](4.1-Event1/)  
 &emsp;**Event Name:** AWS Vietnam Community Day 2026 (Saturday Meetup)  
@@ -46,3 +46,17 @@ The internship journey was enriched by participating in three prominent technolo
 &emsp;**Event Description:** A specialized seminar analyzing infrastructure scale, FinOps cost optimization, and secure connectivity for enterprise-grade AI Agents. Featured topics included Multi-Agent platforms for cloud management, real-time speech processing for Vietnamese Voice AI, DevOps Agents for automatic root cause analysis, and establishing private connection paths using Private Subnets and VPC Endpoints.  
 
 &emsp;**Value Gained:** Developed a deep understanding of Zero Trust security principles and the "Human-in-the-loop" approval philosophy when integrating AI into cloud operations. Mastered secure routing architectures utilizing AWS PrivateLink, Route 53 Resolver, TLS-encrypted ALBs, and safe integration of the Model Context Protocol (MCP).
+
+### [Event 4](4.4-Event4/)  
+&emsp;**Event Name:** AWS Agentic AI Buildweek 2026 Showcase & Sharing  
+
+&emsp;**Date & Time:** July 25, 2026 (09:00 - 12:00)  
+
+&emsp;**Location:** Online (YouTube Livestream & Subtitle Archive)  
+
+&emsp;**Role:** Online Attendee  
+
+&emsp;**Event Description:** A project showcase and summary event for the Agentic AI Buildweek 2026 Hackathon hosted by AWS and JI Fund. Features keynote guidance on AI Agent career paths from AWS ASEAN tech leaders, along with winning solution presentations: multi-channel KFC AI ordering chatbot (One Team - 1st Prize), Multi-Agent competitor intelligence platform (Final Scale - 2nd Prize), and automated anti-money laundering workflow engine for banking (Six Pillars).  
+
+&emsp;**Value Gained:** Understood real-world design and deployment patterns of Multi-Agent systems on AWS (Bedrock Agent Core Memory, Kinesis, Step Functions, Vector OpenSearch), learned practical cloud FinOps trade-offs (YOLO Small vs SageMaker instance costs), hackathon scope management strategies, and the essential "Human-in-the-loop" governance philosophy.
+

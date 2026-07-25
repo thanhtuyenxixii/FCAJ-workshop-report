@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Hành trình thực tập được đồng hành cùng ba sự kiện công nghệ nổi bật, mở ra những cơ hội học hỏi thực chiến, tích lũy tri thức chuyên môn sâu rộng và kiến tạo các kết nối giá trị trong cộng đồng.
+Hành trình thực tập được đồng hành cùng bốn sự kiện công nghệ nổi bật, mở ra những cơ hội học hỏi thực chiến, tích lũy tri thức chuyên môn sâu rộng và kiến tạo các kết nối giá trị trong cộng đồng.
 
 ### [Event 1](4.1-Event1/)
 &emsp;**Tên sự kiện:** AWS Vietnam Community Day 2026 (Gặp gỡ Thứ Bảy)
@@ -48,3 +48,17 @@ Hành trình thực tập được đồng hành cùng ba sự kiện công ngh�
 &emsp;**Mô tả sự kiện:** Hội thảo tập trung phân tích chuyên sâu các bài toán hạ tầng, tối ưu chi phí FinOps và bảo mật kết nối cho AI Agents cấp doanh nghiệp. Chương trình giới thiệu các giải pháp đột phá như Multi-Agent giám sát hệ thống cloud, xử lý tiếng Việt thời gian thực cho Voice AI, DevOps Agent tự động hóa điều tra sự cố, và thiết lập kết nối mạng nội bộ an toàn qua Private Subnet và VPC Endpoints.
 
 &emsp;**Kết quả đạt được:** Hiểu sâu sắc tư duy bảo mật Zero Trust và triết lý "Human-in-the-loop" (con người kiểm duyệt) khi ứng dụng AI vào vận hành hệ thống đám mây. Nắm vững cơ chế định tuyến an toàn qua AWS PrivateLink, Route 53 Resolver, ALB mã hóa TLS và cách tích hợp giao thức MCP để mở rộng tri thức cho AI Agent một cách bảo mật.
+
+### [Event 4](4.4-Event4/)
+&emsp;**Tên sự kiện:** AWS Agentic AI Buildweek 2026 Showcase & Sharing
+
+&emsp;**Thời gian:** 25/07/2026 (Từ 09:00 đến 12:00)
+
+&emsp;**Địa điểm:** Trực tuyến (YouTube Livestream & Subtitle Archive)
+
+&emsp;**Vai trò trong sự kiện:** Người tham dự (Online Attendee)
+
+&emsp;**Mô tả sự kiện:** Buổi báo cáo kết quả và tổng kết cuộc thi Hackathon Agentic AI Buildweek 2026 do AWS phối hợp cùng JI Fund tổ chức. Sự kiện bao gồm định hướng phát triển sự nghiệp AI Agent từ đại diện AWS ASEAN, phần trình bày các giải pháp xuất sắc đoạt giải cao: Chatbot đặt đồ ăn KFC đa kênh qua Zalo/WhatsApp (One Team - Giải Nhất), Hệ thống Multi-Agent phân tích tín hiệu đối thủ (Final Scale - Giải Nhì), và Trợ lý điều tra chống rửa tiền tự động cho ngân hàng (Six Pillars).
+
+&emsp;**Kết quả đạt được:** Hiểu rõ quy trình thiết kế và triển khai thực tế các hệ thống Multi-Agent trên AWS (Bedrock Agent Core Memory, Kinesis, Step Functions, Vector OpenSearch), học hỏi bài học xương máu về FinOps tối ưu chi phí hạ tầng (YOLO Small vs SageMaker), tư duy quản lý scope dự án hiệu quả khi thi đấu Hackathon và triết lý "Human-in-the-loop" trong vận hành sản phẩm.
+
