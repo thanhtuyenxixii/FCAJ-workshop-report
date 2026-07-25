@@ -13,122 +13,140 @@ pre: " <b> 4.4. </b> "
 | **Event Name** | AWS Agentic AI Buildweek 2026 Showcase & Sharing |
 | **Date & Time** | July 25, 2026 (09:00 - 12:00) |
 | **Location** | Online (YouTube Livestream & Subtitle Archive) |
-| **Attendance Mode** | Online (Video recording analysis & subtitle review) |
-| **Role** | Online Attendee |
+| **Attendance Mode** | Online (Reviewing video recording and team presentation decks) |
+| **Role** | Attendee |
 
 ### Event Objectives
 
-The **AWS Agentic AI Buildweek Showcase & Sharing** was a comprehensive wrap-up and project showcase event for the *Agentic AI Buildweek 2026 Hackathon*, jointly organized by **AWS**, **JI Fund**, and the **FCAJ community**. This event served as a real-world playground for cloud engineers, developers, and tech students to transform bold AI Agent ideas into functional products capable of solving practical enterprise challenges.
+The **AWS Agentic AI Buildweek Showcase & Sharing** was the wrap-up event for the *Agentic AI Buildweek 2026 Hackathon*, organized by **AWS**, **JI Fund**, and the **FCAJ community**.
 
-The core objective of this session was to dissect multi-agent infrastructure architectures and practical product development workflows for AI agents across F&B, market intelligence, and banking/finance domains. In addition, the event provided authentic career guidance from AWS ASEAN leadership, hard-earned FinOps lessons on cloud cost optimization, strategies for handling low-resource languages like Vietnamese, and effective scope management techniques for hackathons.
+The session focused on multi-agent infrastructure architectures and real-world AI agent deployments across F&B, market research, and banking/finance. Additionally, speakers from AWS and competing teams shared practical takeaways on cloud cost management (FinOps), handling low-resource Vietnamese data, and keeping project scope tightly managed during hackathons.
 
 ### Speakers & Participating Teams
 
-The event gathered distinguished speakers from AWS alongside the top winning teams from the hackathon:
-
 | No. | Speaker / Team | Role / Award | Topic |
 | :-: | :--- | :--- | :--- |
-| 1 | **Joseph Marazota** | Head of Technology @ *AWS ASEAN* | *Opening Keynote: A 20-year tech journey, shifting to the AI Agent era, breaking mental models, and the Human-in-the-loop principle* |
-| 2 | **Nguyen Gia Hung** | Head of Solution Architect @ *AWS Vietnam* | *Special Guest: AWS Vietnam leadership welcome & presenting certificates to winning teams* |
-| 3 | **One Team** | 1st Prize Winner @ *AWS Track* | *AI-Powered Conversational Ordering: Multi-channel KFC ordering agent on Zalo/WhatsApp utilizing AWS Agent Core Memory, TinyFish scraper, and anti-hallucination guardrails* |
-| 4 | **Final Scale (Signal C)** | 2nd Prize Winner @ *AWS Track* | *Multi-Agent Market Intelligence: Competitor & market signal analysis based on Value Creation Canvas integrated with LangFuse & Bedrock Guardrails* |
-| 5 | **Six Pillars** | Outstanding Team @ *FinTech Track* | *Adaptive Workflow Engine for Anti-Money Laundering (AML): Automated AML investigation assistant for banking, reducing false positives by 90–95%* |
+| 1 | **Joseph Marazota** | Head of Technology @ *AWS ASEAN* | *Keynote: Shifting to the AI Agent era, breaking mental models, and the Human-in-the-loop principle* |
+| 2 | **Nguyen Gia Hung** | Head of Solution Architect @ *AWS Vietnam* | *AWS Vietnam welcome address & certificate presentation for winning teams* |
+| 3 | **One Team** | 1st Prize Winner @ *AWS Track* | *KFC Chatbot Project: Multi-channel ordering agent via Zalo/WhatsApp using AWS Agent Core Memory, TinyFish scraper, and Last Verify mechanism* |
+| 4 | **Final Scale (Signal C)** | 2nd Prize Winner @ *AWS Track* | *Multi-Agent Market Intelligence: Competitor & market signal analysis built on Value Creation Canvas, LangFuse & Bedrock Guardrails* |
+| 5 | **Team Plan C** | Hackathon Team | *SA Professional AI Native App: AI assistant for requirement analysis, automatic Draw.io architecture generation, cost estimation & Terraform IaC output* |
+| 6 | **Team 3KA** | Hackathon Team | *Sheper Project & 24h Hackathon Journey: Stress management, lessons on coding under pressure, and risk management* |
+| 7 | **Six Pillars** | Outstanding Team @ *FinTech Track* | *Adaptive Workflow Engine for AML: Automated anti-money laundering investigation assistant for banking, reducing false positives by 90–95%* |
 
 ---
 
 ### Key Highlights
 
-#### 1. Career Guidance & Mindset Shift from AWS ASEAN Leadership
+#### 1. Career Guidance & Mindset Shift from AWS Leadership
 
-The opening presentation offered inspiring perspectives through keynotes by **Mr. Joseph Marazota** (Head of Technology, AWS ASEAN) and **Mr. Nguyen Gia Hung** (Head of Solution Architect, AWS Vietnam).
+Key insights shared by **Mr. Joseph Marazota** (Head of Technology, AWS ASEAN) and **Mr. Nguyen Gia Hung** (Head of Solution Architect, AWS Vietnam):
 
-- **Evolution of Software Release Cycles:** Reflecting on a 20-year career in technology, Mr. Joseph highlighted how banking software releases evolved from once a quarter to once every two weeks, and now down to automated continuous releases per minute powered by AI Agents.
-- **Breaking Old Mental Models:** Young tech talent should not feel constrained by legacy practices or fear a lack of experience. Adopting new mental models and fresh perspectives is essential to driving innovation.
-- **The "Human-in-the-loop" Philosophy:** Although Amazon operates over 1 million robots in fulfillment centers, "a robot without human programming and direction is merely a piece of useless hardware." Humans remain the essential decision-makers (*Human-in-the-loop*) throughout every innovation lifecycle.
+- **Software Development Velocity Shift:** 20 years ago, banks deployed software once a quarter, then moved to every two weeks with Agile/DevOps. In the AI Agent era, systems can automate continuous releases.
+- **Unconstrained Mindset:** Young engineers shouldn't feel limited by legacy paradigms or a lack of experience. Fresh mental models help uncover innovative problem-solving approaches.
+- **"Human-in-the-loop" Governance:** Amazon runs over 1 million robots in fulfillment centers, but robots still require human logic and direction. Humans remain the essential controlling node in any AI system.
 
-#### 2. Multi-Channel KFC AI Ordering Chatbot – Winning Solution by One Team
+#### 2. KFC Chatbot Project (One Team - 1st Prize)
 
-**One Team** captured 1st Prize by addressing a critical friction point in the F&B industry.
+**One Team** tackled real-world food ordering friction in the F&B sector with key technical implementations:
 
-- **Real-World Problem Analysis:** Learning from past failures like McDonald's AI drive-thru trial (where AI hallucination led to ordering 100 chicken nuggets accidentally), the team identified that requiring customers to download new apps, create accounts, and switch chat apps creates massive ordering friction.
-- **Multi-Channel Zalo/WhatsApp Solution:** Bringing the ordering experience directly inside everyday messaging apps (focusing heavily on Zalo in Vietnam).
-- **Breakthrough Technical Architecture:**
-  - *Dynamic Menu Scraping:* Lacking official KFC APIs, the team leveraged **TinyFish** to scrape dynamic menu items directly from KFC's website and store them in AWS databases.
-  - *Contextual Personalized Memory:* Implemented **AWS Agent Core Memory** to give each user a dedicated agent memory, enabling the bot to recall last week's orders for instant re-ordering.
-  - *Low Latency & Cost Optimization:* Achieved fast 3–5 second response latency at a cost of roughly **$0.006 per order** (a 75% reduction in infrastructure costs compared to traditional serverless architectures).
-  - *Last Verification Layer:* Introduced a final order confirmation step before payment execution to eliminate AI hallucination risks.
+- **Real-World Problem:** Drawing lessons from McDonald's AI drive-thru test (where context errors led to accidentally ordering 100 chicken nuggets), the team noted that forcing users to download new apps creates high drop-off rates. Bringing the chatbot directly into familiar messaging apps like Zalo or WhatsApp (focusing on Zalo in Vietnam) is a far more practical path.
+- **Technical Architecture:**
+  - *Dynamic Menu Scraping:* Lacking official KFC APIs, the team used **TinyFish** to scrape dynamic menu data from KFC's website and store it in AWS databases.
+  - *Contextual Personalized Memory:* Implemented **AWS Agent Core Memory** to give each user a dedicated agent memory, recalling previous orders for quick re-ordering.
+  - *Cost & Performance:* Response latency reached 3–5 seconds at roughly **$0.006 per order** (~75% cost reduction compared to standard serverless setups).
+  - *Order Verification (Last Verify):* Added a final order details confirmation step before payment execution to eliminate AI hallucination risks.
 
-#### 3. Competitor Intelligence via Multi-Agent Systems – Final Scale (Signal C)
+#### 3. Multi-Agent Competitor Market Intelligence (Final Scale - 2nd Prize)
 
-**Final Scale** (a student team from FPT) demonstrated an exemplary blend of business domain understanding and modern multi-agent architecture.
+**Final Scale** (a student team from FPT) approached competitor market analysis with a practical mindset:
 
-- **"Business-First" Mindset:** No matter how complex a technology is, it cannot overcome domain business boundaries. Over 70% of pitching success comes from how effectively the solution addresses real-world business pain points.
-- **Value Creation & Delivery Canvas:** Adapted the traditional Business Model Canvas (which focuses heavily on revenue streams unsuitable for hackathon demos) into a focused Value Creation and Delivery framework.
+- **Business Drives Technology:** A complex AI architecture has no value if it fails to solve a business need. The team used a **Value Creation & Delivery Canvas** (adapted from the Business Model Canvas) to focus on delivered output rather than unnecessary financial metrics for a hackathon demo.
 - **Multi-Agent Architecture & Security:**
-  - *Crawler Subagent:* Combined Apify (for static web data) and TinyFish (for deep dynamic web crawling).
-  - *Token Optimization & Injection Defense:* Cleaned raw data using plain code prior to LLM processing to reduce token costs and prevent prompt injection attacks from external websites.
-  - *Quality Evaluation via LangFuse:* Evaluated output quality using **LangFuse**. Low-scoring data triggered up to two retries to save costs; persistent low scores were stored in DynamoDB tagged for human review.
-  - *Multi-Layer Security:* Enforced protection using **Bedrock Guardrails**, AWS Cognito, WAF, and Amplify.
+  - *Crawler Subagent:* Used Apify for static sites/large data and TinyFish for deep dynamic web scraping.
+  - *Raw Data Filtering & Token Optimization:* Filtered out raw noise using plain code before passing data into LLMs, saving token costs and mitigating prompt injection risks from external web content.
+  - *Quality Evaluation via LangFuse:* Evaluated output scores using **LangFuse**. Low scores triggered up to 2 retries; persistent low scores were saved to DynamoDB tagged for human review.
+  - *Security:* Integrated **Bedrock Guardrails**, AWS Cognito, WAF, and Amplify.
 
-#### 4. FinOps Lessons from the YOLO Demo Discussion
+#### 4. AI Assistant for Solution Architects (Team Plan C)
 
-An insightful segment during the Q&A focused on model selection trade-offs during live demonstrations.
+**Team Plan C** introduced the **SA Professional AI Native App** designed to automate workflow architecture design and cost estimation for Solution Architects:
 
-- The team shared their early mistake of hosting a large object tracking AI model on **Amazon SageMaker**, which accumulated a **$48 bill** in just 3 hours of testing.
-- The team rapidly downgraded to **YOLOv26 Small**. The compact model size provided smooth execution, maintained high confidence scores (90%–97% for human detection), and minimized infrastructure costs—a valuable FinOps lesson for cloud engineering students.
+- **Real-World Problem:** Solution Architects often face urgent client demands for cloud architecture diagrams and cost estimations within tight deadlines (overnight or 2–3 days). Manually drawing diagrams, looking up pricing tiers, and writing Infrastructure-as-Code (IaC) scripts consumes extensive effort.
+- **Solution & Workflow:**
+  - *Natural Language & Document Ingestion:* Supports free-text input or company policy/specification document uploads.
+  - *Automated Draw.io Diagram Generation:* AI parses requirements and generates AWS-compliant architecture diagrams directly inside a Draw.io editor interface, allowing manual drag-and-drop tweaks.
+  - *Cost Estimation & IaC Output:* Automatically computes project cost breakdowns and generates reusable Terraform / CloudFormation modules.
+  - *Policy & Blacklist Enforcement:* Built validation filters to prevent AI from deploying unapproved services (e.g., blocking high-level abstraction services like App Runner in favor of enterprise-managed ECS/Lambda).
+  - *Auto-Deployment:* Clicking confirm triggers automated IaC deployment scripts to provision live resources on AWS.
 
-#### 5. Adaptive Workflow Engine for Anti-Money Laundering (AML) – Six Pillars
+#### 5. Real-Time Crowd Monitoring & YOLO FinOps Lessons (Team 3KA)
 
-**Six Pillars** presented an impressive enterprise-grade solution tailored for the Banking, Financial Services, and Insurance (BFSI) sector.
+**Team 3KA** (a 5-member student team from FPT) presented the **Sheper** project (An AI camera system for detecting and managing crowd congestion at airports, supermarkets, and event venues) along with key 24h hackathon lessons:
 
-- **Banking AML Pain Points:** Traditional rule-based monitoring generates **90%–95% false positive alerts**. Manual review by financial analysts costs $20–$25 per case and takes nearly 3 hours, causing severe operational backlogs and team burnout.
+- **Sheper Technical Architecture:**
+  - *Video Streaming Pipeline:* Ingested CCTV footage directly via **Kinesis Video Streams** into an ECS Fargate cluster.
+  - *Object Detection & Tracking:* Combined **YOLO** with **ByteTrack** for real-time person detection, movement ID tracking, and congestion zone visualization.
+  - *Agent & Operator Co-pilot:* Utilized Amazon Bedrock linked to DynamoDB/S3 for autonomous monitoring and operator guidance.
+- **FinOps Lessons from SageMaker Billing Incident ($48):**
+  - In Q&A, the team shared a practical lesson: they initially hosted a large AI model on **Amazon SageMaker** for a 3-hour demo run, which unexpectedly cost **$48**.
+  - They swiftly pivoted to **YOLOv26 Small**, maintaining high confidence scores (90%–97%) while heavily cutting cloud infrastructure costs.
+- **Risk Management & 24h Hackathon Experience:**
+  - *Git Security Slip-up:* Exhaustion led a member to push a `.env` environment file to Git, serving as a hard-learned lesson on secrets management.
+  - *Time & Scope Management:* Expended 3 hours merely revising UI text, emphasizing the critical need for upfront role delegation and maintaining manageable project scope.
+
+#### 6. Anti-Money Laundering (AML) Solution (Six Pillars - Outstanding FinTech Team)
+
+**Six Pillars** solved operational bottlenecks in Banking and Financial Services (BFSI):
+
+- **Banking AML Bottlenecks:** Traditional rule-based engines generate **90%–95% false positive alerts**. Analysts spend around $20–$25 and nearly 3 hours reviewing each case manually, leading to severe backlogs.
 - **Three-Tier Intelligent Workflow:**
-  - *Layer 1 - Fast Detection:* Kinesis Data Streams ingest real-time transactions, Lambda performs feature engineering, and an XGBoost model on Bedrock rapidly scores risk (routing only 5%–10% suspicious cases upward).
-  - *Layer 2 - Agentic Investigation:* Deployed three specialized sub-agents: **KYC Profile Check**, **Money Flow Check** (detecting structuring/smurfing patterns), and **Sanction Check** (cross-referencing sanction lists). Knowledge was retrieved from legal and typology vector stores in **Vector OpenSearch**.
-  - *Layer 3 - Decision & Human-in-the-loop:* Utilized a two-stage LLM evaluation (first LLM proposes Dismiss/Hold/Escalate; second LLM acts as an LLM-as-a-Judge reviewer). Critical or sanctioned cases were escalated immediately to a human analyst dashboard for final sign-off.
+  - *Layer 1 (Fast Detection):* Kinesis Data Streams ingest real-time transactions, Lambda extracts features, and XGBoost on Bedrock rapidly filters transactions (forwarding only 5%–10% suspicious cases upward).
+  - *Layer 2 (Agentic Investigation):* Deployed three specialized sub-agents: **KYC Profile Check**, **Money Flow Check** (detecting structuring/smurfing patterns), and **Sanction Check**. Legal and typology rules were retrieved from **Vector OpenSearch**.
+  - *Layer 3 (Decision & Human-in-the-loop):* Utilized a two-stage LLM evaluation (first LLM proposes Dismiss/Hold/Escalate; second LLM acts as an LLM-as-a-Judge reviewer). Complex or sanctioned cases were routed directly to the analyst dashboard for final human sign-off.
 
 ---
 
 ### Key Takeaways
 
 #### Design & Business Mindset
-- **"Product-First & Business-First" Philosophy:** A well-architected AI system fails if it does not solve real business pain points. Engineering must always start from real-world problems before choosing technologies.
-- **Hackathon Scope Control:** Avoid expanding project scope during limited hackathon timelines. Winning strategies focus on maintaining a tight, functional Minimum Viable Product (MVP) coupled with clear pitching delivery.
-- **"Human-in-the-loop" Governance:** In sensitive domains like Banking or F&B, AI acts as an accelerator, but final approval remains with human operators for absolute system safety.
+- **Focus on Real Problems:** AI architecture matters little unless it solves real user pain points. Always start from the problem before choosing tech.
+- **Hackathon Scope Management:** Keep the scope manageable, deliver a smooth MVP, and present the core solution clearly during pitching.
+- **Human-in-the-loop Governance:** In sensitive domains like Banking or F&B, AI handles data processing and recommendations, while humans retain final approval authority.
 
 #### Technical Architecture & FinOps
-- **Context Isolation via Multi-Agent Systems:** Learned to break down monolithic tasks into specialized sub-agents (Crawler, Profile, Money Flow, Sanction) to narrow Context Windows, assigning lightweight models to simple tasks and larger LLMs to complex reasoning.
-- **Practical Cloud FinOps:** Continuously monitor cloud spending by filtering data prior to LLM calls and choosing right-sized models.
-- **AWS Technology Integration:** Mastered combining AWS Kinesis, Step Functions, Lambda, Bedrock Agent Core Memory, DynamoDB, and Vector OpenSearch into a cohesive enterprise architecture.
+- **Narrowing Context via Multi-Agent Systems:** Splitting systems into specialized sub-agents (Crawler, KYC, Money Flow...) narrows context windows, allowing small models for simple tasks to cut costs.
+- **FinOps Awareness:** Pre-filter data with plain code before LLM calls, and use lightweight models (like transitioning from SageMaker to YOLO Small).
+- **AWS Service Integration:** Mastered linking Kinesis, Step Functions, Lambda, Bedrock Agent Core Memory, DynamoDB, and Vector OpenSearch into a cohesive system diagram.
 
 ---
 
 ### Application to Work & Study
 
-- **Applying Multi-Agent Patterns:** Incorporate multi-agent modular design and context isolation concepts into university software engineering projects.
-- **Practicing Cloud Cost Optimization:** Calculate estimated resource costs before deployment on AWS, prioritizing serverless options and lightweight models over costly dedicated instances.
-- **Enhancing Teamwork & Pitching Skills:** Adopt structured architecture diagrams, clear slide presentation styles, and a collaborative "Roll together, learn together" team spirit.
+- **University Projects:** Apply multi-agent patterns and context window reduction strategies to software engineering coursework.
+- **Cloud Cost Optimization:** Prioritize Serverless architectures and right-sized model configs when using AWS to prevent unnecessary spending.
+- **Teamwork & Pitching:** Learn structured architecture mapping and concise slide design techniques from winning teams.
 
 ---
 
 ### Online Participation Experience
 
-Even though I attended the showcase via online stream recordings and subtitle transcripts, I felt the vibrant energy and creative passion of the participating student teams and cloud engineers.
+Watching on YouTube wasn't the same as being there in person, but hearing teams talk about 3 AM debug sessions or accidentally burning $48 on SageMaker made the event really engaging. It gave me a lot of clarity on delegating tasks to agents to save token costs and choosing models that fit the budget.
 
-Authentic stories about midnight coding sessions, spirited debates on architecture trade-offs, and humorous lessons on accidental cloud bills brought technology to life. The event provided immense inspiration and confidence for my senior year journey in cloud and AI engineering.
+Even through video recordings and transcripts, I gained plenty of practical lessons on how teams package products and solve real problems.
 
 ---
 
 ### Lessons Learned & Personal Contributions
 
-- **Lessons Learned:** Technology mastery has no shortcuts. Embracing a *Lifelong Learner* mindset, understanding real-world business needs, and staying agile are essential traits for a future Cloud & AI Architect.
-- **Personal Contribution:** Conducted an in-depth review of event video transcripts and documentation, synthesizing this comprehensive study report to share valuable multi-agent architectural insights and hackathon lessons with the AWS FCJ community.
+- **Lessons Learned:** Keep an active learning mindset, understand business requirements before diving into code, and stay flexible with technical choices.
+- **Personal Contribution:** Reviewed full video subtitle transcripts and compiled this structured report to share multi-agent architecture patterns and FinOps experiences with the AWS FCJ community.
 
 ---
 
 ### Event Gallery
 
-Below are the actual photos captured during the presentations, architecture slides, and team project showcases at the **AWS Agentic AI Buildweek Showcase & Sharing** event:
+Below are selected photos of presentation slides and team project demos from the **AWS Agentic AI Buildweek Showcase & Sharing** event:
 
 ![Official event banner for FCAJ - Agentic AI Build Week 2026 at Bitexco Financial Tower](/images/4-EventParticipated/4.4-Event4/1.png)
 
@@ -150,4 +168,4 @@ Below are the actual photos captured during the presentations, architecture slid
 
 ![Slide introducing Team Six Pillars members competing at the Agentic AI Build Week Hackathon](/images/4-EventParticipated/4.4-Event4/10.png)
 
-> *This event provided invaluable architectural insights and inspiration, reinforcing my system design mindset and shaping my career roadmap in AWS Cloud and Agentic AI.*
+> *The event provided practical architectural lessons that helped reinforce my system design thinking and cloud cost management on AWS.*

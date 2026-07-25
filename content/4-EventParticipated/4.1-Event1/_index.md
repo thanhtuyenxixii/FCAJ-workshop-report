@@ -16,9 +16,9 @@ pre: " <b> 4.1. </b> "
 | **Role** | Attendee |
 
 ### Event Objectives
-The Saturday Meetup - AWS Vietnam Community Day 2026 was a major technology event that I had the opportunity to attend in person on the 26th floor of the Bitexco Financial Tower. The core purpose of this event was to create a networking and learning space for the local AWS community in Vietnam. 
+The AWS Vietnam Community Day 2026 at Bitexco Financial Tower was an in-person meetup designed to connect learners and practitioners across the AWS cloud ecosystem in Vietnam.
 
-Rather than focusing on dry theory from textbooks, the meetup presented practical stories from enterprises operating large-scale systems like GoTymeX and VPBank. Through these real-world case studies, attendees - ranging from senior systems engineers to students like myself - could learn about system optimization, integrating Generative AI into business workflows, and shaping their own technical skills development path.
+The session focused on real-world large-scale system operations from companies like GoTymeX, VPBank, and VIB. As a senior tech student, attending helped me gain fresh insights into infrastructure optimization, Generative AI / Multi-Agent adoption, and practical cloud engineering workflows.
 
 ### Speakers
 
@@ -31,85 +31,96 @@ Rather than focusing on dry theory from textbooks, the meetup presented practica
 | 5 | **Duc Dao** | Solution Architect @CloudKinetics | *Non-Determinism of "Deterministic" LLM Settings* |
 | 6 | **Vy Lam** | Sr. Business Systems Analyst @VPBank | *Enterprise-Grade Multi-Agent System* |
 
+---
+
 ### Key Highlights
 
-#### Drawbacks of legacy application architectures
-While listening to the presentations, I realized that many businesses still struggle with legacy architectures like monolithic systems or centralized servers that distribute content directly without using a CDN. The primary drawback here is high latency. Users in Vietnam accessing US-hosted origin servers often face response times exceeding 200ms, which degrades user experience and consumes excessive international bandwidth. Moreover, exposing the origin server directly to the public internet makes it vulnerable to DDoS attacks and botnets without any edge-level shielding.
+#### 1. Pain Points from Monolith Systems & Basic AI
 
-In AI applications, legacy designs integrate LLMs via simple, raw prompts without managing context or retaining long-term memory. This causes the AI to give generic answers, suffer from hallucinations, and fail at complex business tasks. Furthermore, assuming that setting `Temperature = 0` guarantees deterministic output leads to logic bugs in production, as parallel GPU optimizations introduce non-determinism during inference. Finally, in banking, manual credit scoring systems are too slow and rigid to parse the unstructured data of startups, delaying crucial funding.
+Through the speaker presentations, many enterprises still face issues with legacy Monolith setups or serving content directly from a single origin server without a CDN:
 
-### Transitioning to a modern architecture - Microservice Architecture
-To address these limitations, migrating to a modern microservices architecture is essential. In this model, large monolithic systems are broken down into independent services communicating via APIs or events.
+- **High Latency:** Users in Vietnam querying origin servers in the US suffer >200ms round trips, wasting international bandwidth and slowing page loads.
+- **Security Vulnerabilities:** Direct public access to the origin server leaves systems exposed to DDoS attacks and botnets due to a lack of edge protection.
+- **Limitations of Basic AI:** Sending raw prompts without context or memory management leads to hallucinations and unreliable responses for complex workflows.
+- **Misconception about `Temperature = 0`:** Setting temperature to 0 does not guarantee 100% deterministic outputs due to asynchronous GPU parallel optimization (Non-Determinism).
 
-A key takeaway from Ms. Vy Lam's session was applying this pattern to AI as a Multi-Agent system. Instead of relying on a single LLM to do everything, the system decomposes tasks among specialized agents that function like independent microservices (e.g., data collection, risk analysis, compliance). This isolates failures and allows independent upgrades without disrupting the entire system.
+#### 2. Microservices & Multi-Agent Applications in Banking
 
-### Domain-Driven Design (DDD)
-DDD serves as a guiding compass to define clear boundaries between microservices or agents. Rather than jumping straight into coding, DDD requires engineers to collaborate with business teams to establish a Ubiquitous Language and map out Bounded Contexts.
+Migrating from Monoliths to Microservices decouples large monoliths into independent services communicating via APIs or events.
 
-This was illustrated by the VIB Team's UTMorpho project at LotusHacks 2026. Within a 36-hour timeframe, applying DDD was critical to define boundary contexts and user interactions, helping them build a successful MVP. Similarly, at VPBank, orchestrating a Virtual Credit Committee using Multi-Agent systems required clear agent boundaries to ensure compliance in a strict banking environment.
+A key takeaway from Ms. Vy Lam (VPBank) was applying microservice principles to AI via **Multi-Agent** systems:
+- Rather than relying on a single LLM to handle everything, tasks are split across specialized agents: data collection, credit risk analysis, and compliance checking.
+- Modular agents improve fault isolation and allow independent component updates.
 
-### Event-Driven Architecture
-An event-driven architecture enables services or agents to communicate asynchronously, achieving loose coupling. When an event occurs (e.g., a customer uploads documents), the system publishes an event, and the interested services automatically capture it to process their respective workloads without synchronous polling.
+#### 3. Domain Boundary Mapping with DDD
 
-At the network edge, Amazon CloudFront coupled with CloudFront Functions and Lambda@Edge captures request/response events at edge locations closest to users. This allows us to perform URL rewrites, redirection, or header modifications at the edge under 1ms, eliminating the need to route requests back to a distant origin server.
+Domain-Driven Design (DDD) establishes clear boundaries for microservices or individual AI agents. Engineers collaborate with business stakeholders to define a Ubiquitous Language and map out Bounded Contexts.
 
-### Compute Evolution
-Compute infrastructure has evolved from bare-metal servers to virtual machines (EC2), containers (ECS, Fargate), and now Serverless (AWS Lambda).
+- **Lesson from Team VIB (LotusHacks 2026):** During the 36-hour sprint building UTMorpho, applying DDD to separate business boundaries kept the team focused on delivering a functional MVP on time.
+- **Enterprise Use Case at VPBank:** Setting up a "Virtual Credit Committee" using Multi-Agents required distinct agent responsibility boundaries to adhere to strict banking compliance.
 
-Shifting to serverless compute frees developers from OS management, network configuration, and security patching. The system automatically scales from zero to thousands of concurrent requests, charging only for active execution time. This allows developers to focus entirely on business logic and helps companies optimize operational costs.
+#### 4. Latency Optimization with Event-Driven Architecture & Edge Computing
 
-### Amazon Q Developer
-Amazon Q Developer and the G-AsiaPacific AI assistant suite, Amazon Quick (Quick Chat, Quick Flow, Quick Spaces, Quick Sight), demonstrated how AI can optimize the Software Development Lifecycle (SDLC).
+- **Event-Driven:** Services and agents publish and consume events asynchronously, decoupling system dependencies.
+- **Edge Processing:** Combining Amazon CloudFront with CloudFront Functions and Lambda@Edge inspects requests and responses directly at nearby Edge Locations. Performing URL rewrites or header modifications at the Edge achieves sub-1ms latency without routing back to distant origin servers.
 
-These tools assist with code generation, performance optimization, and writing unit tests. Notably, Quick Sight allows business users with no coding background to query raw database tables and generate analytical dashboards using natural language chat prompts, accelerating business decisions.
+#### 5. Compute Evolution: From Bare-Metal to Serverless
+
+Looking at compute evolution over time: Bare-metal physical servers -> EC2 Virtual Machines -> Containers (ECS, Fargate) -> Serverless (AWS Lambda).
+
+Serverless eliminates OS management and server patching overhead. Systems scale automatically based on traffic and bill strictly for execution time, enabling developers to focus purely on business logic.
+
+#### 6. Accelerating SDLC with AI Assistants (Amazon Q & Quick Suite)
+
+Amazon Q Developer and the Amazon Quick suite (Quick Chat, Quick Flow, Quick Spaces, Quick Sight) streamline software development lifecycle workflows:
+
+- Speeds up code generation, refactoring, and unit test creation.
+- Quick Sight enables non-technical business users to run natural language queries against raw data to build visual analytics dashboards without writing SQL.
+
+---
 
 ### Key Takeaways
 
-#### Design Mindset
-- I learned that CloudFront is not just a static cache for images; it is a security shield that protects backend servers (Origin Cloaking) and offloads origin traffic.
-- For AI applications, designing a "Second Brain" with long-term memory via RAG is crucial. AI is only as useful as the context it is provided with.
-- Technical design must always follow business domains (a business-first approach). Implementing complex tech without understanding the business problem leads to bloated architectures.
+#### Design & Architecture Mindset
+- CloudFront is more than a static asset cache; it acts as an edge security shield (Origin Cloaking) protecting backend origin servers.
+- AI applications require structured context and long-term memory (via RAG) to produce domain-accurate responses.
+- System design must remain business-first; pushing overly complex tech into simple problems creates unnecessary overhead.
 
-#### Technical Architecture
-- I mastered advanced CloudFront caching techniques, including multi-layer caching, Regional Edge Caches, and request collapsing to optimize dynamic content delivery.
-- I learned to choose between CloudFront Functions (lightweight JS, <1ms execution at edge, for header changes and redirects) and Lambda@Edge (full Node.js/Python runtimes for complex logic).
-- I understand the root cause of LLM non-determinism (GPU parallel calculations) and how to set Guardrails to control structured output.
+#### CloudFront & LLM Engineering
+- Edge Tooling Trade-offs:
+  - *CloudFront Functions:* Ultra-fast (<1ms) lightweight JS execution at the edge, ideal for header rewrites and redirects.
+  - *Lambda@Edge:* Supports full Node.js/Python runtimes for complex business logic.
+- Understanding LLM non-determinism (floating-point operations on parallel GPUs) and employing Guardrails to enforce structured outputs.
 
-#### Modernization Strategy
-- Upgrading legacy applications should be a phased process guided by the 7Rs model and clear ROI assessments to reduce operational risks.
-- The VIB Team's UTMorpho project taught me the value of building a solid MVP first to test assumptions quickly, embracing failures, and pivoting when stuck.
+---
 
-### Applying to Work
-- In upcoming workshop labs (like the IoT Weather Platform), I will place CloudFront in front of the backend to speed up real-time dashboard updates and secure the origin with AWS Shield.
-- I will deploy static front-end apps hosting on S3 with CloudFront, configuring Origin Access Control (OAC) to block direct S3 bucket access.
-- I will apply RAG and context memory to build a personal AWS study chatbot to organize my documentation and notes.
-- I will integrate Amazon Q Developer in VS Code to assist with code generation, refactoring, and unit tests.
+### Application to Work & Study
 
-### Event Experience
+- Position CloudFront in front of backend origins in upcoming projects (e.g., IoT Weather Platform) to accelerate data transfers and secure origins using OAC / AWS Shield.
+- Deploy static S3 front-ends paired with CloudFront and Origin Access Control (OAC) to block public S3 bucket access.
+- Integrate Amazon Q Developer into VS Code for code generation and unit testing.
+- Build a personal RAG-based AWS study chatbot to index and search study notes.
 
-#### Learning from highly skilled speakers
-The presentations were engaging and filled with real-world architectural diagrams. I was particularly impressed by Mr. Nguyen Tuan Thinh's CloudFront talk. As a 12x AWS Certified Champion Instructor, he explained CDN mechanisms and local edge locations in Vietnam using clear, relatable examples that helped me understand the concepts without getting overwhelmed.
+---
 
-#### Hands-on technical exposure
-I enjoyed seeing the live demos of the credit scoring Multi-Agent workflow at VPBank. Listening to the VIB Team share their LotusHacks struggles, bugs, and pivots under pressure provided practical insights into teamwork and troubleshooting.
+### Event Experience & Discussions
 
-#### Leveraging modern tools
-Watching Amazon QuickSight Q generate analytical reports from natural language prompts during the demo was a highlight. It showed how AI is closing the gap between business users and data engineering.
+- **Speaker Insights:** Impressed by Mr. Nguyen Tuan Thinh's CloudFront session. As an AWS Champion Instructor, his practical analogies made CDN concepts and local Edge Locations easy to grasp.
+- **Live Demos:** Watching VPBank's Multi-Agent credit evaluation demo and hearing Team VIB recount their LotusHacks last-minute bug fixes offered valuable real-world engineering perspectives.
+- **Networking:** Spoke with senior systems engineers and AWS Community Builders during breaks to gather practical tips on career growth and AWS certification prep.
 
-### Networking and discussions
-The atmosphere at Bitexco was energetic. During breaks, I spoke with senior systems engineers and AWS Community Builders who shared career advice and AWS study tips. It was inspiring to see the vitality of the local AWS community.
+---
 
-### Lessons learned & Personal Engagement
-- **Lessons Learned**:
-  + Successful technical communication lies in simplifying abstract concepts into clear, everyday analogies.
-  + Edge performance optimization and context-driven AI integrations are critical to building modern cloud solutions.
-- **Personal Engagement & Contribution**:
-  + Actively participated in discussions and raised questions during Mr. Nguyen Tuan Thinh's CloudFront session to clarify performance trade-offs between CloudFront Functions and Lambda@Edge in real-world scenarios.
-  + Networked and shared ideas with local AWS Community Builders to gather insights on career paths and preparation strategies for upcoming community hackathons.
+### Lessons Learned & Personal Engagement
 
-### Event Photos
+- **Lessons Learned:** Clear technical communication relies on mapping abstract concepts to relatable real-world analogies. Edge optimization and contextual AI integration are essential foundations for modern cloud architectures.
+- **Personal Engagement:** Raised questions during the CloudFront talk to clarify trade-offs between CloudFront Functions and Lambda@Edge, and connected with peers in the AWS FCJ community.
 
-Here are some of the real moments captured during the AWS Vietnam Community Day 2026 event:
+---
+
+### Event Gallery
+
+Below are photos captured during presentation slides and key moments at AWS Vietnam Community Day 2026:
 
 ![Slide "What's Next" for UTMorpho project by Team VIB, showing QR codes to access their Devpost and GitHub repositories](/images/4-EventParticipated/4.1-Event1/IMG20260523105858.jpg)
 
@@ -145,5 +156,4 @@ Here are some of the real moments captured during the AWS Vietnam Community Day 
 
 ![Group photo of all participants and speakers at the end of the event](/images/4-EventParticipated/4.1-Event1/event1.jpg)
 
-> The meetup provided valuable knowledge and technology inspiration, serving as a solid asset for my future studies and work.
-
+> *The meetup provided practical architectural perspectives, helping reinforce my cloud learning path across AWS and Generative AI.*

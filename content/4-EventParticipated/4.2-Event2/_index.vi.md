@@ -11,144 +11,145 @@ pre: " <b> 4.2. </b> "
 | Thông tin sự kiện | Chi tiết |
 | :--- | :--- |
 | **Tên sự kiện** | AWS First Cloud Journey AI |
-| **Thời gian** | 06/06/2026 (Từ 09:00 đến 12:00) |
+| **Thời gian** | 06/06/2026 (09:00 - 12:00) |
 | **Địa điểm** | Tầng 26, Bitexco Financial Tower, TP. Hồ Chí Minh |
 | **Vai trò** | Người tham dự |
 
 ### Mục Đích Của Sự Kiện
-Sự kiện AWS First Cloud Journey AI là một chương trình chia sẻ công nghệ chuyên sâu tập trung vào trí tuệ nhân tạo (AI), các ứng dụng Cloud-native hiện đại, nghệ thuật làm việc nhóm hiệu quả và hành trình định hướng sự nghiệp trong ngành Công nghệ thông tin mà tôi có cơ hội tham gia trực tiếp tại văn phòng AWS Việt Nam (tầng 26, Bitexco Financial Tower). 
+Sự kiện **AWS First Cloud Journey AI** tổ chức tại văn phòng AWS Việt Nam (tầng 26 Bitexco). Buổi này tập trung chia sẻ về AI, ứng dụng Cloud-native, kỹ năng làm việc nhóm và định hướng nghề nghiệp cho sinh viên cũng như lập trình viên trẻ.
 
-Mục đích cốt lõi của sự kiện lần này là mang lại cho cộng đồng sinh viên và các lập trình viên trẻ một cái nhìn toàn diện về việc ứng dụng các dịch vụ đám mây AWS và AI vào các bài toán thực tiễn. Nội dung trải dài từ việc thiết kế hệ thống game multiplayer thời gian thực, tối ưu đóng gói ứng dụng với Docker, xây dựng kiến trúc tìm kiếm thông tin nâng cao GraphRAG, đến việc tăng cường bảo mật Web bằng mô hình Machine Learning. Bên cạnh các kỹ thuật chuyên sâu, sự kiện còn chia sẻ các nguyên lý làm việc nhóm và công cụ cộng tác hiệu quả giúp tối ưu hóa hiệu suất dự án. Đồng thời, phiên thảo luận và câu chuyện thực tế từ một cựu kỹ sư Helpdesk thăng tiến lên Senior Sysadmin đã giúp bản thân tôi định hình rõ ràng lộ trình học tập, chuẩn bị hành trang kỹ thuật vững chắc để bước vào môi trường doanh nghiệp chuyên nghiệp.
+Nội dung bao quát từ thiết kế game multiplayer thời gian thực, tối ưu đóng gói container với Docker, xây dựng tìm kiếm GraphRAG, đến bảo mật Web bằng Machine Learning và lộ trình thăng tiến thực tế từ Helpdesk lên Sysadmin.
 
 ### Danh Sách Diễn Giả
-
-Sự kiện được bắt đầu với phần **AWS AI Director Panel / Q&A** đầy hấp dẫn do Ban giám đốc AWS AI điều phối thảo luận và trả lời câu hỏi trực tiếp. Tiếp đó là danh sách các bài thuyết trình chuyên sâu của các diễn giả:
 
 | STT | Diễn giả | Chức vụ | Chủ đề |
 | :-: | -------- | ------- | ------ |
 | 1 | **Nguyễn Quốc Bảo** | Cloud Engineer / Game Developer | *Multiplayer in the Cloud: Connecting Godot Clients with AWS WebSockets* |
 | 2 | **Huỳnh Bảo** | Junior Cloud Native Developer @Endava Vietnam | *Docker — A containerization technology* |
 | 3 | **Việt Phát** | AI Majoring @Swinburne University of Technology | *GraphRAG: Build GraphRAG applications using Amazon Bedrock and Amazon Neptune* |
-| 4 | **Lê Hoàng Gia Đại** | Final-year Student @HUTECH University | *WAF + ML for Cyber Attack Detection: Machine Learning-based Network Intrusion Detection System (NIDS) on AWS* |
+| 4 | **Lê Hoàng Gia Đại** | Sinh viên năm cuối @HUTECH University | *WAF + ML for Cyber Attack Detection: Machine Learning-based Network Intrusion Detection System (NIDS) on AWS* |
 | 5 | **Trần Trung Vinh** | System Administrator @Central Retail Group | *From IT Helpdesk to Senior Sysadmin* |
 | 6 | **Trương Huy Phước** | Presenter / Teamwork Coach | *The Art of Effective Teamwork* |
 
+---
+
 ### Nội Dung Nổi Bật
 
-#### Panel Thảo Luận & Hỏi Đáp Của Giám Đốc AWS AI
-Phiên mở màn mang đến không khí thảo luận sôi nổi về sự bùng nổ của trí tuệ nhân tạo và cách thế hệ kỹ sư trẻ nên chuẩn bị bản thân trước làn sóng công nghệ này.
-- **Kỹ năng cốt lõi**: Trong bối cảnh AI phát triển vượt bậc, bản thân người học cần đầu tư mạnh mẽ vào tư duy giải quyết vấn đề, thiết kế kiến trúc hệ thống và khả năng kết nối các dịch vụ đám mây linh hoạt. Viết code thủ công đơn thuần sẽ dần bị thay thế, nhưng tư duy phân tích nghiệp vụ và thiết kế giải pháp luôn là kỹ năng sống còn của người kỹ sư trong 5 năm tới.
-- **Khoảng cách doanh nghiệp**: Hiện có một khoảng cách lớn giữa kỳ vọng ứng dụng AI của doanh nghiệp và năng lực thực tế của đội ngũ xây dựng. Để thu hẹp khoảng cách này, lập trình viên cần hiểu sâu về các dịch vụ Managed Services của AWS nhằm rút ngắn thời gian phát triển và tối ưu hóa chi phí.
-- **Thông điệp cốt lõi**: Đám mây và AI đã hạ thấp rào cản gia nhập thị trường cho các nhà xây dựng công nghệ trẻ. Chỉ cần có ý tưởng và tư duy đúng, một kỹ sư trẻ hoàn toàn có thể tự mình xây dựng các ứng dụng quy mô toàn cầu.
+#### 1. Panel Thảo Luận Giám Đốc AWS AI
 
-#### Kết Nối Godot Client Với AWS WebSockets (Multiplayer in the Cloud)
-Chủ đề này tập trung vào việc thiết kế và lập trình hệ thống game kéo-búa-bao nhiều người chơi thời gian thực, giao tiếp trực tiếp qua giao thức mạng tin cậy.
-- **Lựa chọn kiến trúc mạng**:
-  + **UDP/ENet**: Thích hợp cho game hành động nhanh (FPS, đua xe) nhờ độ trễ cực thấp, nhưng cực kỳ phức tạp khi phải tự quản lý việc truyền nhận tin cậy.
-  + **HTTP Polling**: Thích hợp cho các tác vụ phi thời gian thực như đăng nhập, bảng xếp hạng nhưng độ trễ cao và lãng phí băng thông do cơ chế hỏi-đáp liên tục.
-  + **WebSocket**: Lựa chọn tối ưu cho các game theo lượt, sảnh chờ (lobby), hoặc chat nhờ hỗ trợ truyền nhận hai chiều toàn song công (full-duplex) thời gian thực và đảm bảo tính toàn vẹn của dữ liệu.
-- **Kiến trúc trên AWS**: Client phát triển bằng Godot Engine sử dụng lớp `WebSocketPeer` kết nối trực tiếp đến API Gateway WebSocket. API Gateway sẽ dựa trên trường `$request.body.action` để điều phối yêu cầu đến AWS Lambda (Node.js 20) xử lý logic và ghi nhận trạng thái vào bảng DynamoDB.
-- **Thách thức kỹ thuật**:
-  + **Stale Connections**: Người chơi thoát ứng dụng đột ngột khiến connectionId bị hỏng nhưng vẫn tồn tại trong DynamoDB, gây lỗi `GoneException` khi server cố gửi dữ liệu.
-  + **DynamoDB Scan Cost**: Việc lạm dụng `ScanCommand` để tìm kiếm đối thủ ghép cặp gây quá tải và làm tăng chi phí vận hành đáng kể khi quy mô người chơi lớn dần.
-  + **Stateless Lambda**: Do Lambda hoạt động không lưu trạng thái, toàn bộ trạng thái trò chơi bắt buộc phải được nạp và ghi lại liên tục vào DynamoDB trong mỗi request.
-- **Định hướng nâng cấp**: Chuyển đổi sang AWS GameLift để quản lý các máy chủ chuyên dụng (dedicated server) hỗ trợ tính toán vật lý phức tạp và tự động mở rộng linh hoạt.
+Mấy chia sẻ ở phiên Panel gãi đúng chỗ ngứa về thực trạng học và làm AI hiện nay:
 
-#### Docker – Công Nghệ Container Hóa (A Containerization Technology)
-Diễn giả Huỳnh Bảo đã cung cấp một cái nhìn trực quan và dễ tiếp cận về công nghệ container hóa, giải quyết bài toán môi trường chạy ứng dụng không nhất quán.
-- **Hạn chế của Máy ảo (Virtual Machines)**: Mỗi máy ảo đòi hỏi chạy một hệ điều hành riêng biệt, cực kỳ nặng nề, chiếm dụng nhiều tài nguyên CPU, RAM và dung lượng lưu trữ, đồng thời tốn nhiều công sức để vá lỗi, cập nhật định kỳ.
-- **Sức mạnh của Docker**: Docker đóng gói ứng dụng cùng toàn bộ thư viện, cấu hình phụ thuộc vào một container siêu nhẹ, dùng chung nhân hệ điều hành của máy chủ. Điều này hiện thực hóa triết lý "Build once, run anywhere", loại bỏ hoàn toàn lỗi "chạy được trên máy tôi nhưng lỗi trên server".
-- **Cơ chế lớp ảnh (Layered Image)**: Mỗi dòng lệnh trong `Dockerfile` tạo ra một image layer. Khi build lại ảnh, Docker tận dụng bộ nhớ đệm cache cho những layer không đổi, giúp tăng tốc độ đóng gói ứng dụng lên nhiều lần.
-- **Ứng dụng**: Docker là nền tảng cốt lõi để triển khai kiến trúc Microservices, xây dựng các đường ống CI/CD tự động và tối ưu hóa tài nguyên hạ tầng đám mây.
+- **Tư duy thiết kế quan trọng hơn gõ code:** Trong thời đại AI hỗ trợ viết code, kỹ năng quan trọng nhất của dev trẻ là tư duy giải quyết bài toán, thiết kế kiến trúc và biết cách ghép nối các dịch vụ Cloud. Code thủ công sẽ bớt dần, nhưng tư duy phân tích nghiệp vụ vẫn là chìa khóa.
+- **Thu hẹp khoảng cách doanh nghiệp:** Doanh nghiệp muốn dùng AI ngay nhưng đội ngũ triển khai thường thiếu kỹ năng thực tế. Giải pháp tốt nhất là tận dụng các Managed Services có sẵn của AWS để rút ngắn thời gian và đỡ tốn chi phí vận hành.
+- **Cơ hội cho sinh viên:** AI và Cloud đã hạ thấp rào cản kỹ thuật. Chỉ cần tư duy đúng và ý tưởng tốt, sinh viên hoàn toàn có thể tự dựng sản phẩm chạy toàn cầu.
 
-#### GraphRAG: Xây Dựng Ứng Dụng Bằng Amazon Bedrock Và Amazon Neptune
-Bài chia sẻ giới thiệu phương pháp tối ưu hóa khả năng tìm kiếm và trả lời câu hỏi của mô hình ngôn ngữ lớn dựa trên cấu trúc đồ thị dữ liệu.
-- **Giới hạn của RAG truyền thống**: RAG thông thường dựa trên tìm kiếm vector đơn giản thường gặp khó khăn với các câu hỏi đòi hỏi tư duy bắc cầu nhiều bước (multi-hop reasoning).
-- **Giải pháp GraphRAG**: Sử dụng đồ thị tri thức (Knowledge Graph) với các thực thể là đỉnh (nodes) và các quan hệ là cạnh (edges). Khi LLM nhận câu hỏi, hệ thống sẽ thực hiện duyệt đồ thị (graph traversal) qua nhiều tài liệu để trích xuất thông tin có ngữ cảnh liên kết chặt chẽ.
-- **Hai hướng tiếp cận trên AWS**:
-  + **Fully Managed Route**: Sử dụng Amazon Bedrock Knowledge Bases để tự động chia nhỏ, trích xuất thực thể, tạo nhãn và lưu trữ đồ thị trực tiếp trên Amazon Neptune Analytics để khám phá các mối quan hệ ẩn.
-  + **Custom Route**: Dựng pipeline xử lý dữ liệu tùy biến bằng LlamaIndex kết hợp với lưu trữ trên Amazon Neptune, sử dụng ngôn ngữ Cypher Query để thực hiện duyệt đồ thị đa bước phức tạp theo nhu cầu.
+#### 2. Game Multiplayer với Godot & AWS WebSockets
 
-#### Kết Hợp WAF + ML Để Phát Hiện Tấn Công Mạng (Cyber Attack Detection)
-Chuyên đề an ninh mạng chuyên sâu giới thiệu cách thức xây dựng hệ thống phát hiện xâm nhập mạng NIDS thông minh để bổ trợ cho tường lửa ứng dụng web.
-- **Hạn chế của WAF truyền thống**: Hoạt động chủ yếu dựa trên luật định sẵn (Rule-based), do đó rất dễ bị vượt qua bởi các cuộc tấn công zero-day mới, tấn công lai hoặc các hành vi bất thường chưa có trong cơ sở dữ liệu chữ ký.
-- **Giải pháp WAF + Machine Learning**:
-  + Phát triển NIDS thông minh bằng cách huấn luyện mô hình Machine Learning LightGBM trên bộ dữ liệu chuẩn hóa quốc tế CSE-CIC-IDS2018 trên AWS.
-  + Quy trình xử lý dữ liệu phức tạp: Gộp nhiều file CSV lớn, xử lý dữ liệu lỗi (xóa nhãn không hợp lệ, loại bỏ giá trị âm, NaN, vô cực), cân bằng lại các lớp nhãn tấn công thiểu số trước khi đưa vào huấn luyện mô hình.
-- **Kiến trúc triển khai thực tế**: VPC chứa các máy chủ EC2 chạy mô hình NIDS kết hợp với Application Load Balancer. Toàn bộ log traffic được đẩy thời gian thực qua Amazon Kinesis Data Firehose về S3. Một AWS Lambda sẽ phân tích và đối chiếu kết quả dự đoán của NIDS với các sự kiện AWS WAF, gửi cảnh báo qua SNS đến Security Hub, GuardDuty và CloudWatch để quản lý tập trung.
+Phần chia sẻ này demo hệ thống game kéo-búa-bao nhiều người chơi thời gian thực với các ghi chép kỹ thuật chính:
 
-#### Hành Trình Từ IT Helpdesk Đến Senior Sysadmin
-Câu chuyện đầy cảm hứng từ cựu kỹ sư Helpdesk Trần Trung Vinh mang lại nhiều bài học thực tế quý giá về định hướng nghề nghiệp và tự học công nghệ hạ tầng.
-- **Kỹ năng tích lũy từ Helpdesk**: Rèn luyện khả năng chịu đựng áp lực khi xử lý sự cố khẩn cấp, kỹ năng giao tiếp thuyết phục với người dùng và tư duy phân tích nguyên nhân gốc rễ (troubleshooting).
-- **Bước ngoặt nghề nghiệp**: Chủ động học sâu về hệ điều hành Linux và mạng máy tính (Networking), tự xây dựng các phòng Lab thực hành ảo hóa tại nhà để hiểu rõ bản chất hoạt động của hệ thống.
-- **Triết lý vận hành Sysadmin**:
-  + Đảm nhận các công việc quan trọng như phân bổ tài nguyên, vá lỗi bảo mật, lập kế hoạch dung lượng hệ thống.
-  + Ghi nhớ nguyên tắc cốt lõi: "Không bao giờ được kiểm thử trực tiếp trên môi trường production" để đảm bảo độ tin cậy tuyệt đối của hệ thống.
-  + Chuyển đổi từ hạ tầng vật lý truyền thống sang tư duy đám mây (Cloud Mindset với AWS), sử dụng hạ tầng dạng mã (IaC - Terraform) và văn hóa DevOps tự động hóa với Docker và các đường ống CI/CD.
+- **Lựa chọn giao thức mạng:**
+  - *UDP/ENet:* Nhẹ, độ trễ cực thấp (hợp game FPS, đua xe), nhưng phải tự viết logic đảm bảo truyền tin tin cậy.
+  - *HTTP Polling:* Dễ làm nhưng trễ cao, lãng phí băng thông do client phải hỏi server liên tục.
+  - *WebSocket:* Lựa chọn hợp lý cho game theo lượt hoặc sảnh chờ (lobby) nhờ truyền nhận 2 chiều full-duplex thời gian thực.
+- **Kiến trúc trên AWS:** Client Godot dùng `WebSocketPeer` nối tới API Gateway WebSocket. API Gateway dựa vào `$request.body.action` để gọi AWS Lambda (Node.js 20) xử lý logic và lưu trạng thái vào DynamoDB.
+- **Một số vướng mắc thực tế:**
+  - *Stale Connections:* Khách thoát game đột ngột làm `connectionId` bị rác trong DynamoDB, gây lỗi `GoneException` khi server gửi data.
+  - *Chi phí DynamoDB Scan:* Dùng `ScanCommand` để ghép cặp (matchmaking) sẽ làm quét toàn bộ table, tốn tiền và chậm khi user tăng.
+  - *Stateless Lambda:* Lambda không lưu trạng thái nên mỗi request đều phải đọc/ghi lại data game vào DynamoDB.
+- **Hướng nâng cấp:** Chuyển sang AWS GameLift nếu cần dedicated server chạy tính toán vật lý phức tạp.
 
-#### Nghệ Thuật Làm Việc Nhóm Hiệu Quả (The Art of Effective Teamwork)
-Diễn giả Trương Huy Phước đã chia sẻ một góc nhìn sâu sắc về khía cạnh kỹ năng mềm, khẳng định rằng sự phối hợp ăn ý giữa con người mới là yếu tố quyết định sự thành bại của mọi dự án công nghệ.
-- **4 Quy tắc vàng (The 4 Golden Rules)**:
-  + **Rule 1: Mục tiêu rõ ràng & chia sẻ chung (Clear & Shared Goals)**: Toàn đội phải cùng hướng về một đích đến và hiểu rõ mục tiêu chung của dự án.
-  + **Rule 2: Đúng người, đúng việc (Right Person, Right Place)**: Phân chia vai trò dựa trên thế mạnh cá nhân để tối ưu hiệu suất làm việc.
-  + **Rule 3: Giao tiếp cởi mở & Lắng nghe thấu đáo (Open Communication & Active Listening)**: Tạo môi trường tôn trọng, khuyến khích phản hồi và luôn lắng nghe ý kiến của đồng đội.
-  + **Rule 4: Trách nhiệm cá nhân (Personal Accountability)**: Mỗi thành viên phải chủ động hoàn thành phần việc được giao và chịu trách nhiệm với kết quả chung.
-- **Bộ công cụ kỹ thuật số hỗ trợ (Digital Tools)**:
-  + **Quản lý công việc**: Sử dụng các phần mềm hiện đại như Trello, ClickUP để theo dõi tiến độ và phân công nhiệm vụ trực quan.
-  + **Không gian làm việc & giao tiếp**: Kết hợp Google Workspace cho lưu trữ tài liệu, cùng Slack và Discord làm kênh trao đổi nhanh chóng, liên tục.
+#### 3. Ghi chép về Docker & Containerization
+
+Anh Huỳnh Bảo chia sẻ cách đóng gói ứng dụng bằng Docker để xử lý triệt để lỗi "chạy trên máy tôi thì được nhưng lên server thì lỗi":
+
+- **Hạn chế của VM truyền thống:** Mỗi VM phải gánh 1 OS riêng, nặng nề và ngốn CPU/RAM/ổ cứng.
+- **Lợi ích của Docker:** Đóng gói app + thư viện phụ thuộc vào 1 container siêu nhẹ, dùng chung OS kernel với máy chủ.
+- **Cơ chế Image Layers:** Mỗi dòng trong `Dockerfile` tạo ra 1 layer. Docker tận dụng cache layer cũ giúp thời gian build lại image cực nhanh.
+- **Ứng dụng:** Là nền tảng để làm Microservices, dựng pipeline CI/CD tự động.
+
+#### 4. Ứng dụng GraphRAG với Amazon Bedrock & Neptune
+
+Bài chia sẻ của bạn Việt Phát tập trung vào cách giải bài toán tìm kiếm ngữ cảnh phức tạp cho LLM:
+
+- **Điểm yếu của RAG thường:** RAG dựa trên vector search thông thường hay bị hạn chế khi gặp câu hỏi cần suy luận qua nhiều bước (multi-hop reasoning).
+- **Giải pháp GraphRAG:** Dùng đồ thị tri thức (Knowledge Graph) lưu thực thể (nodes) và quan hệ (edges). Khi LLM nhận câu hỏi, hệ thống sẽ duyệt đồ thị (graph traversal) qua nhiều tài liệu để trích xuất ngữ cảnh liên kết.
+- **Cách triển khai trên AWS:**
+  - *Fully Managed:* Dùng Amazon Bedrock Knowledge Bases tự động chunking, trích xuất entity và lưu đồ thị trên Amazon Neptune Analytics.
+  - *Custom Route:* Dùng LlamaIndex kết hợp Amazon Neptune, dùng ngôn ngữ Cypher Query để duyệt đồ thị theo ý muốn.
+
+#### 5. Bảo mật Web: Kết hợp WAF + Machine Learning (NIDS)
+
+Khá ấn tượng với bài WAF + ML của bạn Gia Đại (đồng môn HUTECH luôn). Cách bạn xử lý imbalanced dataset trên bộ CSE-CIC-IDS2018 rồi đẩy log qua Firehose về S3 nhìn rất mượt và thực tế:
+
+- **Hạn chế của WAF truyền thống:** WAF chỉ chạy theo rule định sẵn nên dễ bỏ sót các đợt tấn công zero-day hoặc hành vi bất thường mới.
+- **Mô hình WAF + Machine Learning:**
+  - Huấn luyện model LightGBM trên bộ dữ liệu CSE-CIC-IDS2018 trên AWS để phát hiện xâm nhập mạng (NIDS).
+  - Tiền xử lý dữ liệu: Gộp CSV, làm sạch dữ liệu nhiễu (NaN, âm, vô cực) và cân bằng lại các lớp nhãn tấn công thiểu số trước khi train.
+- **Luồng hạ tầng AWS:** VPC chứa EC2 chạy model NIDS sau ALB. Traffic log gửi real-time qua Kinesis Data Firehose về S3 -> Lambda phân tích -> bắn cảnh báo qua SNS tới Security Hub, GuardDuty và CloudWatch.
+
+#### 6. Lộ trình phát triển: Từ IT Helpdesk lên Senior Sysadmin
+
+Bài chia sẻ từ anh Trần Trung Vinh (Central Retail) cho mình nhiều góc nhìn thực tế về tự học và thăng tiến nghề nghiệp:
+
+- **Kỹ năng tích lũy từ Helpdesk:** Học cách chịu áp lực khi xử lý sự cố, kỹ năng giao tiếp với user và tư duy tìm nguyên nhân gốc rễ (troubleshooting).
+- **Bước ngoặt:** Tự học sâu Linux và Networking, tự dựng phòng Lab thực hành ảo hóa tại nhà.
+- **Triết lý Sysadmin:**
+  - Nắm vững nguyên tắc: *"Không bao giờ test trực tiếp trên Production"*.
+  - Dịch chuyển tư duy sang Cloud (AWS), hạ tầng dạng mã (IaC - Terraform) và DevOps tự động hóa.
+
+#### 7. Kinh nghiệm làm việc nhóm (Teamwork & Digital Tools)
+
+Anh Trương Huy Phước đúc kết 4 quy tắc làm việc nhóm:
+1. *Mục tiêu rõ ràng (Clear Goals)*: Cùng hướng về một đích đến.
+2. *Đúng người đúng việc (Right Place)*: Phân chia theo thế mạnh cá nhân.
+3. *Giao tiếp cởi mở (Open Communication)*: Lắng nghe và phản hồi tôn trọng.
+4. *Trách nhiệm cá nhân (Accountability)*: Chủ động chốt task đúng hạn.
+
+Công cụ hỗ trợ: Trello/ClickUP quản lý task; Slack/Discord/Google Workspace để trao đổi và lưu trữ tài liệu.
+
+---
 
 ### Những Gì Học Được
 
-#### Tư Duy Thiết Kế
-- Tôi nhận ra rằng việc ứng dụng AI vào doanh nghiệp không chỉ dừng lại ở các chatbot đơn giản, mà cần có sự kết hợp sâu sắc của các cơ sở dữ liệu đồ thị (Graph Database) như Amazon Neptune để giải quyết triệt để các bài toán tìm kiếm thông tin liên kết phức tạp.
-- Khi thiết kế các ứng dụng mạng thời gian thực, việc lựa chọn giao thức (UDP hay WebSocket) phải bắt nguồn trực tiếp từ yêu cầu nghiệp vụ và trải nghiệm người dùng mong muốn, đồng thời phải thiết kế cơ chế xử lý lỗi ngắt kết nối đột ngột để hệ thống hoạt động ổn định.
-- Tư duy vận hành hệ thống luôn phải đặt tính an toàn và bảo mật lên hàng đầu. Việc kết hợp ML vào WAF giúp tạo ra một hệ thống phòng thủ chủ động, có khả năng tự thích ứng với các mối đe dọa mới thay vì chỉ thụ động chạy theo các luật định sẵn.
+#### Tư duy kỹ thuật
+- Kết hợp Graph Database (Amazon Neptune) với LLM giúp giải bài toán RAG phức tạp hiệu quả hơn hẳn vector search thuần túy.
+- Thiết kế ứng dụng real-time phải chọn đúng giao thức (WebSocket vs UDP) và luôn có phương án xử lý ngắt kết nối đột ngột (stale connection).
+- Làm bảo mật nên kết hợp Machine Learning với WAF để chủ động phát hiện hành vi bất thường thay vì chỉ phụ thuộc vào rule tĩnh.
 
-#### Kiến Trúc Kỹ Thuật
-- Nắm vững cách cấu hình API Gateway WebSocket định tuyến thông tin qua Route Key và quản lý trạng thái kết nối thông qua connectionId trong DynamoDB.
-- Hiểu rõ cơ chế xây dựng hình ảnh của Docker dựa trên các lớp ảnh (Image Layers) chồng lên nhau và cách tận dụng cache để tối ưu hóa thời gian build hình ảnh ứng dụng.
-- Phân biệt rõ hai mô hình triển khai GraphRAG trên AWS (dùng Bedrock Knowledge Bases + Neptune Analytics quản lý hoàn toàn hoặc dùng LlamaIndex + Neptune tùy biến sâu) để áp dụng linh hoạt theo nguồn lực dự án.
-- Hiểu sâu sơ đồ luồng dữ liệu an ninh mạng tích hợp các dịch vụ giám sát và bảo mật của AWS như WAF, Kinesis Firehose, Lambda, Security Hub, GuardDuty, và CloudWatch.
+#### Kỹ năng & Công cụ
+- Nắm cách API Gateway WebSocket dùng Route Key và `connectionId` trong DynamoDB để quản lý session.
+- Hiểu cơ chế layer cache của Dockerfile để tối ưu tốc độ build.
+- Bài học tự học từ anh Vinh: tập trung học chắc nền tảng (Linux & Networking) trước khi chạy theo các công cụ Cloud đắt tiền.
 
-#### Chiến Lược Phát Triển Bản Thân
-- Bản thân tôi tự rút ra bài học lớn về việc không nên dàn trải học quá nhiều công cụ cùng lúc. Thay vào đó, tôi cần tập trung đi sâu làm chủ 1-2 công nghệ nền tảng (như Linux và Networking cơ bản) trước khi mở rộng lên Cloud/DevOps.
-- Tầm quan trọng của việc xây dựng các bài Lab thực hành cá nhân (Home Labs). Kinh nghiệm thực tiễn có được từ việc tự dựng hệ thống và sửa lỗi có giá trị hơn rất nhiều so với việc chỉ học lý thuyết suông để thi lấy chứng chỉ.
-- Luôn giữ vững tinh thần kiên trì, không ngại bắt đầu từ những vị trí thấp nhất như Helpdesk, bởi mỗi trải nghiệm thực tế đều đóng góp tích cực vào sự trưởng thành chuyên môn sau này.
-- Thấu hiểu và áp dụng 4 quy tắc vàng trong làm việc nhóm để phối hợp nhịp nhàng, có trách nhiệm với các thành viên khác trong nhóm dự án.
+---
 
-### Ứng Dụng Vào Công Việc
-- Tôi sẽ tiến hành thực hành viết Dockerfile đóng gói các ứng dụng web nhỏ đã làm ở trường, áp dụng kỹ thuật tối ưu hóa các lớp ảnh để giảm thiểu dung lượng container và thực hành đẩy lên Amazon ECR.
-- Thiết lập một môi trường Lab cá nhân trên máy tính để thực hành cấu hình mạng cơ bản, cài đặt hệ điều hành Linux và viết các script shell tự động hóa đơn giản để củng cố kiến thức nền tảng.
-- Thử nghiệm xây dựng một game đơn giản sử dụng Godot Engine và tích hợp với API Gateway WebSocket trên AWS để làm quen với lập trình mạng thời gian thực và quản lý session người dùng.
-- Nghiên cứu tài liệu của LlamaIndex và Amazon Bedrock để tự tay dựng một ứng dụng RAG cơ bản chạy local, làm quen với quy trình cắt nhỏ dữ liệu (chunking) và nhúng vector (embedding).
-- Đọc thêm tài liệu về AWS WAF để hiểu cách xây dựng các quy tắc tùy biến (custom rules) bảo vệ các API Gateway của các bài thực hành workshop trước đây chống lại tấn công mạng.
-- Áp dụng các quy tắc cộng tác nhóm và các công cụ cộng tác trực quan như Trello, Slack vào quá trình học tập nhóm tại trường nhằm tối ưu hóa tiến độ làm việc chung.
+### Ứng Dụng Vào Công Việc & Học Tập
 
-### Trải nghiệm trong event
+- Viết Dockerfile đóng gói các bài tập web ở trường, tối ưu layer cache và thử push lên Amazon ECR.
+- Dựng phòng lab Linux/Networking nhỏ trên máy cá nhân để tập viết script shell tự động hóa.
+- Thử nghiệm làm game đơn giản bằng Godot nối với API Gateway WebSocket và DynamoDB.
+- Áp dụng các công cụ Trello/Slack vào bài tập nhóm ở HUTECH để quản lý tiến độ rõ ràng hơn.
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-Các bài thuyết trình mang tính thực tiễn cao đã giúp tôi học hỏi được nhiều kinh nghiệm quý báu. Bản thân tôi vô cùng ấn tượng trước sự chia sẻ chân thành của anh Trần Trung Vinh về hành trình vượt khó vươn lên từ vị trí Helpdesk. Sự kiên trì tự học hệ thống Lab của anh đã truyền cảm hứng rất lớn cho tôi trong việc tự định hướng lộ trình học tập công nghệ của mình. Bên cạnh đó, bài chia sẻ của anh Trương Huy Phước về 4 quy tắc vàng trong teamwork giúp tôi nhận thức sâu sắc rằng công nghệ chỉ là một nửa của thành công, nửa còn lại nằm ở cách chúng ta giao tiếp và phối hợp trong tập thể.
+---
 
-#### Trải nghiệm kỹ thuật thực tế
-Tôi rất thích thú khi được xem trực tiếp bản demo chạy thực tế của hệ thống ghép cặp game kéo-búa-bao qua WebSocket của anh Nguyễn Quốc Bảo và cách hệ thống xử lý các lỗi kết nối mạng. Đồng thời, sơ đồ kiến trúc an ninh mạng tích hợp đầy đủ các dịch vụ bảo mật AWS của anh Lê Hoàng Gia Đại mang lại cho tôi cái nhìn trực quan, sinh động về cách doanh nghiệp bảo vệ hệ thống của họ trong thực tế.
+### Trải Nghiệm & Thảo Luận Tại Sự Kiện
 
-#### Ứng dụng công cụ hiện đại
-Tận mắt nhìn thấy sức mạnh của việc kết hợp Machine Learning để tự động hóa phát hiện các cuộc tấn công mạng vượt qua lớp WAF truyền thống. Dashboard theo dõi lưu lượng mạng trực quan và cơ chế cảnh báo tự động thông báo qua SNS giúp tôi nhận ra tiềm năng to lớn của việc ứng dụng công nghệ thông minh vào công tác an ninh an toàn thông tin.
+- **Góc nhìn thực tế:** Ấn tượng nhất là bài WAF + ML của bạn Gia Đại (HUTECH) và câu chuyện tự học dựng lab từ Helpdesk lên Sysadmin của anh Vinh. Nghe xong thấy có thêm nhiều động lực để cày sâu lab cá nhân.
+- **Demo thực tế:** Phần demo game kéo-búa-bao qua WebSocket của anh Bảo giúp mình thấy rõ cách nạp/nhả `connectionId` trong DynamoDB thực tế chạy như thế nào.
+- **Networking:** Giờ nghỉ mình có trao đổi thêm với anh Huỳnh Bảo về môi trường làm việc tại Endava và các hoạt động tại ITea Lab.
 
-### Kết nối và trao đổi
-Không gian sự kiện tại văn phòng AWS vô cùng chuyên nghiệp và cởi mở. Trong giờ giải lao, tôi đã chủ động kết nối, trò chuyện với anh Huỳnh Bảo về môi trường làm việc thực tế tại Endava Vietnam cũng như cách thức hoạt động của phòng lab ITea Lab do anh sáng lập. Buổi trò chuyện cởi mở giúp tôi tự tin hơn trong việc giao tiếp và học hỏi từ những người đi trước trong ngành.
+---
 
-### Bài học rút ra & Đóng góp cá nhân
-- **Bài học rút ra**:
-  + Một giải pháp công nghệ tốt không nhất thiết phải là giải pháp phức tạp nhất, mà phải là giải pháp giải quyết hiệu quả nhất bài toán nghiệp vụ của doanh nghiệp với chi phí hợp lý.
-  + Kiến thức nền tảng vững chắc (Linux, Networking, cấu trúc dữ liệu) luôn là bệ phóng vững chắc nhất giúp người kỹ sư thích ứng nhanh chóng với mọi sự thay đổi công nghệ.
-- **Đóng góp và Tương tác cá nhân**:
-  + Chủ động tham gia đặt câu hỏi trực tiếp cho diễn giả Việt Phát trong phiên trình bày về GraphRAG để làm rõ sự khác biệt giữa hai phương pháp Custom và Managed trên AWS Neptune.
-  + Giao lưu và trao đổi thông tin liên lạc với các diễn giả và các bạn sinh viên cùng tham gia sự kiện để xây dựng mạng lưới học tập đám mây lâu dài.
+### Bài Học Rút Ra & Đóng Góp Cá Nhân
+
+- **Bài học rút ra:** Giải pháp tốt là giải pháp vừa đủ xài cho bài toán nghiệp vụ chứ không cần quá phức tạp. Nền tảng Linux & Networking vững sẽ giúp học Cloud/DevOps nhanh hơn rất nhiều.
+- **Đóng góp cá nhân:** Đặt câu hỏi thảo luận về sự khác biệt chi phí/hiệu năng giữa Custom GraphRAG và Managed Bedrock Knowledge Bases; giao lưu kết nối với các bạn sinh viên cùng tham dự.
+
+---
 
 ### Một số hình ảnh khi tham gia sự kiện 
 
-Dưới đây là một số hình ảnh thực tế ghi lại những khoảnh khắc đáng nhớ của bản thân khi tham gia sự kiện AWS First Cloud Journey AI:
+Dưới đây là một số hình ảnh ghi lại slide kiến trúc và khoảnh khắc tại sự kiện AWS First Cloud Journey AI:
 
 ![Slide hiển thị 3 câu hỏi thảo luận lớn của Panel thảo luận với Giám đốc AWS AI về xu hướng AI, kỹ năng cần thiết cho lập trình viên trẻ và giải quyết khoảng cách năng lực doanh nghiệp](/images/4-EventParticipated/4.2-Event2/IMG20260606090407.jpg)
 
@@ -198,4 +199,4 @@ Dưới đây là một số hình ảnh thực tế ghi lại những khoảnh 
 
 ![Ảnh chụp cuốn sổ tay ghi chú thứ tự trình bày và tóm tắt các diễn giả của sự kiện do tôi ghi lại](/images/4-EventParticipated/4.2-Event2/note.png)
 
-> Sự kiện đã mang lại cho bản thân rất nhiều kiến thức giá trị cùng nguồn cảm hứng công nghệ to lớn, làm chắc chắn cho quá trình học tập và làm việc sau này.
+> *Buổi chia sẻ mang lại nhiều kiến thức thực tế, giúp mình hiểu rõ hơn cách kết nối công nghệ trên AWS và có thêm động lực học tập.*

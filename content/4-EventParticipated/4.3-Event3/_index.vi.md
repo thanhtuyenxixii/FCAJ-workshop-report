@@ -11,20 +11,18 @@ pre: " <b> 4.3. </b> "
 | Thông tin sự kiện | Chi tiết |
 | :--- | :--- |
 | **Tên sự kiện** | AWS FC Community Day 2026 |
-| **Thời gian** | 27/06/2026 (Từ 09:00 đến 12:00) |
-| **Địa điểm** | Tầng 26 và Tầng 36, Bitexco Financial Tower, TP. Hồ Chí Minh |
+| **Thời gian** | 27/06/2026 (09:00 - 12:00) |
+| **Địa điểm** | Tầng 26 & Tầng 36, Bitexco Financial Tower, TP. Hồ Chí Minh |
 | **Hình thức tham gia** | Trực tuyến (YouTube Livestream) |
 | **Vai trò** | Người tham dự |
 
 ### Mục Đích Của Sự Kiện
 
-Sự kiện AWS FC Community Day là chuỗi hội thảo công nghệ được tổ chức định kỳ hàng tháng nhằm tạo không gian kết nối, chia sẻ kiến thức, kinh nghiệm thực tế và cung cấp góc nhìn thực chiến từ môi trường doanh nghiệp lớn đến với cộng đồng lập trình viên và sinh viên trẻ. 
+Sự kiện **AWS FC Community Day** là chuỗi hội thảo công nghệ hàng tháng kết nối cộng đồng lập trình viên và sinh viên với các bài toán thực tế từ doanh nghiệp.
 
-Mục đích cốt lõi của số sự kiện lần này là mổ xẻ chuyên sâu các bài toán hạ tầng, tối ưu chi phí vận hành và thiết lập lá chắn an ninh nghiêm ngặt khi đưa các mô hình AI Agents (Tác nhân thông minh) vào môi trường Production cấp doanh nghiệp (Enterprise-Grade). Nội dung chương trình trải dài qua các giải pháp đột phá: từ việc ứng dụng nền tảng Multi-Agent để giám sát và xử lý incident của hạ tầng đám mây, xây dựng đường ống Voice AI xử lý ngôn ngữ tiếng Việt thời gian thực, tích hợp DevOps AI Agent để tự động hóa quy trình ứng phó sự cố, ứng dụng trợ lý thông minh Amazon Q (Quick) hỗ trợ tự động hóa phòng quản trị nhân sự, cho đến cơ chế bảo mật kết nối mạng khép kín riêng tư (Private Security) kết hợp máy chủ MCP Server.
+Nội dung số này tập trung vào các giải pháp triển khai AI Agent trong môi trường Enterprise: từ kiến trúc Multi-Agent cho hạ tầng đám mây và FinOps, xử lý Voice AI tiếng Việt thời gian thực cho tổng đài ngân hàng, tự động hóa xử lý sự cố DevOps, đến ứng dụng Amazon Q cho quy trình HR và bảo mật private qua VPC Endpoints kết nối máy chủ MCP.
 
 ### Danh Sách Diễn Giả
-
-Sự kiện quy tụ dàn diễn giả chất lượng cao là các nhà sáng lập, chuyên gia bảo mật và kỹ sư đám mây có thâm niên thực chiến dày dặn trong ngành:
 
 | STT | Diễn giả | Chức vụ | Chủ đề |
 | :-: | :--- | :--- | :--- |
@@ -34,108 +32,108 @@ Sự kiện quy tụ dàn diễn giả chất lượng cao là các nhà sáng l
 | 4 | **Trường (Wren) & Minh Anh** | AI Solutions Team @ *Noventics* | *HR Intelligent Automation via Amazon Q: Giải pháp bóc tách CV chính xác 99%, chấm điểm ứng viên theo khung năng lực và xây dựng No-code Pipeline* |
 | 5 | **Toàn Nguyễn & Hiếu Nghị** | AWS Security Builder @ *AWS Community* | *Private Security for AI Agents: Thiết lập kết nối mạng khép kín kết nối Amazon Q tới máy chủ MCP qua VPC Endpoints bảo mật* |
 
+---
+
 ### Nội Dung Nổi Bật
 
-#### Nền tảng Multi-Agent giám sát hạ tầng đám mây & tối ưu chi phí FinOps
+#### 1. Ghi chép về Multi-Agent & FinOps (Anh Steve Trần)
 
-Diễn giả Steve Trần mang đến câu chuyện career path đầy cảm hứng cùng giải pháp giải quyết bài toán phức tạp hóa kiến trúc khi doanh nghiệp tăng trưởng quy mô hệ thống và dịch chuyển sang Microservices trên đám mây.
-- **Câu chuyện định hướng sự nghiệp:** Anh chia sẻ việc từng nghỉ học đại học năm 19 tuổi để làm việc tại một Contact Center (năm 2018-2019) và chật vật vận hành các cụm server vật lý cồng kềnh với rủi ro sập phần cứng liên tục. Sau khi hổng kiến thức nền tảng và thi trượt chứng chỉ Azure 3-4 lần, anh đã chuyển hướng chinh phục thành công hệ thống tài liệu sạch sẽ của AWS để trở thành Solution Architect tại chính AWS trước khi thành lập Cloud Thinker.
-- **Giải quyết bài toán "Nợ công nghệ" (Tech Debt):** Trong các doanh nghiệp lớn thuộc khối tài chính, ngân hàng (BFSI), hệ thống phục vụ hàng triệu user luôn tồn tại những món nợ công nghệ qua nhiều thế hệ. Tốc độ đọc log và điều tra sự cố của AI tính bằng phút, trong khi con người phải tốn bằng giờ.
-- **Kiến trúc Single-Agent vs Multi-Agent:** Team Cloud Thinker đã dành gần 2 năm nghiên cứu để tối ưu hóa bài toán này. Mặc dù một con Single Super Agent thiết kế đủ tốt có khả năng hoàn thành trên 95% tác vụ, nhưng kiến trúc Multi-Agent (Tác nhân chuyên biệt) vượt trội hơn nhờ thu hẹp được Context Window, cho phép chọn các mô hình nhỏ (trọng số thấp) cho tác vụ đơn giản để tối ưu chi phí, và hỗ trợ phân quyền kiểm soát nghiêm ngặt theo vai trò (Role-based Access Control).
-- **Lá chắn ngăn chặn rủi ro tự động:** Khác với các công cụ coding tự động thông thường dễ gặp drama tự truy cập database để xóa schema, hệ thống Agentic của Cloud Thinker thiết kế nhiều tầng phê duyệt (Layer Approval) khắt khe trước khi áp dụng bất kỳ thay đổi nào lên môi trường Production. Hệ thống cũng ứng dụng AI để chạy tự động hóa FinOps gần như 100%, thay thế con người liên tục theo dõi dashboard sử dụng nhằm tối ưu hóa chi phí hạ tầng đám mây.
+Diễn giả Steve Trần chia sẻ câu chuyện phát triển sự nghiệp và kinh nghiệm xử lý bài toán hạ tầng khi doanh nghiệp mở rộng:
 
-#### Voice AI Agents – Xây dựng hệ thống tổng đài thoại tiếng Việt cấp doanh nghiệp
+- **Câu chuyện định hướng sự nghiệp:** Anh kể về giai đoạn nghỉ học đại học năm 19 tuổi làm việc tại Contact Center (2018-2019), vất vả vận hành server vật lý và rủi ro sập phần cứng. Sau khi nhận ra mình hổng kiến thức nền tảng và thi trượt chứng chỉ Azure 3-4 lần, anh chuyển sang tự học kỹ hệ thống tài liệu của AWS, sau đó trở thành Solution Architect tại AWS trước khi thành lập Cloud Thinker.
+- **Giải quyết nợ công nghệ (Tech Debt):** Trong các hệ thống ngân hàng/tài chính lớn, nợ công nghệ qua nhiều thế hệ làm việc điều tra sự cố bằng tay mất hàng giờ, trong khi AI có thể đọc log và phân tích trong vài phút.
+- **Single-Agent vs Multi-Agent:** Mặc dù 1 con Single Super Agent thiết kế tốt có thể gánh ~95% tác vụ, nhưng kiến trúc Multi-Agent vượt trội hơn nhờ thu hẹp Context Window, cho phép gán model nhỏ cho việc dễ để tiết kiệm chi phí và hỗ trợ phân quyền RBAC khắt khe.
+- **Cơ chế kiểm duyệt thay đổi (Approval Layers):** Tránh rủi ro agent tự ý chạy script làm hỏng DB, hệ thống của Cloud Thinker đặt nhiều tầng phê duyệt (Layer Approval) trước khi áp thay đổi lên Production. Hệ thống cũng chạy tự động hóa FinOps để liên tục tối ưu chi phí hạ tầng.
 
-Phiên chia sẻ của team R AI và Renova Cloud làm sáng tỏ phương pháp phát triển các trợ lý giọng nói thông minh trong môi trường ngân hàng nghiêm ngặt (VPBank, VIB).
-- **Thách thức của tiếng Việt (Low-resource Language):** Các mô hình chuyển đổi trực tiếp từ giọng nói sang giọng nói (Speech-to-Speech) hiện nay trên thế giới hầu như chỉ hỗ trợ tốt tiếng Anh. Tiếng Việt là ngôn ngữ nghèo tài nguyên dữ liệu huấn luyện, khiến các tập đoàn lớn không mặn mà đầu tư.
-- **Kiến trúc đường ống 3 bước tối ưu:** Để khắc phục, giải pháp thực tế được triển khai theo pipeline: Speech-to-Text (STT) -> LLM -> Text-to-Speech (TTS). Mô hình STT bắt giọng nói và stream trực tiếp thành văn bản vào LLM, LLM xử lý prompt dựa trên cấu trúc ngữ cảnh ngân hàng để xuất ra câu trả lời dưới dạng text, sau đó stream thẳng qua bộ TTS để chuyển đổi thành giọng nói phản hồi khách hàng.
-- **Xử lý các bài toán hóc búa của tiếng Việt:**
-  - *Nhận diện giới tính:* Tiếng Việt bắt buộc phải xưng hô "anh/chị" dựa theo giọng nói, nếu nhận diện sai sẽ gây trải nghiệm rất tệ cho người dùng.
-  - *Thuật toán ngắt lời (Interruption):* Phải huấn luyện các mô hình phụ để hiểu ngữ cảnh khi nào khách hàng dừng nói để suy nghĩ (ví dụ: đang đọc số điện thoại rồi dừng lại chút ít) nhằm ngăn chặn tình trạng AI nhảy vào miệng khách hàng hoặc AI nói tràn lan không dừng khi bị ngắt lời.
-  - *Giọng vùng miền (Accent):* Nạp vào tập dữ liệu từ 10% đến 20% giọng vùng miền đặc thù (miền Trung, miền Bắc) để AI không bị "tê liệt" khi nhận diện.
-- **Ứng dụng Tool Calling thực tế:** Hệ thống cho phép thực hiện hành động trực tiếp thay vì chỉ trả lời câu hỏi suông. Khi khách hàng gọi điện yêu cầu khóa thẻ, AI sẽ tự động kích hoạt chức năng kiểm tra thông tin căn cước công dân và thực thi lệnh khóa thẻ ngân hàng thời gian thực. Nếu khách hàng có dấu hiệu bực tức vượt quá khả năng xử lý, AI sẽ chủ động chuyển cuộc gọi (pass) sang cho điện thoại viên (Human) một cách tự nhiên nhất.
+#### 2. Xây dựng Voice AI tiếng Việt cho tổng đài (Team R AI)
 
-#### DevOps AI Agent – Tự động hóa quy trình ứng phó sự cố hạ tầng trên AWS
+Phiên chia sẻ của team R AI và Renova Cloud giải bài toán làm trợ lý giọng nói tiếng Việt cho ngành ngân hàng (VPBank, VIB):
 
-Chuyên đề từ team Cloud Kinetics giới thiệu giải pháp tự động hóa điều tra Root Cause mỗi khi hệ thống phát sinh lỗi nghiêm trọng, giảm tải tối đa áp lực cho đội ngũ SRE/DevOps.
-- **Nỗi đau fragmentation dữ liệu:** Khi website bị chậm hoặc lỗi, các kỹ sư phải chật vật truy cập thủ công vào hàng loạt nơi rời rạc như CloudWatch, CloudTrail để tìm log, dẫn đến thất thoát ngữ cảnh (Context loss) và đẩy chỉ số MTTD/MTTR lên rất cao.
-- **6 Trụ cột cốt lõi của DevOps AI Agent:**
-  1. *Context Learning:* Dựa trên khái niệm Agent Space (một container logic định nghĩa tài nguyên qua các tag). AI sẽ tự học hạ tầng và xuất ra một mô hình sơ đồ Topology đại diện cho cách nó hiểu hệ thống đám mây.
-  2. *Control:* Giới hạn quyền tiếp cận của Agent nghiêm ngặt theo tag hoặc thiết lập kết nối khép kín Private Connection.
-  3. *Integration:* Mở rộng năng lực điều tra của Agent thông qua giao thức Model Context Protocol (MCP). Ví dụ, Agent không thể tự SSH vào EC2 để đọc log ứng dụng kín, nhưng tích hợp MCP tool giúp nó chạy truy vấn thẳng vào database để lấy chứng cứ.
-  4. *Collaboration:* Tương tác mượt mà thông qua giao diện Web, Slack hoặc ServiceNow.
-  5. *Convenience:* Kích hoạt nhanh chóng ngay trên giao diện AWS Console.
-  6. *Cost-effective:* Giá tính theo thời gian thực thi tác vụ (khoảng 0.083 USD cho 1 giây), không tính theo số lượng token hạ tầng.
-- **Quy trình 4 bước xử lý sự cố tự động:** Kích hoạt tự động qua Trigger Alert -> Đưa ra các giả thuyết logic -> Chứng minh giả thuyết dựa trên dữ liệu log thu thập được để tìm ra Root Cause Analysis (RCA) -> Đề xuất bản vá (Mitigation Plan) nhưng không tự ý thực thi để đảm bảo tính an toàn hệ thống (Safety First), quyền quyết định thuộc về con người.
-- **Case-study minh chứng hiệu quả:** Trường đại học trực tuyến WGU (phục vụ gần 200,000 học sinh) tích hợp Dynatrace với Agent giúp giảm thời gian xử lý sự cố từ 2 tiếng xuống còn 28 phút (nhanh hơn 77% MTTR). Ứng dụng Zenchef giảm 75% thời gian tìm lỗi cấu hình sai xuống còn 20 phút. Tập đoàn viễn thông KDDI Nhật Bản rút ngắn thời gian xử lý từ nhiều tuần xuống còn vài ngày.
+- **Thách thức của tiếng Việt:** Các mô hình Speech-to-Speech hiện tại chủ yếu tối ưu cho tiếng Anh, trong khi tiếng Việt là ngôn ngữ ít dữ liệu huấn luyện (low-resource).
+- **Pipeline 3 bước thực tế:** Speech-to-Text (STT) -> LLM -> Text-to-Speech (TTS). STT chuyển giọng nói thành text đẩy vào LLM, LLM xử lý prompt theo ngữ cảnh ngân hàng rồi xuất text cho bộ TTS chuyển thành giọng nói phản hồi.
+- **Xử lý đặc thù tiếng Việt:**
+  - *Nhận diện giới tính:* Cần đoán giới tính từ giọng nói để xưng hô "anh/chị" chính xác.
+  - *Thuật toán ngắt lời (Interruption):* Train model phụ để nhận biết khi nào khách dừng lại suy nghĩ (như đọc dở số điện thoại), tránh việc AI nhảy vào miệng khách hàng hoặc nói tràn lan.
+  - *Giọng vùng miền (Accent):* Nạp 10%-20% data giọng miền Trung/Bắc để AI không bị lỗi nhận diện.
+- **Tích hợp Tool Calling:** Cho phép AI thực hiện hành động thực tế (như kiểm tra CCCD và khóa thẻ ngân hàng thời gian thực). Nếu khách hàng bức xúc vượt khả năng xử lý, AI sẽ tự động chuyên giao cuộc gọi cho tổng đài viên.
 
-#### Cách mạng hóa quy trình quản trị nhân sự HR bằng trợ lý thông minh Amazon Q
+#### 3. Tự động hóa xử lý sự cố hạ tầng với DevOps AI Agent (Cloud Kinetics)
 
-Diễn giả Trường (Wren) và Minh Anh mang đến góc nhìn mới mẻ về việc dùng AI giải quyết bài toán nhân sự phi kỹ thuật trong kỷ nguyên số.
-- **Thách thức của ngành HR truyền thống:** Quy trình lọc hồ sơ (Screening CV) bằng tay tốn rất nhiều thời gian và dễ bỏ sót các nhân tài cốt lõi. Quá trình đánh giá ứng viên thường bị chi phối nặng nề bởi cảm tính cá nhân thay vì dựa trên một bộ khung chuẩn hóa. Đồng thời, rủi ro rò rỉ dữ liệu bảo mật nội bộ cực cao khi nhân sự tùy tiện đẩy thông tin cá nhân của nhân viên lên các nền tảng AI công cộng.
-- **Giải pháp Amazon Q (Quick Ecosystem):** Là một trợ lý Agentic thông minh hỗ trợ kết nối đa dạng (Google Workspace, Microsoft Sharepoint, OneDrive, Gmail) và các Relational Database, file S3 để bóc tách thông tin. Toàn bộ dữ liệu được bảo vệ an toàn nhờ vùng dữ liệu Local Zone đặt tại Việt Nam.
-- **Quy trình tự động hóa phòng nhân sự:**
-  - *Học kỹ năng:* Chỉ cần nạp một file tài liệu định dạng `.md`, Amazon Q sẽ tự động học và sinh ra kỹ năng *HR Talent Review Assistant* bao gồm tập lệnh chạy Python, đọc PDF/Docx.
-  - *Tạo JD tự động:* AI tự động sinh bộ khung mô tả công việc (JD) chi tiết dựa trên yêu cầu phòng ban.
-  - *Sàng lọc và chấm điểm hồ sơ:* AI tự động quét thư mục chứa CV (hỗ trợ OCR chính xác đến 99% kể cả file scan), so khớp với JD để phân loại các mức độ (*Strong, Good, Low, Very Low*). Xuất ra báo cáo Talent Review bằng file HTML phân tích rõ điểm mạnh, điểm yếu của từng ứng viên và dự phóng khung lương phù hợp.
-  - *Tự động hóa luồng việc:* Tự động kiểm tra lịch trống (Calendar) của Hiring Manager để hẹn lịch phỏng vấn, viết nháp mail phản hồi và xây dựng ứng dụng theo dõi pipeline tuyển dụng (No-code App Building) chỉ bằng vài câu lệnh trò chuyện.
+Team Cloud Kinetics giới thiệu giải pháp tự động tìm nguyên nhân gốc rễ (Root Cause) khi hệ thống gặp sự cố, giảm tải cho đội SRE/DevOps:
 
-#### Thiết lập kết nối khép kín bảo mật (Private Security) cho AI Agent qua VPC Endpoint
+- **Thách thức khi log bị phân tán:** Khi website chậm/lỗi, dev phải mò log thủ công trên CloudWatch, CloudTrail... làm mất ngữ cảnh và kéo dài thời gian xử lý (MTTR/MTTD).
+- **6 trụ cột của DevOps AI Agent:**
+  1. *Context Learning:* Dùng Agent Space (container logic định nghĩa tài nguyên qua tag) để AI tự vẽ sơ đồ Topology hệ thống.
+  2. *Control:* Giới hạn quyền agent theo tag hoặc Private Connection.
+  3. *Integration:* Mở rộng năng lực qua giao thức MCP (Model Context Protocol) để query trực tiếp vào DB lấy dữ liệu chứng cứ.
+  4. *Collaboration:* Tương tác qua Web, Slack hoặc ServiceNow.
+  5. *Convenience:* Kích hoạt nhanh trên AWS Console.
+  6. *Cost-effective:* Tính tiền theo giây thực thi (~0.083 USD/giây).
+- **Quy trình 4 bước:** Trigger Alert -> Đưa giả thuyết -> Kiểm chứng bằng log để ra Root Cause (RCA) -> Đề xuất bản vá (không tự ý chạy code sửa để đảm bảo Safety First).
+- **Kết quả thực tế:** Trường WGU giảm thời gian xử lý sự cố từ 2 tiếng xuống 28 phút (giảm 77% MTTR). Zenchef giảm 75% thời gian tìm lỗi cấu hình xuống còn 20 phút.
 
-Phiên kỹ thuật chuyên sâu cuối cùng của diễn giả Toàn Nguyễn và Hiếu Nghị tập trung vào bài toán bảo vệ dữ liệu, ngăn chặn hiểm họa an ninh mạng khi AI kết nối với thế giới bên ngoài.
-- **Rủi ro từ Public Endpoint:** Khi Amazon Q kết nối tới các máy chủ MCP của bên thứ ba (như Zalo, WhatsApp, Jira) thông qua internet công cộng, hệ thống sẽ lộ ra các bề mặt tấn công nguy hiểm, dễ bị tấn công Man-in-the-middle đứng giữa đánh cắp gói tin hoặc bị tấn công từ chối dịch vụ DDoS.
-- **Kiến trúc mạng nội bộ khép kín:** Để tuân thủ triệt để nguyên tắc **Zero Trust**, toàn bộ máy chủ MCP Server bắt buộc phải đặt trong vùng mạng kín (Private Subnet).
-- **Cơ chế vận hành luồng bảo mật:** Đưa Amazon Q vào trong mạng ảo thông qua giải pháp **VPC Connection** sử dụng các cổng kết nối nội bộ Interface Endpoint (AWS PrivateLink). Luồng dữ liệu đi từ Amazon Q -> VPC Connection -> Xác thực qua Amazon Cognito -> Chuyển tiếp tới Application Load Balancer (ALB) được mã hóa chứng chỉ số TLS qua AWS Certificate Manager (ACM) -> Định tuyến chính xác tới MCP Server nhờ hệ thống phân giải tên miền nội bộ **Route 53 Resolver**. Toàn bộ luồng đi này hoàn toàn là private bên trong hạ tầng AWS, không một byte dữ liệu nào bị lọt ra ngoài môi trường internet công cộng.
+#### 4. Tự động hóa quy trình HR với Amazon Q (Team Noventics)
+
+Ứng dụng AI giải quyết bài toán nhân sự phi kỹ thuật từ team Noventics:
+
+- **Thách thức làm HR thủ công:** Lọc CV bằng tay lâu, dễ bỏ sót người giỏi, đánh giá bị cảm tính và rủi ro lộ data nhân sự khi up lên các AI public.
+- **Giải pháp Amazon Q:** Trợ lý Agentic hỗ trợ kết nối Google Workspace, SharePoint, OneDrive, Gmail, S3... Dữ liệu được bảo vệ trong Local Zone tại Việt Nam.
+- **Quy trình tự động hóa:**
+  - *Học kỹ năng:* Nạp file `.md`, Amazon Q tự học và tạo skill *HR Talent Review Assistant*.
+  - *Sàng lọc & Chấm điểm CV:* AI quét thư mục CV (OCR chính xác 99%), so với JD để xếp loại (*Strong, Good, Low, Very Low*), xuất báo cáo HTML phân tích điểm mạnh/yếu và gợi ý khung lương.
+  - *Tự động luồng việc:* Tự check calendar của Hiring Manager để hẹn lịch phỏng vấn và viết nháp email phản hồi.
+
+#### 5. Bảo mật Private cho AI Agent qua VPC Endpoints (Toàn Nguyễn & Hiếu Nghị)
+
+Phiên bảo mật chuyên sâu hướng dẫn cách bảo vệ dữ liệu khi AI kết nối với các hệ thống bên ngoài:
+
+- **Rủi ro Public Endpoint:** Cho Amazon Q nối tới các MCP Server bên ngoài (Zalo, WhatsApp, Jira...) qua internet công cộng dễ bị tấn công Man-in-the-middle hoặc DDoS.
+- **Kiến trúc mạng khép kín:** Áp dụng Zero Trust, đưa toàn bộ MCP Server vào Private Subnet.
+- **Luồng kết nối nội bộ:** Amazon Q -> VPC Connection (dùng Interface Endpoint / AWS PrivateLink) -> Xác thực Cognito -> Application Load Balancer (mã hóa TLS qua ACM) -> Route 53 Resolver phân giải tên miền nội bộ -> MCP Server. Toàn bộ luồng đi hoàn toàn private trong hạ tầng AWS.
+
+---
 
 ### Những Gì Học Được
 
-#### Tư duy thiết kế
-- **Tư duy phòng thủ an ninh tầng sâu (Security-first):** Một hệ thống phần mềm Enterprise vận hành trong thực tế không bao giờ có tiêu chí "chỉ cần chạy được là đủ". Kiến trúc thiết kế bắt buộc phải tích hợp các giải pháp an ninh khép kín từ biên mạng (VPC Endpoints) để bảo vệ toàn vẹn dữ liệu nhạy cảm của khách hàng.
-- **Triết lý "AI hỗ trợ con người" (Human-in-the-loop):** Đối với các tác vụ nhạy cảm liên quan trực tiếp tới môi trường Production (như tự động sửa code hạ tầng DevOps Agent) hoặc quyết định tài chính (FinOps), AI chỉ đóng vai trò là trợ lý đắc lực đề xuất phương án và tăng tốc sản xuất. Quyền phê duyệt cuối cùng (Approval Layer) luôn thuộc về con người để đảm bảo tính an toàn tuyệt đối.
-- **Thiết kế hệ thống dựa trên sự thấu hiểu ranh giới:** Việc phân tách kiến trúc Multi-Agent giúp cô lập các vùng dữ liệu (Context Window), tối ưu hóa chi phí vận hành bằng cách gán đúng model nhỏ cho việc dễ và model lớn cho việc khó.
+#### Tư duy kỹ thuật & Kiến trúc
+- Hệ thống Enterprise không thể dừng ở mức "chạy được là xong" mà phải bảo mật khép kín từ biên mạng (VPC Endpoints).
+- Nguyên tắc Human-in-the-loop: Với các tác vụ đụng tới Production (sửa code hạ tầng) hay chi phí (FinOps), AI chỉ đề xuất, con người vẫn giữ quyền duyệt cuối cùng.
+- Phân tách Multi-Agent giúp cô lập Context Window, gán đúng model nhỏ cho task dễ để tối ưu tiền cloud.
+- Nắm được pipeline 3 bước Voice AI (STT -> LLM -> TTS) và cách dùng MCP Server mở rộng tri thức cho AI Agent.
 
-#### Kiến trúc kỹ thuật
-- Làm chủ đường ống xử lý Voice AI nâng cao: Hiểu rõ kiến trúc streaming dữ liệu 3 bước (STT -> LLM -> TTS) để giải bài toán ngôn ngữ nghèo tài nguyên như tiếng Việt, kết hợp các model phụ để xử lý kịch bản ngắt lời và nhận diện giới tính người dùng.
-- Nắm vững cơ chế vận hành hạ tầng an toàn cấp doanh nghiệp: Hiểu sâu vai trò phân giải tên miền nội bộ của Route 53 Resolver, cơ chế mã hóa đầu cuối của ALB kết hợp ACM, và cách tích hợp giao thức MCP (Model Context Protocol) để mở rộng không giới hạn không gian tri thức của AI Agent tới các nền tảng bên thứ ba.
+#### Bài học sự nghiệp
+- Bài học từ anh Steve Trần: Muốn đi xa trong mảng Cloud/DevOps bắt buộc phải học chắc nền tảng Linux và Networking trước khi chạy theo các công cụ AI thượng tầng.
 
-#### Chiến lược phát triển bản thân
-- **Kiên trì bồi đắp kiến thức gốc (Foundations Matter):** Bài học từ career path của anh Steve Trần chứng minh rằng không có lối đi tắt trong ngành Cloud/DevOps. Muốn đi xa, bắt buộc phải làm chủ kiến trúc hệ điều hành Linux, hiểu sâu bản chất mạng máy tính (Networking) và quy trình vận hành thực tế trước khi học các công nghệ AI thượng tầng.
-- **Rèn luyện kỹ năng viết CV chuẩn hóa:** Hiểu được cơ chế sàng lọc hồ sơ tự động (OCR/Screening CV) của các nền tảng AI như Amazon Q để có chiến lược viết CV làm nổi bật các keyword công nghệ cốt lõi sát với mô tả công việc (JD) của doanh nghiệp nhằm vượt qua vòng gửi xe.
+---
 
-### Ứng Dụng Vào Công Việc
-- **Nâng cấp tư duy đóng gói và quản lý tài nguyên:** Tiếp tục ứng dụng Docker để đóng gói các module dịch vụ trong đồ án trường học, đồng thời áp dụng nguyên tắc quản lý phân quyền đặc quyền tối thiểu (Least Privilege) dựa trên hệ thống gán thẻ (Tags) tương tự cấu trúc Agent Space của DevOps Agent.
-- **Thực hành xây dựng kịch bản automation cơ bản:** Tận dụng tài khoản free của bộ công cụ DevOps AI Agent để trực tiếp lên AWS Console trải nghiệm cách hệ thống tự động vẽ sơ đồ Topology và phân tích log sự cố.
-- **Tối ưu hóa quy trình làm việc nhóm:** Tích hợp bộ công cụ số được gợi ý từ sự kiện (Trello/ClickUp để quản lý task, Discord/Slack để stream thông tin liên tục) vào quá trình làm đồ án nhóm Kỹ thuật Phần mềm để nâng cao hiệu suất cộng tác theo chuẩn quy trình doanh nghiệp.
-- **Tự xây dựng bộ công cụ học tập thông minh:** Nghiên cứu tài liệu hướng dẫn (Documentation) của Amazon Q để thử cấu hình một chat agent cá nhân, nạp toàn bộ slide bài giảng và sách giáo trình định dạng `.md` hoặc PDF để AI tự trích xuất thông tin, hỗ trợ ôn thi học kỳ hiệu quả.
+### Ứng Dụng Vào Công Việc & Học Tập
 
-### Trải nghiệm trong event
+- Tiếp tục dùng Docker đóng gói các module dịch vụ trong đồ án môn học, áp dụng gán thẻ (Tags) để phân quyền theo nguyên tắc Least Privilege.
+- Trải nghiệm thử công cụ DevOps AI Agent trên AWS Console để xem cách hệ thống tự dựng sơ đồ Topology và phân tích log.
+- Cấu hình thử Amazon Q chat agent cá nhân, nạp slide `.md` và tài liệu môn học để hỗ trợ tra cứu kiến thức ôn thi.
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-Bản thân cực kỳ ấn tượng với phong cách trình bày thực chiến, gãy gọn của anh Steve Trần. Việc anh chia sẻ thẳng thắn về những thất bại trong quá khứ khi học Azure và những bài toán "đau thương", các điểm trade-off khi khởi nghiệp giúp sinh viên năm cuối như tôi gạt bỏ được tâm lý ảo tưởng về công nghệ, hiểu rằng mọi kiến trúc được chọn đều phải phục vụ lợi ích kinh tế và bài toán thực tế của khách hàng. Bên cạnh đó, bài chia sẻ của anh Trương Huy Phước về 4 quy tắc vàng trong teamwork giúp tôi nhận thức sâu sắc rằng công nghệ chỉ là một nửa của thành công, nửa còn lại nằm ở cách chúng ta giao tiếp và phối hợp trong tập thể.
+---
 
-#### Trải nghiệm kỹ thuật thực tế
-Khoảnh khắc thú vị nhất là phiên chạy thử nghiệm trực tiếp (Live Demonstration) bộ đôi Voice Agent cấu hình trên nền tảng hạ tầng Amazon Bedrock Agent Core kết hợp Knowledge Bases của bạn Kiệt. Việc xem con bot tự động trích xuất dữ liệu domain hẹp về cấu hình MacBook Pro và phản hồi bằng giọng nói tiếng Anh mượt mà mang lại nguồn cảm hứng rất lớn. Tiếp đó là phần phân tích chuyên sâu về giải pháp stream text tiếng Việt của anh Trung Đỗ (CEO R AI) giúp tôi mở mang tầm mắt về cách xử lý các biến số "rìa" như việc ngắt lời hay đoán giới tính khách hàng.
+### Trải Nghiệm & Thảo Luận Tại Sự Kiện
 
-#### Ứng dụng công cụ hiện đại
-Tận mắt nhìn thấy quy trình Amazon Q bóc tách file scan CV và xuất ra một trang báo cáo HTML phân tích benchmark năng lực ứng viên sắc bén của team Noventics. Cơ chế tính toán chi phí vận hành mạng private (ALB, Route 53 Resolver, EC2) dao động từ 250 đến 350 USD một tháng được anh Toàn Nguyễn mổ xẻ tường tận trong phiên QA giúp tôi định hình được tư duy tối ưu hóa chi phí hạ tầng của một kiến trúc sư giải pháp thực thụ.
+- **Ấn tượng diễn giả:** Thích phong cách chia sẻ thẳng thắn của anh Steve Trần về những bài học thất bại thời đầu và các điểm trade-off thực tế khi chọn kiến trúc cho khách hàng.
+- **Demo thực tế:** Phần demo Voice Agent trên Amazon Bedrock Agent Core của bạn Kiệt và phần giải thích stream text tiếng Việt của anh Trung Đỗ (CEO R AI) cho mình thấy rõ cách xử lý các case thực tế như khách ngắt lời hay đoán giới tính.
+- **Ứng dụng thực tế:** Đoạn demo Amazon Q bóc tách CV xuất báo cáo HTML của team Noventics và phần phân tích chi phí vận hành mạng private ($250-$350/tháng cho ALB, Route 53 Resolver, EC2) từ anh Toàn Nguyễn mang lại góc nhìn rất thực tế về làm Solution Architect.
+- **Networking:** Dù xem qua Livestream, mình vẫn tranh thủ kết nối LinkedIn với anh Toàn Nguyễn để hỏi thêm tài liệu về VPC Connection.
 
-### Kết nối và trao đổi
-Dù tham gia theo hình thức Livestream trực tuyến, tôi vẫn cảm nhận được không khí vô cùng náo nhiệt và cởi mở của sự kiện đang diễn ra tại văn phòng AWS Bitexco. Trong và sau sự kiện, tôi đã chủ động kết nối LinkedIn với anh Toàn Nguyễn để hỏi thêm về tài liệu cấu hình mạng kết nối VPC Connection cũng như tương tác cùng các bạn sinh viên. Buổi trò chuyện giúp tôi mở rộng mạng lưới học tập và tự tin hơn trong việc học hỏi từ những người đi trước.
+---
 
-### Bài học rút ra & Đóng góp cá nhân
-- **Bài học rút ra**:
-  + Một hệ thống công nghệ Enterprise thành công không nằm ở việc sử dụng những mô hình AI phức tạp nhất, mà nằm ở khả năng giải quyết triệt để nỗi đau của doanh nghiệp (giảm chỉ số MTTR, bảo mật dữ liệu tuyệt đối) với mức chi phí tối ưu nhất.
-  + Tham gia các ngày hội lớn như AWS Community Day là cơ hội vàng để sinh viên Kỹ thuật Phần mềm liên tục cập nhật dòng chảy công nghệ, trang bị cho mình cả "đồ chơi" kỹ thuật lẫn tư duy nghiệp vụ thực tế trước khi ra trường.
-- **Đóng góp và Tương tác cá nhân**:
-  + Tích cực theo dõi qua Livestream và đặt câu hỏi cho diễn giả Toàn Nguyễn trong phiên chia sẻ về Private Security để làm rõ chi tiết chi phí vận hành mạng private (ALB, Route 53 Resolver, EC2) trong môi trường thực tế.
-  + Giao lưu, kết nối LinkedIn với các diễn giả và các bạn sinh viên Swinburne để chia sẻ tài liệu và cùng nhau hỗ trợ học tập công nghệ đám mây.
+### Bài Học Rút Ra & Đóng Góp Cá Nhân
+
+- **Bài học rút ra:** Hệ thống Enterprise thành công là giải quyết đúng bài toán nghiệp vụ (giảm MTTR, bảo mật data) với chi phí tối ưu. Nền tảng Linux & Networking vững vẫn là yếu tố quyết định.
+- **Đóng góp cá nhân:** Theo dõi livestream và đặt câu hỏi cho diễn giả Toàn Nguyễn về chi phí vận hành hạ tầng private network trong thực tế; kết nối học hỏi với các bạn trong cộng đồng chứ giờ không "chat" được.
+
+---
 
 ### Một số hình ảnh khi tham gia sự kiện
 
-Dưới đây là một số hình ảnh thực tế ghi lại những khoảnh khắc đáng nhớ của bản thân khi tham gia sự kiện AWS FC Community Day 2026 tại văn phòng AWS Việt Nam:
-
+Dưới đây là hình ảnh thực tế ghi lại từ sự kiện AWS FC Community Day 2026:
 
 ![Slide mở màn giới thiệu chuỗi sự kiện định kỳ hàng tháng AWS FC Community Day tại Bitexco](/images/4-EventParticipated/4.3-Event3/IMG20260620130023.jpg)
 
-
-> Sự kiện đã đem lại những bài học công nghệ đắt giá cùng cơ hội giao lưu tuyệt vời, giúp tôi tự tin định hình và phát triển năng lực của mình trên con đường chinh phục điện toán đám mây và AI.
+> *Sự kiện mang lại nhiều góc nhìn thực tế về triển khai AI Agent và bảo mật hạ tầng trên AWS, giúp mình định hình rõ hơn lộ trình học tập.*

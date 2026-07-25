@@ -6,112 +6,121 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-
-
 ## Bài thu hoạch AWS Vietnam Community Day 2026
 
 | Thông tin sự kiện | Chi tiết |
 | :--- | :--- |
-| **Tên sự kiện** | AWS Vietnam Community Day 2026 (Gặp gỡ Thứ Bảy) |
-| **Thời gian** | 23/05/2026 (Từ 09:00 đến 12:00) |
+| **Tên sự kiện** | AWS Vietnam Community Day 2026 (Saturday Meetup) |
+| **Thời gian** | 23/05/2026 (09:00 - 12:00) |
 | **Địa điểm** | Tầng 26, Bitexco Financial Tower, TP. Hồ Chí Minh |
 | **Vai trò** | Người tham dự |
 
 ### Mục Đích Của Sự Kiện
-Sự kiện Gặp gỡ Thứ Bảy - AWS Vietnam Community Day 2026 là ngày hội công nghệ lớn mà tôi có cơ hội tham gia trực tiếp tại tầng 26 của tòa nhà Bitexco Financial Tower. Mục đích cốt lõi của sự kiện lần này là tạo không gian giao lưu, gắn kết cho cộng đồng những người làm việc hoặc đang học tập trong hệ sinh thái đám mây AWS tại Việt Nam. 
+Sự kiện AWS Vietnam Community Day 2026 tổ chức tại tòa nhà Bitexco là buổi gặp gỡ trực tiếp nhằm kết nối cộng đồng học tập và làm việc trong hệ sinh thái đám mây AWS tại Việt Nam.
 
-Thay vì chỉ tập trung vào lý thuyết sách vở, sự kiện hướng tới việc chia sẻ các câu chuyện thực tiễn từ các doanh nghiệp đang vận hành hệ thống lớn như GoTymeX hay VPBank. Qua đó, người tham gia -từ các kỹ sư lâu năm cho đến các bạn sinh viên như tôi - có thể học hỏi thêm nhiều kiến thức mới về tối ưu hệ thống, ứng dụng Generative AI vào công việc và định hình rõ ràng hơn lộ trình phát triển kỹ năng kỹ thuật của bản thân.
+Nội dung chương trình tập trung vào các bài toán vận hành hệ thống lớn thực tế từ GoTymeX, VPBank và VIB. Buổi chia sẻ giúp sinh viên năm cuối như mình cập nhật thêm các hướng đi mới về tối ưu hạ tầng, ứng dụng Generative AI/Multi-Agent và học hỏi kinh nghiệm làm việc thực chiến.
 
 ### Danh Sách Diễn Giả
 
 | STT | Diễn giả | Chức vụ | Chủ đề |
 | :-: | -------- | ------- | ------ |
-| 1 | **Tinh Truong** | Kỹ sư Nền tảng (Platform Engineer) @GoTymeX | *Context Is Everything – Making AI Actually Work for You* (Ngữ cảnh là tất cả – Để AI thực sự phục vụ công việc) |
-| 2 | **Pham Ng Hai Anh** | AWS Community Builder @G-AsiaPacificVietnam | *Friendly AI Assistant w/ Amazon Quick* (Trợ lý AI thân thiện với bộ giải pháp Amazon Quick) |
-| 3 | **Nguyen Tuan Thinh** | Giảng viên AWS Champion, 12x AWS Certified | *From Edge To Origin: CloudFront as Your Foundation* (Từ Edge đến Origin: CloudFront làm nền tảng hệ thống) |
-| 4 | **Team VIB** | Đội Quán quân AWS Track @LotusHacks2026 | *36 hours with LotusHacks – Building UTMorpho* (36 giờ tại LotusHacks – Xây dựng giải pháp UTMorpho) |
-| 5 | **Duc Dao** | Kiến trúc sư Giải pháp (Solution Architect) @CloudKinetics | *Non-Determinism of "Deterministic" LLM Settings* (Tính phi xác định trong các thiết lập "xác định" của LLM) |
-| 6 | **Vy Lam** | Chuyên viên Phân tích Hệ thống Kinh doanh Senior @VPBank | *Enterprise-Grade Multi-Agent System* (Hệ thống Đa tác nhân cấp doanh nghiệp) |
+| 1 | **Tinh Truong** | Platform Engineer @GoTymeX | *Context Is Everything – Making AI Actually Work for You* |
+| 2 | **Pham Ng Hai Anh** | AWS Community Builder @G-AsiaPacificVietnam | *Friendly AI Assistant w/ Amazon Quick* |
+| 3 | **Nguyen Tuan Thinh** | AWS Champion Instructor, 12x AWS Certified | *From Edge To Origin: CloudFront as Your Foundation* |
+| 4 | **Team VIB** | Quán quân AWS Track @LotusHacks2026 | *36 hours with LotusHacks – Building UTMorpho* |
+| 5 | **Duc Dao** | Solution Architect @CloudKinetics | *Non-Determinism of "Deterministic" LLM Settings* |
+| 6 | **Vy Lam** | Sr. Business Systems Analyst @VPBank | *Enterprise-Grade Multi-Agent System* |
+
+---
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
-Khi lắng nhe chia sẻ từ các diễn giả, tôi nhận ra rất nhiều doanh nghiệp hiện nay vẫn đang chật vật với những hệ thống cũ chạy theo kiểu Monolith truyền thống hoặc phân phối nội dung trực tiếp từ một server duy nhất mà không qua mạng phân phối CDN. Điểm yếu lớn nhất ở đây là độ trễ mạng cực kỳ cao. Người dùng tại Việt Nam khi truy cập các ứng dụng có server đặt ở Mỹ thường phải đợi hơn 200ms để tải trang. Điều này không chỉ gây ức chế cho người dùng mà còn làm hao tốn băng thông quốc tế của doanh nghiệp. Hơn thế nữa, việc mở cổng cho người dùng kết nối trực tiếp vào máy chủ gốc (Origin) biến server thành miếng mồi ngon cho các cuộc tấn công DDoS hoặc mã độc từ botnet mà không có lớp lá chắn bảo vệ ở biên mạng.
+#### 1. Những "nỗi đau" từ hệ thống Monolith cũ & AI thô sơ
 
-Ở góc độ ứng dụng trí tuệ nhân tạo, các hệ thống cũ tích hợp AI theo dạng thô sơ—chỉ gửi các câu lệnh (prompt) đơn lẻ mà không có hệ thống quản lý ngữ cảnh hay bộ nhớ dài hạn. Điều này làm cho AI phản hồi rất ngô nghê, thường xuyên xảy ra lỗi ảo tưởng (hallucination) và không giải quyết được các tác vụ phức tạp của doanh nghiệp. Ngoài ra, việc lầm tưởng rằng thiết lập nhiệt độ bằng 0 (Temperature = 0) là LLM sẽ trả ra kết quả hoàn toàn giống nhau cũng gây ra nhiều lỗi logic nghiêm trọng khi đưa ứng dụng vào môi trường production thực tế do các cơ chế tối ưu hóa song song trên GPU hoạt động bất đồng bộ. Cuối cùng, đối với nghiệp vụ tài chính ngân hàng, hệ thống đánh giá thủ công hoặc phân tích dữ liệu cũ quá chậm chạp, không thể xử lý nổi nguồn dữ liệu lớn và phi cấu trúc của các doanh nghiệp khởi nghiệp, gây cản trở việc tiếp cận nguồn vốn.
+Qua phần chia sẻ của các diễn giả, nhiều doanh nghiệp hiện vẫn gặp vướng mắc với hệ thống Monolith hoặc phân phối nội dung trực tiếp từ một server gốc mà không qua CDN:
 
-### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
-Để khắc phục những hạn chế của hệ thống cũ, xu hướng dịch chuyển sang kiến trúc Microservices hiện đại là tất yếu. Trong mô hình này, một ứng dụng khổng lồ sẽ được bẻ nhỏ thành nhiều dịch vụ độc lập, giao tiếp với nhau qua API hoặc các luồng sự kiện. 
+- **Độ trễ cao:** User ở Việt Nam gọi về origin server đặt ở Mỹ phải đợi >200ms, tốn băng thông quốc tế và trải nghiệm tải trang bị chậm.
+- **Rủi ro bảo mật:** Mở kết nối công khai trực tiếp tới origin server khiến hệ thống dễ thành mục tiêu cho các cuộc tấn công DDoS hoặc botnet khi không có lớp chặn ở biên (Edge).
+- **Hạn chế khi dùng AI thô sơ:** Gửi prompt đơn lẻ mà không quản lý context/bộ nhớ khiến AI hay bị hallucination và trả lời thiếu chính xác.
+- **Lầm tưởng về `Temperature = 0`:** Đặt nấc này không đồng nghĩa LLM sẽ trả ra kết quả hoàn toàn giống nhau 100%, do cơ chế tối ưu GPU chạy song song bất đồng bộ sinh ra tính phi xác định (Non-Determinism).
 
-Một điểm cực kỳ thú vị mà tôi học được từ phần trình bày của chị Vy Lam là việc áp dụng mô hình này vào thiết kế AI dưới dạng hệ thống Multi-Agent (Đa tác nhân). Thay vì cố bắt một mô hình LLM gánh vác toàn bộ công việc, hệ thống phân rã thành nhiều Agent chuyên biệt như những microservices độc lập: một Agent thu thập dữ liệu khởi nghiệp, một Agent phân tích rủi ro tín dụng và một Agent kiểm tra tính tuân thủ pháp lý. Cách thiết kế này giúp cô lập lỗi tốt hơn, dễ dàng nâng cấp từng thành phần độc lập mà không ảnh hưởng tới toàn bộ hệ thống chung.
+#### 2. Xu hướng Microservices & Ứng dụng Multi-Agent vào Banking
 
-### Domain-Driven Design (DDD)
-Thiết kế hướng tên miền (DDD) đóng vai trò nền tảng giúp phân chia ranh giới rõ ràng cho các dịch vụ trong hệ thống Microservices hoặc các tác nhân trong mô hình Multi-Agent. Thay vì nhảy vào viết code ngay, DDD yêu cầu các kỹ sư phải làm việc chặt chẽ với bộ phận nghiệp vụ để thống nhất một ngôn ngữ chung (Ubiquitous Language) và phân chia hệ thống thành các Bounded Contexts (ngữ cảnh giới hạn) độc lập.
+Dịch chuyển từ Monolith sang Microservices là hướng đi bắt buộc để chia nhỏ hệ thống lớn thành các dịch vụ độc lập giao tiếp qua API/Event.
 
-Điều này thể hiện rất rõ qua bài chia sẻ của nhóm VIB khi tham gia LotusHacks 2026. Trong vòng 36 tiếng ngắn ngủi, nếu không áp dụng DDD để phân tách ranh giới các nghiệp vụ của sản phẩm UTMorpho và xác định rõ thực thể nào tương tác với nhau, bản thân họ chắc chắn sẽ bị rối và không thể hoàn thành sản phẩm đúng hạn. Tương tự, tại VPBank, việc thiết lập "Ủy ban tín dụng ảo" bằng Multi-Agent đòi hỏi ranh giới trách nhiệm của từng Agent phải cực kỳ rõ ràng để đảm bảo tính tuân thủ trong môi trường ngân hàng nghiêm ngặt.
+Một điểm hay từ bài nói của chị Vy Lam (VPBank) là áp dụng tư duy Microservices vào thiết kế AI dưới dạng hệ thống **Multi-Agent**:
+- Thay vì bắt 1 con LLM ôm đồm tất cả, hệ thống tách thành các Agent chuyên biệt: thu thập dữ liệu doanh nghiệp, phân tích rủi ro tín dụng và kiểm tra tuân thủ.
+- Tách nhỏ agent giúp cô lập lỗi tốt hơn và nâng cấp từng phần độc lập.
 
-### Event-Driven Architecture
-Kiến trúc hướng sự kiện giúp các dịch vụ hoặc các Agent trong hệ thống hoạt động bất đồng bộ, giảm thiểu sự phụ thuộc trực tiếp lẫn nhau. Khi một sự kiện xảy ra (ví dụ: khách hàng tải lên một bộ tài liệu mới), hệ thống sẽ phát đi một sự kiện và các dịch vụ quan tâm sẽ tự động bắt lấy để xử lý công việc của mình mà không cần server chính phải liên tục gửi yêu cầu kiểm tra.
+#### 3. Phân tách nghiệp vụ với Domain-Driven Design (DDD)
 
-Ở mức độ hạ tầng mạng, Amazon CloudFront kết hợp với CloudFront Functions và Lambda@Edge cho phép bắt các sự kiện yêu cầu (request) và phản hồi (response) ngay tại các trạm biên (Edge Locations) gần người dùng nhất. Nhờ đó, chúng ta có thể thực hiện rewrite URL, redirect hoặc điều chỉnh header trực tiếp tại Edge với độ trễ dưới 1ms, loại bỏ hoàn toàn việc phải gửi request ngược về server gốc ở xa.
+DDD đóng vai trò xác định ranh giới cho dịch vụ hoặc từng Agent. Kỹ sư cần làm việc với bộ phận nghiệp vụ để chốt ngôn ngữ chung (Ubiquitous Language) và chia hệ thống thành các Bounded Contexts.
 
-### Compute Evolution
-Hạ tầng tính toán đã đi một chặng đường dài từ việc sử dụng các máy chủ vật lý cồng kềnh, chuyển sang máy ảo đám mây (EC2), container (ECS, Fargate) và giờ đây là Serverless (AWS Lambda). 
+- **Bài học từ nhóm VIB (LotusHacks 2026):** Trong 36 tiếng làm sản phẩm UTMorpho, việc dùng DDD để phân tách ranh giới nghiệp vụ giúp nhóm không bị rối scope và kịp hoàn thành MVP.
+- **Ứng dụng tại VPBank:** Mô hình "Ủy ban tín dụng ảo" bằng Multi-Agent đòi hỏi ranh giới trách nhiệm của từng agent phải rõ ràng để đảm bảo tuân thủ quy trình ngân hàng.
 
-Khi dịch chuyển sang mô hình Serverless, chúng ta không cần phải lo lắng về việc quản trị hệ điều hành, cấu hình mạng hay vá lỗi bảo mật định kỳ cho máy chủ. Hệ thống sẽ tự động scale linh hoạt từ 0 đến hàng ngàn request đồng thời và chỉ tính phí trên thời gian chạy thực tế của code. Sự tiến hóa này giúp các lập trình viên tập trung hoàn toàn vào việc viết logic nghiệp vụ, đồng thời giúp doanh nghiệp tối ưu chi phí vận hành ở mức tối đa.
+#### 4. Tối ưu độ trễ với Event-Driven Architecture & CloudFront Edge
 
-### Amazon Q Developer
-Amazon Q Developer cùng bộ giải pháp AI từ G-AsiaPacific như Amazon Quick (bao gồm Quick Chat, Quick Flow, Quick Spaces, Quick Sight) mang lại cho bản thân tôi góc nhìn mới về cách ứng dụng AI hỗ trợ quy trình phát triển phần mềm (SDLC).
+- **Event-Driven:** Các dịch vụ hoặc Agent phát/nhận sự kiện bất đồng bộ, giảm phụ thuộc trực tiếp.
+- **Xử lý tại trạm biên (Edge):** Kết hợp Amazon CloudFront với CloudFront Functions và Lambda@Edge cho phép can thiệp request/response ngay tại Edge Location gần user. Rewrite URL hoặc sửa header tại Edge giúp đạt độ trễ <1ms mà không cần đẩy request ngược về server gốc ở xa.
 
-Nhờ các trợ lý AI này, việc viết mã nguồn, tối ưu hóa code và viết unit test trở nên nhanh chóng hơn rất nhiều. Đặc biệt, công cụ Quick Sight cho phép người dùng nghiệp vụ không có kiến thức lập trình vẫn có thể dễ dàng truy vấn dữ liệu thô và dựng nên các dashboard phân tích báo cáo trực quan chỉ bằng cách trò chuyện với AI bằng ngôn ngữ tự nhiên, giúp doanh nghiệp ra quyết định kinh doanh nhanh hơn gấp nhiều lần.
+#### 5. Sự tiến hóa của Compute: Từ EC2 đến Serverless
+
+Nhìn lại hành trình tiến hóa compute: Máy chủ vật lý -> Máy ảo EC2 -> Container (ECS, Fargate) -> Serverless (AWS Lambda).
+
+Dùng Serverless giúp bỏ qua khâu vận hành OS và vá lỗi máy chủ. Hệ thống tự scale linh hoạt theo traffic và chỉ tính tiền khi code chạy, giúp dev tập trung hoàn toàn vào logic ứng dụng.
+
+#### 6. Trợ lý AI tăng tốc quy trình phát triển (Amazon Q & Quick Suite)
+
+Amazon Q Developer cùng bộ công cụ Amazon Quick (Quick Chat, Quick Flow, Quick Spaces, Quick Sight) hỗ trợ đáng kể cho quy trình làm phần mềm:
+
+- Hỗ trợ sinh code, refactor và viết unit test nhanh hơn.
+- Công cụ Quick Sight cho phép nhân viên nghiệp vụ gõ câu lệnh tự nhiên để truy vấn data thô và dựng dashboard báo cáo trực quan mà không cần gõ SQL.
+
+---
 
 ### Những Gì Học Được
 
-#### Tư Duy Thiết Kế
-- Tôi nhận ra rằng CloudFront không đơn giản chỉ là công cụ lưu trữ đệm cho hình ảnh hay file tĩnh như bản thân từng nghĩ. Nó thực chất là một lớp bảo mật biên vững chắc, giúp ẩn giấu toàn bộ hệ thống backend (Origin Cloaking) và giảm tải tối đa cho server gốc.
-- Khi xây dựng các ứng dụng AI, tư duy thiết kế hệ thống phải đi liền với việc xây dựng ngữ cảnh (Context) và trí nhớ dài hạn ("Second Brain") thông qua kỹ thuật RAG. AI chỉ thực sự hữu ích khi nó có đủ thông tin và dữ liệu phù hợp với nghiệp vụ cụ thể.
-- Thiết kế kỹ thuật luôn luôn phải bắt đầu từ nghiệp vụ thực tế (Business-first). Việc cố gắng áp đặt công nghệ phức tạp vào khi chưa hiểu rõ bài toán nghiệp vụ sẽ chỉ tạo ra một kiến trúc cồng kềnh và không hiệu quả.
+#### Tư duy thiết kế & Kiến trúc
+- CloudFront không chỉ để cache ảnh/file tĩnh, nó là lớp lá chắn bảo vệ origin server (Origin Cloaking) và giảm tải cho backend.
+- Xây dựng ứng dụng AI cần chuẩn bị context và bộ nhớ dài hạn (qua RAG) thì AI mới trả lời đúng nghiệp vụ.
+- Thiết kế hệ thống phải bắt đầu từ nghiệp vụ thực tế (Business-first) chứ không nên ép công nghệ phức tạp vào bài toán đơn giản.
 
-#### Kiến Trúc Kỹ Thuật
-- Nắm vững các kỹ thuật caching nâng cao của CloudFront như multi-layer caching, Regional Edge Caches, và request collapsing để tối ưu hóa đường truyền dữ liệu động.
-- Phân biệt rõ ràng mục đích sử dụng của CloudFront Functions (chạy script JavaScript siêu nhẹ tại Edge, độ trễ cực thấp <1ms, dùng cho thay đổi header hoặc chuyển hướng nhanh) và Lambda@Edge (hỗ trợ đầy đủ thư viện Node.js/Python để xử lý logic phức tạp hơn).
-- Hiểu rõ nguồn gốc của tính phi xác định trong LLM (do GPU tối ưu hóa các phép tính dấu phẩy động song song) và cách áp dụng các Guardrails để kiểm soát kết quả đầu ra, đảm bảo hệ thống tự động hoạt động ổn định.
+#### Kỹ thuật CloudFront & LLM
+- Phân biệt công cụ Edge:
+  - *CloudFront Functions:* Chạy JS siêu nhẹ tại Edge, siêu nhanh (<1ms), thích hợp sửa header, redirect URL.
+  - *Lambda@Edge:* Chạy full Node.js/Python cho các logic phức tạp hơn.
+- Hiểu nguyên nhân LLM bị phi xác định (do phép tính dấu phẩy động trên GPU) và cách dùng Guardrails để kiểm soát output.
 
-#### Chiến Lược Hiện Đại Hóa
-- Việc nâng cấp hệ thống cũ lên Cloud/AI cần được thực hiện từng bước một theo lộ trình rõ ràng (Phased Approach) dựa trên mô hình đánh giá 7Rs và tính toán ROI kỹ lưỡng, tránh tâm lý nôn nóng đập đi xây lại toàn bộ.
-- Bài học từ dự án UTMorpho của nhóm VIB cho bản thân tôi thấy tầm quan trọng của việc định hình sản phẩm khả dụng tối thiểu (MVP) để thử nghiệm nhanh chóng, sẵn sàng chấp nhận các lỗi phát sinh và xoay hướng sản phẩm linh hoạt khi thị trường yêu cầu.
+---
 
-### Ứng Dụng Vào Công Việc
-- Trong các bài thực hành workshop tiếp theo (ví dụ như dự án IoT Weather Platform), tôi sẽ thử cấu hình Amazon CloudFront đứng trước backend để kiểm chứng khả năng tăng tốc độ tải dữ liệu biểu đồ thời tiết thời gian thực và bảo vệ hệ thống bằng AWS Shield.
-- Triển khai các ứng dụng front-end tĩnh lưu trữ trên S3 kết hợp CloudFront, cấu hình Origin Access Control (OAC) để chặn truy cập trực tiếp vào S3 bucket.
-- Áp dụng kỹ thuật RAG và bộ nhớ ngữ cảnh để xây dựng một AI chatbot hỗ trợ học tập AWS cá nhân nhằm sắp xếp, tra cứu tài liệu và ghi chú.
-- Tích hợp Amazon Q Developer vào VS Code để hỗ trợ tự động tạo mã nguồn, tối ưu hóa (refactor) code và viết unit test.
+### Ứng Dụng Vào Công Việc & Học Tập
 
-### Trải Nghiệm Sự Kiện
+- Cấu hình CloudFront đứng trước backend trong các đồ án (như IoT Weather Platform) để tăng tốc tải data và bảo vệ origin bằng OAC / AWS Shield.
+- Triển khai web tĩnh S3 + CloudFront với Origin Access Control (OAC) để chặn truy cập trực tiếp vào S3 bucket.
+- Tích hợp Amazon Q Developer vào VS Code hỗ trợ viết code và unit test.
+- Tự làm một bot hỗ trợ học AWS bằng RAG để sắp xếp ghi chú cá nhân.
 
-#### Học hỏi từ các diễn giả giàu kinh nghiệm
-Các bài trình bày rất lôi cuốn và trực quan với nhiều sơ đồ kiến trúc thực tế. Tôi đặc biệt ấn tượng với phần chia sẻ về CloudFront của anh Nguyễn Tuấn Thịnh. Là một AWS Champion Instructor sở hữu 12 chứng chỉ AWS, anh giải thích cơ chế CDN và các trạm biên (Edge Locations) tại Việt Nam bằng những ví dụ rất dễ hiểu, giúp tôi nắm bắt kiến thức một cách tự nhiên.
+---
 
-#### Tiếp cận trải nghiệm kỹ thuật thực tế
-Tôi rất thích thú khi được xem phần demo trực tiếp quy trình thẩm định tín dụng bằng hệ thống Multi-Agent tại VPBank. Phần chia sẻ chân thực từ nhóm VIB về những khó khăn, lỗi phát sinh và cách xoay chuyển hướng đi dưới áp lực thời gian tại LotusHacks đã mang lại nhiều bài học thực chiến giá trị về làm việc nhóm và xử lý sự cố.
+### Trải Nghiệm & Thảo Luận Tại Sự Kiện
 
-#### Ứng dụng các công cụ hiện đại
-Đoạn demo Amazon QuickSight Q tự động tạo báo cáo phân tích từ câu lệnh ngôn ngữ tự nhiên là một điểm nhấn ấn tượng. Điều này cho thấy AI đang rút ngắn khoảng cách giữa người dùng nghiệp vụ và kỹ thuật dữ liệu như thế nào.
+- **Học từ diễn giả:** Ấn tượng với bài chia sẻ CloudFront của anh Nguyễn Tuấn Thịnh (AWS Champion Instructor). Cách anh giải thích cơ chế CDN và Edge Locations tại VN bằng ví dụ thực tế rất dễ ngấm.
+- **Demo thực tế:** Xem quy trình thẩm định tín dụng Multi-Agent của VPBank và nghe nhóm VIB kể lại các sự cố, cách xử lý bug phút chót tại LotusHacks cho mình nhiều góc nhìn thực chiến.
+- **Networking:** Giờ giải lao mình có tranh thủ hỏi thêm các anh kỹ sư lâu năm và các AWS Community Builders về kinh nghiệm làm việc và cách chọn tài liệu ôn thi chứng chỉ AWS.
 
-### Mạng Lưới & Thảo Luận
-Bầu không khí tại Bitexco vô cùng năng động. Trong giờ giải lao, tôi đã có cơ hội trò chuyện với các kỹ sư hệ thống lâu năm và các AWS Community Builders, lắng nghe những lời khuyên định hướng sự nghiệp và kinh nghiệm ôn luyện chứng chỉ AWS.
+---
 
 ### Bài Học Rút Ra & Đóng Góp Cá Nhân
-- **Bài học rút ra**:
-  + Chìa khóa truyền đạt kỹ thuật hiệu quả nằm ở việc đơn giản hóa các khái niệm trừu tượng thành những hình ảnh so sánh thực tế gần gũi.
-  + Tối ưu hóa hiệu năng tại trạm biên (Edge) và tích hợp AI quản lý ngữ cảnh là hai yếu tố cốt lõi để xây dựng các giải pháp Cloud hiện đại.
-- **Đóng góp & Tương tác cá nhân**:
-  + Tích cực đặt câu hỏi thảo luận trong phiên chia sẻ về CloudFront của anh Nguyễn Tuấn Thịnh để làm rõ sự khác biệt hiệu năng giữa CloudFront Functions và Lambda@Edge trong thực tế.
-  + Giao lưu và kết nối với các AWS Community Builders để học hỏi lộ trình phát triển bản thân và chuẩn bị cho các kỳ thi Hackathon sắp tới.
+
+- **Bài học rút ra:** Cách truyền đạt kỹ thuật tốt nhất là quy đổi khái niệm phức tạp thành ví dụ gần gũi. Tối ưu ở biên (Edge) và chuẩn bị context cho AI là 2 yếu tố then chốt cho hệ thống đám mây hiện đại.
+- **Đóng góp cá nhân:** Đặt câu hỏi thảo luận trong phiên CloudFront để làm rõ ranh giới áp dụng giữa CloudFront Functions và Lambda@Edge; giao lưu kết nối với các bạn trong cộng đồng AWS FCJ.
+
+---
 
 ### Một số hình ảnh khi tham gia sự kiện
 
-Dưới đây là một số hình ảnh thực tế ghi lại những khoảnh khắc đáng nhớ của bản thân khi tham gia sự kiện AWS Vietnam Community Day 2026:
+Dưới đây là một số hình ảnh ghi lại các slide kiến trúc và khoảnh khắc tại sự kiện AWS Vietnam Community Day 2026:
 
 ![Slide "What's Next" giới thiệu dự án UTMorpho của nhóm VIB với mã QR truy cập Devpost và GitHub](/images/4-EventParticipated/4.1-Event1/IMG20260523105858.jpg)
 
@@ -144,5 +153,4 @@ Dưới đây là một số hình ảnh thực tế ghi lại những khoảnh 
 
 ![Bức ảnh tập thể các thành viên chụp chung lưu niệm khi kết thúc sự kiện](/images/4-EventParticipated/4.1-Event1/event1.jpg)
 
-> Sự kiện đã mang lại cho bản thân rất nhiều kiến thức giá trị cùng nguồn cảm hứng công nghệ to lớn, làm chắc chắn cho quá trình học tập và làm việc sau này.
-
+> *Sự kiện mang lại nhiều góc nhìn kiến trúc thực tế, củng cố thêm định hướng học tập về Cloud và Generative AI cho bản thân.*

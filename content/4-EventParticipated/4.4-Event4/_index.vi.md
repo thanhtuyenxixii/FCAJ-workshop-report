@@ -11,124 +11,142 @@ pre: " <b> 4.4. </b> "
 | Thông tin sự kiện | Chi tiết |
 | :--- | :--- |
 | **Tên sự kiện** | AWS Agentic AI Buildweek 2026 Showcase & Sharing |
-| **Thời gian** | 25/07/2026 (Từ 09:00 đến 12:00) |
+| **Thời gian** | 25/07/2026 (09:00 - 12:00) |
 | **Địa điểm** | Trực tuyến (YouTube Livestream & Subtitle Archive) |
-| **Hình thức tham gia** | Trực tuyến (Xem video và nghiên cứu bài trình bày của các đội thi) |
+| **Hình thức tham gia** | Trực tuyến (Xem video và tổng hợp bài trình bày của các đội thi) |
 | **Vai trò** | Người tham dự |
 
 ### Mục Đích Của Sự Kiện
 
-Sự kiện **AWS Agentic AI Buildweek Showcase & Sharing** là buổi tổng kết và báo cáo kết quả chuyên sâu từ cuộc thi Hackathon *Agentic AI Buildweek 2026* do **AWS** phối hợp cùng quỹ đầu tư **JI Fund** và cộng đồng **FCAJ** tổ chức. Đây là sân chơi thực chiến dành cho các kỹ sư đám mây, lập trình viên và sinh viên trẻ nhằm biến những ý tưởng táo bạo về Tác nhân thông minh (Agentic AI) thành các sản phẩm có khả năng giải quyết các bài toán thực tế của doanh nghiệp.
+Buổi **AWS Agentic AI Buildweek Showcase & Sharing** là sự kiện tổng kết cuộc thi Hackathon *Agentic AI Buildweek 2026* do **AWS**, quỹ đầu tư **JI Fund** và cộng đồng **FCAJ** phối hợp tổ chức. 
 
-Mục đích cốt lõi của số sự kiện lần này là mổ xẻ các kiến trúc hạ tầng Multi-Agent, quy trình phát triển sản phẩm AI Agent cấp doanh nghiệp trong các lĩnh vực F&B, quản trị thị trường và tài chính ngân hàng. Đồng thời, sự kiện mang đến những góc nhìn thực tế về tư duy đổi mới từ đại diện AWS ASEAN, bài học xương máu về tối ưu chi phí hạ tầng (FinOps), bài toán xử lý dữ liệu tiếng Việt nghèo tài nguyên và kinh nghiệm quản lý scope khi thi đấu Hackathon.
+Nội dung buổi chia sẻ tập trung vào kiến trúc hạ tầng Multi-Agent và quy trình triển khai AI Agent thực tế trong các mảng F&B, nghiên cứu thị trường và tài chính - ngân hàng. Bên cạnh đó, các đại diện từ AWS và các đội thi cũng chia sẻ nhiều bài học thực tế về quản lý chi phí đám mây (FinOps), cách xử lý dữ liệu tiếng Việt và kinh nghiệm gói gọn scope khi làm sản phẩm.
 
 ### Danh Sách Diễn Giả & Các Đội Thi
 
-Sự kiện quy tụ dàn diễn giả uy tín từ AWS cùng các đội thi xuất sắc nhất bước ra từ cuộc thi Hackathon:
-
 | STT | Diễn giả / Đội thi | Chức vụ / Giải thưởng | Chủ đề trình bày |
 | :-: | :--- | :--- | :--- |
-| 1 | **Joseph Marazota** | Head of Technology @ *AWS ASEAN* | *Opening Keynote: Hành trình 20 năm công nghệ, sự chuyển dịch sang kỷ nguyên AI Agent, tư duy bứt phá giới hạn và vai trò Human-in-the-loop* |
-| 2 | **Nguyễn Gia Hưng** | Head of Solution Architect @ *AWS Vietnam* | *Khách mời đặc biệt (Special Guest): Đại diện AWS Việt Nam chào mừng & vinh danh trao chứng nhận cho các đội thi* |
-| 3 | **One Team** | Giải Nhất (First Prize) @ *AWS Track* | *AI-Powered Conversational Ordering: Tác nhân đặt món KFC đa kênh qua Zalo/WhatsApp sử dụng AWS Agent Core Memory, TinyFish scraper và kiến trúc chống hallucination* |
-| 4 | **Final Scale (Signal C)** | Giải Nhì (Second Prize) @ *AWS Track* | *Multi-Agent Market Intelligence: Phân tích tín hiệu đối thủ & thị trường dựa trên Value Creation Canvas kết hợp LangFuse & Bedrock Guardrails* |
-| 5 | **Six Pillars** | Đội thi xuất sắc @ *FinTech Track* | *Adaptive Workflow Engine for Anti-Money Laundering (AML): Trợ lý điều tra rửa tiền tự động cho ngân hàng, giảm 90-95% cảnh báo giả (False Positive)* |
+| 1 | **Joseph Marazota** | Head of Technology @ *AWS ASEAN* | *Keynote: Sự chuyển dịch sang kỷ nguyên AI Agent, tư duy bứt phá rào cản và vai trò Human-in-the-loop* |
+| 2 | **Nguyễn Gia Hưng** | Head of Solution Architect @ *AWS Vietnam* | *Đại diện AWS Việt Nam chào mừng & trao chứng nhận cho các đội thi* |
+| 3 | **One Team** | Giải Nhất @ *AWS Track* | *Dự án KFC Chatbot: Tác nhân đặt món KFC qua Zalo/WhatsApp dùng AWS Agent Core Memory, TinyFish scraper và cơ chế Last Verify* |
+| 4 | **Final Scale (Signal C)** | Giải Nhì @ *AWS Track* | *Multi-Agent Market Intelligence: Phân tích tín hiệu đối thủ & thị trường dựa trên Value Creation Canvas, LangFuse & Bedrock Guardrails* |
+| 5 | **Team Plan C** | Đội thi Hackathon | *SA Professional AI Native App: Trợ lý AI phân tích requirement, tự động gen kiến trúc Draw.io, tính chi phí & xuất Terraform IaC* |
+| 6 | **Team 3KA** | Đội thi Hackathon | *Dự án Sheper & Trải nghiệm Hackathon 24h: Quản trị tâm lý, bài học lập trình dưới áp lực và quản lý rủi ro* |
+| 7 | **Six Pillars** | Đội thi xuất sắc @ *FinTech Track* | *Adaptive Workflow Engine for AML: Trợ lý tự động hóa điều tra rửa tiền cho ngân hàng, giảm 90-95% cảnh báo giả (False Positive)* |
 
 ---
 
 ### Nội Dung Nổi Bật
 
-#### 1. Định hướng sự nghiệp & Tư duy bứt phá từ diễn giả AWS ASEAN
+#### 1. Định hướng sự nghiệp & Tư duy bứt phá từ diễn giả AWS
 
-Phiên mở đầu mang lại nhiều cảm xúc và nguồn cảm hứng lớn thông qua bài chia sẻ của ông **Joseph Marazota** (Head of Technology, AWS ASEAN) và anh **Nguyễn Gia Hưng** (Head of Solution Architect, AWS Vietnam).
+Phần chia sẻ của ông **Joseph Marazota** (Head of Technology, AWS ASEAN) và anh **Nguyễn Gia Hưng** (Head of Solution Architect, AWS Vietnam) mang lại một số góc nhìn đáng chú ý:
 
-- **Sự chuyển dịch kỷ nguyên phát triển phần mềm:** Ông Joseph chia sẻ về hành trình 20 năm làm nghề công nghệ. Nếu như 20 năm trước các ngân hàng chỉ dám release phần mềm 1 lần mỗi quý, sau đó rút ngắn xuống 2 tuần/lần, thì trong kỷ nguyên AI Agent hiện nay, các hệ thống có thể thực hiện tự động hóa release liên tục từng phút.
-- **Tư duy không ngại rào cản:** Kỹ sư trẻ không nên bị gò bó bởi những tư duy cũ kỹ hay nỗi sợ thiếu kinh nghiệm. Những mô hình tâm trí mới (New Mental Models) và góc nhìn tươi mới chính là chìa khóa để tạo ra đổi mới sáng tạo.
-- **Triết lý "Human-in-the-loop":** Dù Amazon sở hữu hơn 1 triệu robot vận hành các trung tâm Fulfillment, nhưng "robot nếu không có con người lập trình và định hướng thì cũng chỉ là đống phần cứng vô dụng". Con người luôn đóng vai trò là hạt nhân điều khiển (Human-in-the-loop) trong mọi chu trình đổi mới.
+- **Sự chuyển dịch tốc độ phát triển phần mềm:** 20 năm trước các ngân hàng thường 3 tháng mới release code 1 lần, sau đó rút ngắn xuống 2 tuần/lần với Agile/DevOps. Đến kỷ nguyên AI Agent, hệ thống có thể hỗ trợ tự động hóa và release liên tục.
+- **Tư duy không gò bó rào cản:** Lập trình viên trẻ không nên bị giới hạn bởi tư duy cũ hay tâm lý thiếu kinh nghiệm. Các góc nhìn mới (New Mental Models) chính là điểm cộng để tạo ra cách giải quyết bài toán khác biệt.
+- **Triết lý "Human-in-the-loop":** Amazon vận hành hơn 1 triệu robot trong các kho hàng Fulfillment, nhưng robot vẫn cần con người thiết lập logic và định hướng. Con người luôn là mắt xích kiểm soát chính (Human-in-the-loop) trong mọi hệ thống AI.
 
-#### 2. Chatbot đặt món KFC đa kênh – Giải pháp đột phá từ quán quân One Team
+#### 2. Dự án KFC Chatbot (One Team - Giải Nhất)
 
-Đội **One Team** đã chinh phục ban giám khảo và đoạt Giải Nhất nhờ bài toán thực tế xuất sắc trong ngành F&B.
+Đội **One Team** giải quyết bài toán đặt đồ ăn thực tế trong ngành F&B với các điểm kỹ thuật chính:
 
-- **Mổ xẻ bài toán thực tế:** Nhìn lại bài học thất bại của McDonald's khi thử nghiệm AI Drive-thru (AI bị nhầm lẫn ngữ cảnh, bị hallucination dẫn tới việc đặt nhầm 100 miếng gà cho 1 khách hàng), đội nhận thấy rào cản lớn nhất của các app đặt đồ ăn hiện tại là bắt người dùng tải app mới, tạo tài khoản và chuyển kênh trò chuyện.
-- **Giải pháp Chatbot đa kênh trên Zalo/WhatsApp:** Đưa trải nghiệm đặt hàng về ngay trong ứng dụng nhắn tin quen thuộc. Tại Việt Nam, Zalo được lựa chọn làm kênh trọng tâm.
-- **Kiến trúc Kỹ thuật đột phá:**
-  - *Thu thập dữ liệu thực đơn:* Do không có API trực tiếp từ KFC, đội sử dụng giải pháp **Tiny Fish** để cào (scrape) dữ liệu thực đơn động từ website chính thức của KFC và lưu trữ trên cơ sở dữ liệu AWS.
-  - *Ghi nhớ ngữ cảnh cá nhân hóa:* Sử dụng **AWS Agent Core Memory** cho phép mỗi user sở hữu một agent memory riêng. AI có thể nhớ lại đơn hàng khách từng đặt tuần trước để gợi ý nhanh.
-  - *Tối ưu chi phí & Tốc độ:* Đạt độ trễ phản hồi cực thấp (3 - 5 giây), chi phí hạ tầng chỉ khoảng **0.006 USD/đơn hàng** (giảm 75% chi phí hạ tầng so với mô hình serverless truyền thống).
-  - *Tầng xác thực cuối (Last Verify):* Đặt một bước xác nhận lại chi tiết đơn hàng trước khi chốt thanh toán để triệt tiêu hoàn toàn rủi ro hallucination của AI.
+- **Vấn đề thực tế:** Nhìn từ bài học thử nghiệm AI Drive-thru của McDonald's (AI bị nhầm ngữ cảnh dẫn tới đặt lộn 100 miếng gà), nhóm nhận thấy việc bắt người dùng cài thêm app mới để đặt hàng có tỷ lệ chuyển đổi rất thấp. Do đó, đưa chatbot về ứng dụng nhắn tin sẵn có như Zalo hay WhatsApp (trọng tâm là Zalo tại Việt Nam) là hướng đi thực tế hơn.
+- **Kiến trúc Kỹ thuật:**
+  - *Thu thập dữ liệu thực đơn:* Vì không có API trực tiếp từ KFC, đội dùng **TinyFish** cào (scrape) menu động từ website KFC và lưu vào CSDL trên AWS.
+  - *Bộ nhớ ngữ cảnh cá nhân hóa:* Dùng **AWS Agent Core Memory** tạo bộ nhớ riêng cho từng user, tự ghi nhớ món khách từng đặt tuần trước để gợi ý nhanh.
+  - *Chi phí & Tốc độ:* Tốc độ phản hồi đạt 3 - 5 giây, chi phí hạ tầng khoảng **0.006 USD/đơn hàng** (rẻ hơn khoảng 75% so với mô hình serverless truyền thống).
+  - *Xác thực đơn hàng (Last Verify):* Đội thêm bước confirm lại toàn bộ chi tiết đơn hàng trước khi chốt thanh toán để chặn lỗi hallucination của AI.
 
-#### 3. Phân tích tín hiệu đối thủ bằng Multi-Agent – Đội Final Scale (Signal C)
+#### 3. Phân tích tín hiệu đối thủ bằng Multi-Agent (Final Scale - Giải Nhì)
 
-Đội **Final Scale** (đến từ sinh viên FPT) mang tới góc nhìn chuẩn chỉnh về tư duy làm sản phẩm nghiệp vụ kết hợp kiến trúc Multi-Agent hiện đại.
+Đội **Final Scale** (sinh viên FPT) tập trung vào bài toán phân tích thông tin thị trường với cách tiếp cận bài bản:
 
-- **Triết lý "Nghiep vu truyen cam hung cho Cong nghe":** Công nghệ dù phức tạp đến đâu cũng không thể vượt qua rào cản giới hạn về nghiệp vụ. 70% quyết định chiến thắng của dự án nằm ở chỗ bài toán đó giải quyết vấn đề gì cho xã hội và doanh nghiệp.
-- **Value Creation & Delivery Canvas:** Thay vì áp dụng Business Model Canvas truyền thống (quá nặng về dòng tiền không phù hợp cho bản demo hackathon), đội đã tinh chỉnh thành bản vẽ tạo lập và phân phối giá trị.
+- **Nghiệp vụ dẫn dắt công nghệ:** 70% thành bại của dự án nằm ở bài toán nghiệp vụ chứ không phải độ phức tạp của model. Nhóm dùng **Value Creation & Delivery Canvas** (tinh chỉnh từ Business Model Canvas) để tập trung vào giá trị đầu ra thay vì sa đà vào các chỉ số dòng tiền không cần thiết cho demo hackathon.
 - **Kiến trúc Multi-Agent & Bảo mật:**
-  - *Crawler Subagent:* Kết hợp Apify (cho web tĩnh, dữ liệu lớn) và Tiny Fish (cho web động, quét sâu).
-  - *Tối ưu Token & Chống Prompt Injection:* Lọc sạch dữ liệu thô bằng code thuần trước khi đưa vào LLM để cắt giảm chi phí token và ngăn chặn tấn công injection từ các trang web bên ngoài.
-  - *Đánh giá chất lượng qua LangFuse:* Đưa dữ liệu qua **LangFuse** để chấm điểm. Nếu dữ liệu điểm thấp, hệ thống kích hoạt chạy lại (retry) tối đa 2 lần để tiết kiệm chi phí; nếu vẫn thấp sẽ lưu vào DynamoDB và gắn tag yêu cầu con người review.
-  - *Bảo mật đa lớp:* Sử dụng **Bedrock Guardrails**, AWS Cognito, WAF và Amplify.
+  - *Crawler Subagent:* Dùng Apify cho web tĩnh/dữ liệu lớn và TinyFish cho web động cần quét sâu.
+  - *Lọc dữ liệu thô & Tối ưu Token:* Dùng code thuần xử lý bớt dữ liệu rác trước khi đẩy vào LLM. Cách này vừa đỡ tốn chi phí token vừa giảm nguy cơ bị Prompt Injection từ dữ liệu web bên ngoài.
+  - *Đánh giá chất lượng bằng LangFuse:* Chạy qua **LangFuse** để chấm điểm output. Nếu điểm thấp, hệ thống tự retry tối đa 2 lần; nếu vẫn chưa đạt thì lưu vào DynamoDB để gắn tag cho người kiểm tra lại.
+  - *Bảo mật:* Kết hợp **Bedrock Guardrails**, AWS Cognito, WAF và Amplify.
 
-#### 4. Thảo luận & Bài học xương máu FinOps từ câu chuyện YOLO Demo
+#### 4. Trợ lý AI cho Solution Architect (Team Plan C)
 
-Một điểm nhấn rất thú vị trong phần Q&A của sự kiện là cuộc thảo luận về việc chọn lựa model AI trong các buổi live demo.
+Đội **Team Plan C** mang đến giải pháp **SA Professional AI Native App** nhằm tự động hóa quy trình thiết kế hệ thống và báo giá chi phí cho các Solution Architect:
 
-- Đội thi chia sẻ trải nghiệm "đau thương" ở giai đoạn đầu khi host mô hình AI lớn trên **Amazon SageMaker** để làm demo theo dõi đối tượng trong 3 tiếng nhưng chi phí vọt lên tới **48 USD**.
-- Ngay sau đó, đội đã linh hoạt hạ cấp xuống mô hình **YOLOv26 Small**. Kích thước mô hình nhỏ gọn giúp chạy cực nhẹ, vẫn giữ được độ confident score cao (90% - 97% khi nhận diện người) mà lại tiết kiệm chi phí hạ tầng một cách tối đa. Đây là bài học thực chiến đắt giá về ý thức FinOps cho sinh viên khi lên đám mây.
+- **Bài toán thực tế:** Khi làm việc với khách hàng, các SA thường nhận yêu cầu gấp phải tạo sơ đồ kiến trúc và ước tính chi phí trong vòng 2-3 ngày, hoặc thậm chí ngay trong đêm. Việc vẽ tay sơ đồ, tra cứu bảng giá dịch vụ và viết script hạ tầng (IaC) tốn rất nhiều thời gian.
+- **Giải pháp & Luồng xử lý:**
+  - *Xử lý ngôn ngữ tự nhiên & Tài liệu:* Cho phép người dùng nhập yêu cầu bằng câu lệnh tự nhiên (Free text) hoặc tải lên tài liệu policy/quy chuẩn kỹ thuật của công ty.
+  - *Tự động sinh sơ đồ Draw.io:* AI phân tích yêu cầu và tự động dựng sơ đồ kiến trúc chuẩn bộ icon AWS trên giao diện Draw.io. Người dùng có thể kéo thả và tinh chỉnh trực tiếp.
+  - *Báo giá & Sinh mã IaC:* Tự động xuất bảng tính chi phí dự án và tạo file cấu hình Terraform / CloudFormation theo chuẩn mã nguồn mở (Terraform Modules).
+  - *Kiểm soát Policy & Blacklist:* Đội thiết lập bộ lọc output validation để ngăn AI dùng các dịch vụ không mong muốn (ví dụ: chặn các service thiếu khả năng quản lý chi tiết như App Runner để ưu tiên ECS/Lambda trong môi trường doanh nghiệp).
+  - *Triển khai tự động (Auto-Deploy):* Khi người dùng bấm confirm, hệ thống có thể kích hoạt luồng chạy script IaC để khởi tạo toàn bộ hạ tầng thực tế trên AWS.
 
-#### 5. Adaptive Workflow Engine – Giải pháp chống rửa tiền AML từ Six Pillars
+#### 5. Giám sát đám đông thời gian thực & Bài học FinOps từ YOLO Demo (Team 3KA)
 
-Đội **Six Pillars** mang đến một giải pháp cấp doanh nghiệp vô cùng ấn tượng dành cho khối Ngân hàng & Tài chính (BFSI).
+Đội **Team 3KA** (gồm 5 sinh viên FPT/chung trường) mang đến dự án **Sheper** (Hệ thống camera AI phát hiện và điều phối đám đông ùn tắc tại sân bay, siêu thị, sự kiện) cùng các bài học thực chiến 24h:
 
-- **Nỗi đau ngành ngân hàng (AML Pain Point):** Các quy tắc cảnh báo truyền thống sinh ra tới **90% - 95% cảnh báo giả (False Positive)**. Mỗi lần chuyên viên tài chính review thủ công một case tốn 20 - 25 USD và mất gần 3 giờ đồng hồ, gây tình trạng quá tải và tồn đọng công việc nghiêm trọng.
-- **Luồng xử lý 3 tầng thông minh:**
-  - *Layer 1 - Fast Detection:* Kinesis Data Stream tiếp nhận dữ liệu giao dịch thời gian thực, Lambda trích xuất đặc trưng và mô hình XGBoost trên Bedrock chấm điểm nhanh (chỉ đẩy 5-10% giao dịch thực sự nghi vấn lên tầng trên).
-  - *Layer 2 - Agentic Investigation:* Sử dụng 3 sub-agent chuyên biệt gồm: **KYC Profile Check**, **Money Flow Check** (phát hiện hành vi rửa tiền chia nhỏ dòng tiền structuring/smurfing) và **Sanction Check** (đối soát danh sách cấm vận). Hệ thống truy vấn nguồn tri thức pháp lý (Legal & Typology) nạp sẵn trên **Vector OpenSearch**.
-  - *Layer 3 - Decision & Human-in-the-loop:* Sử dụng 2 tầng LLM (con thứ nhất đưa ra đề xuất Dismiss/Hold/Escalate, con thứ hai đóng vai trò LLM-as-a-Judge kiểm tra lại). Nếu case phức tạp hoặc vi phạm luật cấm vận, hệ thống lập tức đẩy về Dashboard cho chuyên viên ngân hàng phê duyệt cuối cùng.
+- **Kiến trúc Kỹ thuật Dự án Sheper:**
+  - *Luồng Video Stream:* Dùng **Kinesis Video Streams** kết nối trực tiếp camera giám sát đẩy dữ liệu vào ECS Fargate Cluster.
+  - *Nhận diện & Tracking đám đông:* Sử dụng mô hình **YOLO** kết hợp **ByteTrack** để detect người, gán ID theo dõi di chuyển và vẽ zone cảnh báo ùn tắc theo thời gian thực.
+  - *Agent & Operator Co-pilot:* Dùng Amazon Bedrock tích hợp CSDL DynamoDB/S3 để theo dõi tự động (Autonomous Monitor) và hỗ trợ điều phối viên (Operator Co-pilot).
+- **Bài học FinOps từ sự cố SageMaker ($48):**
+  - Trong phần Q&A, đội chia sẻ trải nghiệm thực tế: ban đầu đội host mô hình AI lớn trên **Amazon SageMaker** để demo trong 3 tiếng, khiến chi phí vọt lên **48 USD**.
+  - Đội sau đó linh hoạt chuyển sang **YOLOv26 Small** (gọn nhẹ hơn hẳn), vừa đảm bảo confident score đạt 90% - 97% khi tracking vừa tối ưu chi phí hạ tầng.
+- **Bài học quản trị rủi ro & Tâm lý 24h Hackathon:**
+  - *Sự cố lộ file bí mật:* Do mệt mỏi trong đêm, thành viên nhóm lỡ tay push file chứa biến môi trường (`.env`) lên Git, để lại bài học xương máu về bảo mật.
+  - *Quản lý thời gian & Scope:* Mất 3 tiếng chỉ để sửa giao diện/chữ viết, giúp nhóm nhận ra tầm quan trọng của việc phân công vai trò rõ ràng và giữ scope vừa sức.
+
+#### 6. Giải pháp chống rửa tiền AML (Six Pillars - Đội Xuất Sắc FinTech Track)
+
+Đội **Six Pillars** giải bài toán nghiệp vụ trong lĩnh vực Tài chính - Ngân hàng (BFSI):
+
+- **Vấn đề AML ở ngân hàng:** Quy tắc lọc truyền thống tạo ra tới **90% - 95% cảnh báo giả (False Positive)**. Chuyên viên ngân hàng mất khoảng 20 - 25 USD và 3 giờ đồng hồ để rà soát thủ công từng ca, gây quá tải công việc.
+- **Luồng xử lý 3 tầng:**
+  - *Layer 1 (Fast Detection):* Kinesis Data Stream nhận giao dịch real-time, Lambda trích xuất đặc trưng và XGBoost trên Bedrock lọc nhanh (chỉ chuyển 5-10% ca thực sự nghi vấn lên tầng trên).
+  - *Layer 2 (Agentic Investigation):* Dùng 3 sub-agent chuyên biệt: **KYC Profile Check**, **Money Flow Check** (phát hiện hành vi chia nhỏ dòng tiền smurfing) và **Sanction Check** (đối soát danh sách cấm vận). Hệ thống tra cứu tri thức pháp lý lưu trên **Vector OpenSearch**.
+  - *Layer 3 (Decision & Human-in-the-loop):* Dùng 2 tầng LLM (con thứ nhất đề xuất Dismiss/Hold/Escalate, con thứ hai làm LLM-as-a-Judge soát lại). Các ca phức tạp hoặc vi phạm cấm vận sẽ được đẩy thẳng về Dashboard để chuyên viên ngân hàng ra quyết định cuối.
 
 ---
 
 ### Những Gì Học Được
 
 #### Tư duy thiết kế & Nghiệp vụ
-- **Tư duy "Product-First & Business-First":** Học được rằng một kiến trúc AI đẹp đến đâu cũng sẽ thất bại nếu không giải quyết đúng nỗi đau nghiệp vụ của khách hàng. Phải luôn bắt đầu từ bài toán thực tế trước khi lựa chọn công nghệ.
-- **Triết lý kiểm soát Scope khi thi Hackathon:** Không nên cố phình to scope dự án trong thời gian ngắn. Bí quyết chiến thắng là giữ scope vừa đủ, hoàn thiện bản Demo chạy mượt mà (MVP) và dồn sức truyền tải thông điệp ý tưởng sắc bén khi pitching.
-- **Triết lý "Human-in-the-loop":** Trong các miền nghiệp vụ nhạy cảm như Tài chính hay F&B, AI đóng vai trò là cánh tay hỗ trợ đắc lực tăng tốc độ xử lý, nhưng quyền quyết định phê duyệt cuối cùng vẫn thuộc về con người để đảm bảo an toàn tuyệt đối.
+- **Tập trung vào bài toán thực tế:** Kiến trúc AI có phức tạp đến đâu cũng không có giá trị nếu không giải quyết đúng bài toán nghiệp vụ. Cần bắt đầu từ vướng mắc của người dùng trước khi chọn công nghệ.
+- **Quản lý Scope khi làm Hackathon:** Giữ scope vừa sức, làm sản phẩm MVP chạy mượt và tập trung truyền tải rõ ràng giải pháp khi pitching.
+- **Vai trò Human-in-the-loop:** Với các mảng nhạy cảm như Tài chính hay F&B, AI đóng vai trò xử lý dữ liệu và gợi ý, còn con người vẫn giữ quyền duyệt cuối cùng.
 
 #### Kiến trúc kỹ thuật & FinOps
-- **Tư duy Multi-Agent cô lập ngữ cảnh:** Hiểu rõ cách chia nhỏ hệ thống thành các Sub-Agent chuyên biệt (Crawler, Profile, Money Flow, Sanction) để thu hẹp Context Window, chọn mô hình nhỏ cho việc dễ để tiết kiệm chi phí và chọn mô hình lớn cho việc suy luận phức tạp.
-- **Bài học FinOps thực chiến:** Luôn có ý thức kiểm soát chi phí hạ tầng cloud (như bài học hạ cấp SageMaker xuống YOLO Small hay việc lọc bớt dữ liệu bằng code thô trước khi gọi LLM).
-- **Ứng dụng công nghệ thực tế trên AWS:** Nắm vững cách phối hợp các dịch vụ AWS như Kinesis, Step Functions, Lambda, Bedrock Agent Core Memory, DynamoDB và Vector OpenSearch vào một sơ đồ kiến trúc hoàn chỉnh.
+- **Chia nhỏ Agent để thu hẹp Context:** Phân tách hệ thống thành các Sub-Agent chuyên biệt (Crawler, KYC, Money Flow...) giúp thu hẹp Context Window, dễ chọn model nhỏ cho task đơn giản để tiết kiệm chi phí.
+- **Ý thức kiểm soát chi phí (FinOps):** Dùng code thuần tiền xử lý dữ liệu trước khi gọi LLM và cân nhắc chọn model gọn nhẹ (như bài học chuyển từ SageMaker sang YOLO Small).
+- **Phối hợp dịch vụ AWS:** Nắm được cách liên kết các dịch vụ Kinesis, Step Functions, Lambda, Bedrock Agent Core Memory, DynamoDB và Vector OpenSearch vào sơ đồ kiến trúc hoàn chỉnh.
 
 ---
 
 ### Ứng Dụng Vào Công Việc & Học Tập
 
-- **Định hình tư duy thiết kế đồ án:** Áp dụng mô hình phân tách Multi-Agent và tư duy cô lập ngữ cảnh vào các đồ án Kỹ thuật phần mềm tại trường đại học.
-- **Thực hành quản lý chi phí Cloud (FinOps):** Khi triển khai các dịch vụ trên AWS, luôn tính toán chi phí trước, ưu tiên các dịch vụ Serverless và sử dụng các mô hình gọn nhẹ đủ dùng thay vì chọn cấu hình mặc định đắt đỏ.
-- **Rèn luyện kỹ năng Pitching & Làm việc nhóm:** Học hỏi cách xây dựng slide gãy gọn, thiết kế sơ đồ kiến trúc chuẩn mực và tinh thần làm việc nhóm "Roll together, learn together" từ kinh nghiệm của các đội thi quán quân.
+- **Áp dụng vào đồ án môn học:** Vận dụng mô hình phân tách Multi-Agent và cách thu hẹp context window vào các đồ án phần mềm tại trường.
+- **Tối ưu chi phí Cloud:** Ưu tiên mô hình Serverless và chọn cấu hình/model đủ dùng khi làm việc với AWS để tránh phát sinh chi phí thừa.
+- **Kỹ năng làm việc nhóm & Pitching:** Học hỏi cách vẽ sơ đồ kiến trúc rõ ràng và thiết kế slide đúc kết giải pháp gãy gọn từ các đội quán quân.
 
 ---
 
 ### Trải Nghiệm Khi Xem Sự Kiện Trực Tuyến
 
-Dù theo dõi sự kiện qua màn hình trực tuyến và tài liệu ghi chép phụ đề, bản thân vẫn cảm nhận trọn vẹn không khí vô cùng nhiệt huyết, năng lượng sáng tạo và tinh thần học hỏi không ngừng của các bạn sinh viên cũng như các kỹ sư tham gia Hackathon. 
+Xem qua YouTube tuy không trực tiếp ở hội trường nhưng mấy đoạn các đội kể chuyện thức 3h sáng debug hay bấm nhầm SageMaker bay mất $48 coi cuốn thật. Buổi này giúp mình vỡ ra nhiều thứ về cách chia bớt việc cho Agent để đỡ tốn tiền token, cũng như cách chọn model phù hợp với ngân sách.
 
-Những câu chuyện thật thà về khoảnh khắc 3 giờ sáng thức trắng làm slide, những màn tranh luận nảy lửa về ý tưởng hay bài học "dở khóc dở cười" khi chọn nhầm server đắt tiền đã kéo công nghệ trở nên gần gũi, thực tế và đầy cảm hứng. Buổi tổng kết giúp một sinh viên năm cuối như mình tự tin hơn rất nhiều trên con đường theo đuổi đám mây và AI.
+Dù chỉ theo dõi lại qua video và tài liệu ghi chép, mình vẫn học được rất nhiều bài học thực tế từ cách các đội thi đóng gói sản phẩm và giải quyết vấn đề.
 
 ---
 
 ### Bài Học Rút Ra & Đóng Góp Cá Nhân
 
-- **Bài học rút ra:** Hành trình chinh phục công nghệ không có đường tắt. Tinh thần học tập suốt đời (*Lifelong Learner*), khả năng lắng nghe bài toán thực tế và sự linh hoạt trong tư duy chính là chìa khóa để trở thành một Kỹ sư Đám mây / AI giỏi trong tương lai.
-- **Đóng góp cá nhân:** Nghiên cứu kỹ lưỡng toàn bộ nội dung phụ đề video sự kiện, tổng hợp và biên soạn lại bài thu hoạch chi tiết, bài bài bản nhằm chia sẻ lại những tri thức kiến trúc Multi-Agent và kinh nghiệm thực chiến giá trị này cho cộng đồng học tập AWS FCJ.
+- **Bài học rút ra:** Cần giữ tinh thần chủ động học hỏi, hiểu rõ bài toán nghiệp vụ trước khi cắm đầu vào làm công nghệ và luôn linh hoạt khi chọn giải pháp kỹ thuật.
+- **Đóng góp cá nhân:** Tổng hợp và ghi chép lại toàn bộ nội dung từ video/phụ đề sự kiện thành bài thu hoạch hệ thống, chia sẻ kiến trúc Multi-Agent và kinh nghiệm FinOps cho cộng đồng AWS FCJ.
 
 ---
 
 ### Một số hình ảnh khi tham gia sự kiện
 
-Dưới đây là các hình ảnh thực tế ghi lại những khoảnh khắc đáng nhớ, slide kiến trúc và bài trình bày của các đội thi tại sự kiện **AWS Agentic AI Buildweek Showcase & Sharing**:
+Dưới đây là một số hình ảnh ghi lại slide kiến trúc và bài trình bày của các đội thi tại sự kiện **AWS Agentic AI Buildweek Showcase & Sharing**:
 
 ![Banner chính thức giới thiệu chuỗi sự kiện FCAJ - Agentic AI Build Week 2026 tại Bitexco Financial Tower](/images/4-EventParticipated/4.4-Event4/1.png)
 
@@ -150,4 +168,4 @@ Dưới đây là các hình ảnh thực tế ghi lại những khoảnh khắc
 
 ![Slide giới thiệu danh sách thành viên đội Six Pillars tham gia tranh tài tại cuộc thi Hackathon Agentic AI Build Week](/images/4-EventParticipated/4.4-Event4/10.png)
 
-> *Sự kiện đã mang đến những bài học kiến trúc đắt giá và nguồn cảm hứng lớn, giúp mình củng cố vững chắc tư duy thiết kế hệ thống và định hình rõ nét lộ trình phát triển sự nghiệp với AWS và Agentic AI.*
+> *Buổi chia sẻ mang lại nhiều bài học kiến trúc thực tế, giúp mình củng cố tư duy thiết kế hệ thống Multi-Agent và quản lý chi phí khi làm việc trên AWS.*
