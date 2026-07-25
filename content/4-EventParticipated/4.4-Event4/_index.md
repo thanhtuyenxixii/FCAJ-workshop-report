@@ -11,9 +11,9 @@ pre: " <b> 4.4. </b> "
 | Event Information | Details |
 | :--- | :--- |
 | **Event Name** | AWS Agentic AI Buildweek 2026 Showcase & Sharing |
-| **Date & Time** | July 25, 2026 (09:00 - 12:00) |
-| **Location** | Online (YouTube Livestream & Subtitle Archive) |
-| **Attendance Mode** | Online (Reviewing video recording and team presentation decks) |
+| **Date & Time** | July 25, 2026 (08:30 AM - 12:00 PM) |
+| **Location** | 26th Floor, Bitexco Financial Tower, Ho Chi Minh City |
+| **Attendance Mode** | Online (YouTube Livestream) |
 | **Role** | Attendee |
 
 ### Event Objectives
@@ -30,7 +30,7 @@ The session focused on multi-agent infrastructure architectures and real-world A
 | 2 | **Nguyen Gia Hung** | Head of Solution Architect @ *AWS Vietnam* | *AWS Vietnam welcome address & certificate presentation for winning teams* |
 | 3 | **One Team** | 1st Prize Winner @ *AWS Track* | *KFC Chatbot Project: Multi-channel ordering agent via Zalo/WhatsApp using AWS Agent Core Memory, TinyFish scraper, and Last Verify mechanism* |
 | 4 | **Final Scale (Signal C)** | 2nd Prize Winner @ *AWS Track* | *Multi-Agent Market Intelligence: Competitor & market signal analysis built on Value Creation Canvas, LangFuse & Bedrock Guardrails* |
-| 5 | **Team Plan C** | Hackathon Team | *SA Professional AI Native App: AI assistant for requirement analysis, automatic Draw.io architecture generation, cost estimation & Terraform IaC output* |
+| 5 | **Team Plan V** | Hackathon Team | *SA Professional AI Native App: AI assistant for requirement analysis, automatic Draw.io architecture generation, cost estimation & Terraform IaC output* |
 | 6 | **Team 3KA** | Hackathon Team | *Sheper Project & 24h Hackathon Journey: Stress management, lessons on coding under pressure, and risk management* |
 | 7 | **Six Pillars** | Outstanding Team @ *FinTech Track* | *Adaptive Workflow Engine for AML: Automated anti-money laundering investigation assistant for banking, reducing false positives by 90–95%* |
 
@@ -68,9 +68,9 @@ Key insights shared by **Mr. Joseph Marazota** (Head of Technology, AWS ASEAN) a
   - *Quality Evaluation via LangFuse:* Evaluated output scores using **LangFuse**. Low scores triggered up to 2 retries; persistent low scores were saved to DynamoDB tagged for human review.
   - *Security:* Integrated **Bedrock Guardrails**, AWS Cognito, WAF, and Amplify.
 
-#### 4. AI Assistant for Solution Architects (Team Plan C)
+#### 4. AI Assistant for Solution Architects (Team Plan V)
 
-**Team Plan C** introduced the **SA Professional AI Native App** designed to automate workflow architecture design and cost estimation for Solution Architects:
+**Team Plan V** introduced the **SA Professional AI Native App** designed to automate workflow architecture design and cost estimation for Solution Architects:
 
 - **Real-World Problem:** Solution Architects often face urgent client demands for cloud architecture diagrams and cost estimations within tight deadlines (overnight or 2–3 days). Manually drawing diagrams, looking up pricing tiers, and writing Infrastructure-as-Code (IaC) scripts consumes extensive effort.
 - **Solution & Workflow:**
@@ -154,13 +154,13 @@ Below are selected photos of presentation slides and team project demos from the
 
 ![Opening slide for the AI-Powered Conversation Ordering project presentation by 1st Prize winner One Team](/images/4-EventParticipated/4.4-Event4/3.png)
 
-![AWS Cloud infrastructure architecture diagram incorporating VPC, ECS Fargate, Amazon Bedrock, ALB, Cognito, and PostgreSQL](/images/4-EventParticipated/4.4-Event4/4.png)
+![Team Plan V presenting the opening slide for the Solution Architect Professional Native App project](/images/4-EventParticipated/4.4-Event4/5.png)
 
-![Team Plan V presenting the Solution Architect Professional Native App project at the Hackathon](/images/4-EventParticipated/4.4-Event4/5.png)
+![Speaker representing Team Plan V presenting the AWS cloud infrastructure architecture diagram for the Solution Architect Native App (incorporating CloudFront, ECS Fargate, Amazon Bedrock, PostgreSQL, and Draw.io)](/images/4-EventParticipated/4.4-Event4/4.png)
 
-![Presentation slide outlining the four stages of the hackathon journey "The Journey Ahead: Four stages of our hackathon"](/images/4-EventParticipated/4.4-Event4/6.png)
+![Team 3KA sharing presentation slide outlining the four stages of the hackathon journey "The Journey Ahead: Four stages of our hackathon"](/images/4-EventParticipated/4.4-Event4/6.png)
 
-![Real-time video streaming architecture diagram utilizing Kinesis Video Streams, ECS Stream Processor, SageMaker Endpoint, and Bedrock AgentCore Runtime](/images/4-EventParticipated/4.4-Event4/7.png)
+![Real-time video streaming architecture diagram for the Sheper project by Team 3KA utilizing Kinesis Video Streams, ECS Stream Processor, SageMaker Endpoint, and Bedrock AgentCore Runtime](/images/4-EventParticipated/4.4-Event4/7.png)
 
 ![Team Six Pillars presenting the Adaptive AML Workflow Engine solution automating anti-money laundering investigation workflows for banking](/images/4-EventParticipated/4.4-Event4/8.png)
 

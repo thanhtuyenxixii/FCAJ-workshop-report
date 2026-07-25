@@ -11,9 +11,9 @@ pre: " <b> 4.4. </b> "
 | Thông tin sự kiện | Chi tiết |
 | :--- | :--- |
 | **Tên sự kiện** | AWS Agentic AI Buildweek 2026 Showcase & Sharing |
-| **Thời gian** | 25/07/2026 (09:00 - 12:00) |
-| **Địa điểm** | Trực tuyến (YouTube Livestream & Subtitle Archive) |
-| **Hình thức tham gia** | Trực tuyến (Xem video và tổng hợp bài trình bày của các đội thi) |
+| **Thời gian** | 25/07/2026 (08:30 - 12:00) |
+| **Địa điểm** | Tầng 26, Bitexco Financial Tower, TP. Hồ Chí Minh |
+| **Hình thức tham gia** | Trực tuyến (YouTube Livestream) |
 | **Vai trò** | Người tham dự |
 
 ### Mục Đích Của Sự Kiện
@@ -30,7 +30,7 @@ Nội dung buổi chia sẻ tập trung vào kiến trúc hạ tầng Multi-Agen
 | 2 | **Nguyễn Gia Hưng** | Head of Solution Architect @ *AWS Vietnam* | *Đại diện AWS Việt Nam chào mừng & trao chứng nhận cho các đội thi* |
 | 3 | **One Team** | Giải Nhất @ *AWS Track* | *Dự án KFC Chatbot: Tác nhân đặt món KFC qua Zalo/WhatsApp dùng AWS Agent Core Memory, TinyFish scraper và cơ chế Last Verify* |
 | 4 | **Final Scale (Signal C)** | Giải Nhì @ *AWS Track* | *Multi-Agent Market Intelligence: Phân tích tín hiệu đối thủ & thị trường dựa trên Value Creation Canvas, LangFuse & Bedrock Guardrails* |
-| 5 | **Team Plan C** | Đội thi Hackathon | *SA Professional AI Native App: Trợ lý AI phân tích requirement, tự động gen kiến trúc Draw.io, tính chi phí & xuất Terraform IaC* |
+| 5 | **Team Plan V** | Đội thi Hackathon | *SA Professional AI Native App: Trợ lý AI phân tích requirement, tự động gen kiến trúc Draw.io, tính chi phí & xuất Terraform IaC* |
 | 6 | **Team 3KA** | Đội thi Hackathon | *Dự án Sheper & Trải nghiệm Hackathon 24h: Quản trị tâm lý, bài học lập trình dưới áp lực và quản lý rủi ro* |
 | 7 | **Six Pillars** | Đội thi xuất sắc @ *FinTech Track* | *Adaptive Workflow Engine for AML: Trợ lý tự động hóa điều tra rửa tiền cho ngân hàng, giảm 90-95% cảnh báo giả (False Positive)* |
 
@@ -68,9 +68,9 @@ Phần chia sẻ của ông **Joseph Marazota** (Head of Technology, AWS ASEAN) 
   - *Đánh giá chất lượng bằng LangFuse:* Chạy qua **LangFuse** để chấm điểm output. Nếu điểm thấp, hệ thống tự retry tối đa 2 lần; nếu vẫn chưa đạt thì lưu vào DynamoDB để gắn tag cho người kiểm tra lại.
   - *Bảo mật:* Kết hợp **Bedrock Guardrails**, AWS Cognito, WAF và Amplify.
 
-#### 4. Trợ lý AI cho Solution Architect (Team Plan C)
+#### 4. Trợ lý AI cho Solution Architect (Team Plan V)
 
-Đội **Team Plan C** mang đến giải pháp **SA Professional AI Native App** nhằm tự động hóa quy trình thiết kế hệ thống và báo giá chi phí cho các Solution Architect:
+Đội **Team Plan V** mang đến giải pháp **SA Professional AI Native App** nhằm tự động hóa quy trình thiết kế hệ thống và báo giá chi phí cho các Solution Architect:
 
 - **Bài toán thực tế:** Khi làm việc với khách hàng, các SA thường nhận yêu cầu gấp phải tạo sơ đồ kiến trúc và ước tính chi phí trong vòng 2-3 ngày, hoặc thậm chí ngay trong đêm. Việc vẽ tay sơ đồ, tra cứu bảng giá dịch vụ và viết script hạ tầng (IaC) tốn rất nhiều thời gian.
 - **Giải pháp & Luồng xử lý:**
@@ -154,13 +154,13 @@ Dưới đây là một số hình ảnh ghi lại slide kiến trúc và bài t
 
 ![Slide mở màn bài trình bày dự án AI-Powered Conversation Ordering của đội quán quân One Team](/images/4-EventParticipated/4.4-Event4/3.png)
 
-![Sơ đồ kiến trúc hạ tầng đám mây AWS bao gồm VPC, ECS Fargate, Amazon Bedrock, ALB, Cognito và PostgreSQL](/images/4-EventParticipated/4.4-Event4/4.png)
+![Đội Plan V trình bày slide mở màn dự án Solution Architect Professional Native App](/images/4-EventParticipated/4.4-Event4/5.png)
 
-![Đội Plan V trình bày dự án Solution Architect Professional Native App trong khuôn khổ cuộc thi Hackathon](/images/4-EventParticipated/4.4-Event4/5.png)
+![Diễn giả đại diện Team Plan V trình bày sơ đồ kiến trúc hạ tầng AWS dự án Solution Architect Native App (bao gồm CloudFront, ECS Fargate, Amazon Bedrock, PostgreSQL và Draw.io)](/images/4-EventParticipated/4.4-Event4/4.png)
 
-![Slide trình bày 4 giai đoạn chinh phục cuộc thi Hackathon "The Journey Ahead: Four stages of our hackathon"](/images/4-EventParticipated/4.4-Event4/6.png)
+![Đội 3KA chia sẻ slide 4 giai đoạn chinh phục cuộc thi Hackathon "The Journey Ahead: Four stages of our hackathon"](/images/4-EventParticipated/4.4-Event4/6.png)
 
-![Sơ đồ kiến trúc xử lý luồng Video Stream thời gian thực sử dụng Kinesis Video Stream, ECS Stream Processor, SageMaker Endpoint và Bedrock AgentCore Runtime](/images/4-EventParticipated/4.4-Event4/7.png)
+![Sơ đồ kiến trúc xử lý luồng Video Stream thời gian thực của dự án Sheper (đội 3KA) sử dụng Kinesis Video Stream, ECS Stream Processor, SageMaker Endpoint và Bedrock AgentCore Runtime](/images/4-EventParticipated/4.4-Event4/7.png)
 
 ![Đội Six Pillars trình bày giải pháp Adaptive AML Workflow Engine ứng dụng AI tự động hóa điều tra rửa tiền cho ngân hàng](/images/4-EventParticipated/4.4-Event4/8.png)
 
