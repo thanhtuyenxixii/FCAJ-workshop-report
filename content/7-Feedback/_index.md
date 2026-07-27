@@ -32,11 +32,11 @@ The provisioning of generous AWS practice credits is a substantial benefit, enab
 ### Personal Reflections & Takeaways
 
 - **Most satisfying aspect during the internship:** Having the opportunity to work directly with advanced AWS services and build a complete end-to-end product combining Serverless architecture with AI Agents. Additionally, participating in major community events like AWS Community Day expanded insights into the cloud industry.
-- **Areas for program improvement for future cohorts:** The program could introduce periodic cross-team technical sharing sessions, allowing different cohorts to learn from one another's projects and gain diverse perspectives on cloud architecture.
+- **Areas for program improvement for future cohorts:** The program could introduce periodic cross-team technical sharing sessions to learn cross-functionally from different projects, helping oneself gain more diverse perspectives on cloud architecture solutions and learn from/guide one another.
 - **Advice for future interns:** This is highly recommended as a top-tier internship program for anyone pursuing a career as a Cloud or DevOps Engineer. The practical challenges help students grow rapidly in both technical mindset and professional conduct.
 
 
 ### Suggestions & Expectations
 
-- **Suggestions for better experience:** Providing detailed reference architecture diagrams and quick-start guides for troubleshooting common issues regarding complex services during the initial weeks of the internship would help. Furthermore, organizing periodic technical Q&A or short office hours would help interns troubleshoot issues faster and optimize hands-on lab practice.
+- **Suggestions for better experience:** Providing detailed reference architecture diagrams and quick-start guides for troubleshooting common issues regarding complex services during the initial weeks of the internship would help. Furthermore, increasing opportunities to visit the office more often or organizing periodic technical Q&A sessions / short office hours would help oneself experience more of the working environment, troubleshoot issues faster, and optimize hands-on lab practice.
 - **Future expectations:** Aspiring to continue learning, keeping up with new cloud technologies, and actively participating in events and activities within the AWS Study Group / FCJ community. Additionally, hoping that this internship worklog will serve as a helpful reference resource for future students.

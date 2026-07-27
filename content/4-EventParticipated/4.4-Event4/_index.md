@@ -140,7 +140,7 @@ Even through video recordings and transcripts, I gained plenty of practical less
 ### Lessons Learned & Personal Contributions
 
 - **Lessons Learned:** Keep an active learning mindset, understand business requirements before diving into code, and stay flexible with technical choices.
-- **Personal Contribution:** Reviewed full video subtitle transcripts and compiled this structured report to share multi-agent architecture patterns and FinOps experiences with the AWS FCJ community.
+- **Personal Contribution:** Reviewed full video subtitle transcripts and compiled this structured report to share multi-agent architecture patterns and FinOps experiences with the AWS FCJ community, with direct interactive "Chat" being even better.
 
 ---
 

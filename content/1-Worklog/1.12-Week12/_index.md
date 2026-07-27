@@ -32,8 +32,8 @@ During this final week of wrap-up, corporate evaluations, and academic preparati
   + Refactoring code, adding clear inline comments, and writing a comprehensive README.md ensure that the project is maintainable by others.
   + Takeaway: Structured packaging and documentation are critical final steps to maximize project hand-off value and display professional delivery.
 
-* **Corporate Feedback and Professional Review:**
-  + Detailed reviews and positive feedback from the AWS mentor helped identify core technical strengths and areas for continued professional growth.
+* **Receiving Feedback from Mentors:**
+  + Sincere feedback and evaluations from AWS mentors helped identify core technical strengths to leverage as well as areas to continue refining post-internship.
   + Takeaway: Adopting a feedback-driven growth mindset is key to bridging academic concepts and corporate realities.
 
 * **Internship Journey Reflections:**

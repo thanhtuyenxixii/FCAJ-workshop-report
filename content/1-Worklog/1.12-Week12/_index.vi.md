@@ -32,8 +32,8 @@ Qua tuần cuối cùng của kỳ thực tập tập trung vào hoàn thiện, 
   + Việc dọn dẹp mã nguồn, chuẩn hóa tài liệu hướng dẫn sử dụng (README.md) giúp sản phẩm dễ dàng được tiếp cận và chuyển giao cho các bên liên quan.
   + Đúc kết: Đóng gói và viết tài liệu hướng dẫn kỹ càng là một bước cực kỳ quan trọng giúp tăng tính chuyên nghiệp và giá trị của sản phẩm.
 
-* **Tiếp nhận phản hồi từ doanh nghiệp thực tế:**
-  + Những đánh giá, góp ý chân thành từ cán bộ hướng dẫn tại AWS giúp nhận ra những điểm mạnh cần phát huy cũng như các khía cạnh cần tiếp tục trau dồi sau kỳ thực tập.
+* **Tiếp nhận phản hồi từ anh/chị thực tế:**
+  + Những đánh giá, góp ý chân thành từ mấy anh hướng dẫn tại AWS giúp nhận ra những điểm mạnh cần phát huy cũng như các khía cạnh cần tiếp tục trau dồi sau kỳ thực tập.
   + Đúc kết: Tư duy cầu thị và chủ động lắng nghe phản hồi (feedback-driven growth) là chìa khóa để phát triển bản thân vượt bậc trong môi trường làm việc thực tế.
 
 * **Tổng kết toàn bộ kỳ thực tập tốt nghiệp:**

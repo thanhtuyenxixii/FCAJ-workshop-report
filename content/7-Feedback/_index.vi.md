@@ -32,10 +32,10 @@ Chính sách hỗ trợ tài khoản AWS thực hành (AWS Credit) dồi dào l�
 ### Nhìn nhận và Đúc kết cá nhân
 
 - **Điều hài lòng nhất trong thời gian thực tập:** Cơ hội được làm việc trực tiếp trên các dịch vụ AWS cao cấp và xây dựng hoàn chỉnh một sản phẩm thực tế kết hợp giữa Serverless và AI Agent. Đồng thời, việc tham gia các sự kiện cộng đồng lớn như AWS Community Day giúp mở rộng tầm nhìn về ngành công nghiệp điện toán đám mây.
-- **Điểm chương trình cần cải thiện cho các khóa sau:** Chương trình có thể bổ sung thêm các buổi chia sẻ kỹ thuật (tech sharing) định kỳ giữa các nhóm để học hỏi chéo các dự án khác nhau, từ đó có góc nhìn đa dạng hơn về các giải pháp kiến trúc đám mây.
+- **Điểm chương trình cần cải thiện cho các khóa sau:** Chương trình có thể bổ sung thêm các buổi chia sẻ kỹ thuật (tech sharing) định kỳ giữa các nhóm để học hỏi chéo các dự án khác nhau, để bản thân từ đó có góc nhìn đa dạng hơn về các giải pháp kiến trúc đám mây và học hỏi chỉ bảo nhau.
 - **Lời khuyên cho các bạn thực tập sinh tiếp theo:** Đây chắc chắn là một chương trình thực tập vô cùng chất lượng cho bất kỳ ai muốn theo đuổi con đường Cloud/DevOps. Những thử thách thực tế sẽ giúp sinh viên trưởng thành nhanh chóng về cả tư duy kỹ thuật lẫn tác phong làm việc.
 
 ### Đề xuất & mong muốn
 
-- **Đề xuất cải thiện trải nghiệm:** Nên bổ sung thêm các sơ đồ kiến trúc mẫu chi tiết và tài liệu hướng dẫn nhanh (quick-start guides) để xử lý các lỗi thường gặp (common issues) liên quan đến các dịch vụ phức tạp trong những tuần đầu của kỳ thực tập. Ngoài ra, việc tổ chức định kỳ các buổi giải đáp thắc mắc kỹ thuật ngắn hoặc office hours sẽ giúp các bạn thực tập sinh gỡ rối nhanh hơn và tối ưu hóa thời gian thực hành lab.
+- **Đề xuất cải thiện trải nghiệm:** Nên bổ sung thêm các sơ đồ kiến trúc mẫu chi tiết và tài liệu hướng dẫn nhanh (quick-start guides) để xử lý các lỗi thường gặp (common issues) liên quan đến các dịch vụ phức tạp trong những tuần đầu của kỳ thực tập. Ngoài ra, tăng thêm cơ hội được đến văn phòng nhiều hơn hay việc tổ chức định kỳ các buổi giải đáp thắc mắc kỹ thuật ngắn hoặc office hours sẽ giúp bản thân được trải nghiệm thêm môi trường làm việc hay gỡ rối nhanh hơn và tối ưu hóa thời gian thực hành lab.
 - **Định hướng trong tương lai:** Mong muốn được tiếp tục học hỏi, cập nhật các công nghệ mới về Cloud và tích cực tham gia các sự kiện, hoạt động của cộng đồng AWS Study Group / FCJ. Đồng thời, hy vọng cuốn nhật ký thực tập (worklog) này sẽ là một nguồn tài liệu tham khảo hữu ích cho các bạn sinh viên khóa sau.

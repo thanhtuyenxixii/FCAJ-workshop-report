@@ -33,5 +33,5 @@ To objectively reflect on this journey, a self-assessment has been conducted bas
 ### Areas for Improvement and Development
 
 - **Work ethic and self-discipline:** Need to enhance personal time management, improve punctuality, and strictly adhere to team reporting procedures to foster greater professionalism.
-- **Problem-solving methodology:** Instead of rushing to implement quick fixes when encountering system errors, focus should be placed on reading and analyzing logs systematically to understand root causes before making changes.
+- **Problem-solving methodology:** Instead of trying to find solutions right away when encountering system errors, focus should be placed on building a habit of reading logs deeply and systematically analyzing root causes before making changes.
 - **Technical communication skills:** Continue learning to summarize and present complex technical issues in a concise, easy-to-understand manner so that non-technical stakeholders can follow along easily.

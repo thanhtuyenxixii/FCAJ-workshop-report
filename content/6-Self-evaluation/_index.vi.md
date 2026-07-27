@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Kỳ thực tập tại **AWS Việt Nam** từ ngày **17/04/2026** đến **10/07/2026** đã mang lại một khoảng thời gian vô cùng ý nghĩa để cọ xát thực tế, chuyển hóa những kiến thức học được ở giảng đường thành các giải pháp chạy trên môi trường đám mây doanh nghiệp.
+Kỳ thực tập tại **AWS Việt Nam** từ ngày **17/04/2026** đến **10/07/2026** nó cho một khoảng thời gian vô cùng ý nghĩa để cọ xát thực tế, chuyển hóa những kiến thức học được ở giảng đường thành các giải pháp chạy trên môi trường đám mây doanh nghiệp.
 
 Nhiệm vụ chính trong giai đoạn này xoay quanh việc tham gia thiết kế, phát triển và kiểm thử dự án **Stock Alerts System** – hệ thống tự động hóa phân tích và cảnh báo giá cổ phiếu ứng dụng kiến trúc AWS Serverless kết hợp AI Agent (Amazon Bedrock). Qua dự án thực tế này, trình độ thiết kế hệ thống đám mây, lập trình Serverless, bảo mật hạ tầng cùng khả năng cộng tác nhóm và viết tài liệu kỹ thuật đã tiến bộ rõ rệt.
 
@@ -33,5 +33,5 @@ Nhằm nhìn nhận lại hành trình vừa qua một cách khách quan nhất,
 ### Định hướng cải thiện và phát triển
 
 - **Tác phong làm việc và tính tự giác:** Cần nâng cao tính chủ động trong việc quản lý thời gian cá nhân, đi làm đúng giờ hơn và tuân thủ chặt chẽ các quy trình báo cáo của nhóm để tăng tính chuyên nghiệp.
-- **Phương pháp tiếp cận và giải quyết vấn đề:** Thay vì vội vã đi tìm giải pháp ngay khi gặp lỗi hệ thống, cần tập trung rèn luyện thói quen đọc hiểu log sâu sắc, phân tích nguyên nhân gốc rễ (Root Cause) một cách bài bản trước khi thực hiện các thay đổi.
+- **Phương pháp tiếp cận và giải quyết vấn đề:** Thay vì cố đi tìm giải pháp ngay khi gặp lỗi hệ thống, cần tập trung rèn luyện thói quen đọc hiểu log sâu sắc, phân tích nguyên nhân gốc rễ (Root Cause) một cách bài bản trước khi thực hiện các thay đổi.
 - **Kỹ năng truyền đạt và giao tiếp kỹ thuật:** Tiếp tục học cách tóm tắt và trình bày các vấn đề kỹ thuật phức tạp một cách cô đọng, dễ hiểu hơn để các thành viên ngoài nhóm kỹ thuật cũng có thể nắm bắt nhanh chóng.

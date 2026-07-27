@@ -60,7 +60,7 @@ Phần chia sẻ này demo hệ thống game kéo-búa-bao nhiều người chơ
 
 #### 3. Ghi chép về Docker & Containerization
 
-Anh Huỳnh Bảo chia sẻ cách đóng gói ứng dụng bằng Docker để xử lý triệt để lỗi "chạy trên máy tôi thì được nhưng lên server thì lỗi":
+Anh Huỳnh Bảo thì chia sẻ cách đóng gói ứng dụng bằng Docker để xử lý triệt để lỗi "chạy trên máy tôi thì được nhưng lên server thì lỗi":
 
 - **Hạn chế của VM truyền thống:** Mỗi VM phải gánh 1 OS riêng, nặng nề và ngốn CPU/RAM/ổ cứng.
 - **Lợi ích của Docker:** Đóng gói app + thư viện phụ thuộc vào 1 container siêu nhẹ, dùng chung OS kernel với máy chủ.

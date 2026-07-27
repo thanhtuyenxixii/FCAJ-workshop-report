@@ -140,7 +140,7 @@ Dù chỉ theo dõi lại qua video và tài liệu ghi chép, mình vẫn học
 ### Bài Học Rút Ra & Đóng Góp Cá Nhân
 
 - **Bài học rút ra:** Cần giữ tinh thần chủ động học hỏi, hiểu rõ bài toán nghiệp vụ trước khi cắm đầu vào làm công nghệ và luôn linh hoạt khi chọn giải pháp kỹ thuật.
-- **Đóng góp cá nhân:** Tổng hợp và ghi chép lại toàn bộ nội dung từ video/phụ đề sự kiện thành bài thu hoạch hệ thống, chia sẻ kiến trúc Multi-Agent và kinh nghiệm FinOps cho cộng đồng AWS FCJ.
+- **Đóng góp cá nhân:** Tổng hợp và ghi chép lại toàn bộ nội dung từ video/phụ đề sự kiện thành bài thu hoạch hệ thống, chia sẻ kiến trúc Multi-Agent và kinh nghiệm FinOps cho cộng đồng AWS FCJ, nếu "Chat" trực tiếp được thì càng tốt.
 
 ---
 
